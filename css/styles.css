@@ -927,6 +927,9 @@ nav {
 
 .contact-right .form-group {
     margin-bottom: 20px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .contact-right input,
@@ -941,7 +944,15 @@ nav {
     font-family: inherit;
     transition: all 0.3s;
     color: #333;
+    box-sizing: border-box;
+    height: 50px; /* 입력 필드 높이 통일 */
 }
+
+.contact-right textarea {
+    height: auto; /* textarea는 자동 높이 */
+    min-height: 150px;
+    resize: vertical;
+} 
 
 .contact-right input:focus,
 .contact-right textarea:focus,
