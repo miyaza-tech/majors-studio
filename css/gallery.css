@@ -4,9 +4,9 @@
 .filter-section {
     background: #fff;
     padding: 40px 0;
-    position: sticky;
-    top: 70px;
-    z-index: 100;
+    /* position: sticky; */  /* 제거 */
+    /* top: 70px; */         /* 제거 */
+    /* z-index: 100; */      /* 제거 */
     margin-top: 15px;
 }
 

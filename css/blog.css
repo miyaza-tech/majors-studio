@@ -23,9 +23,9 @@
 .blog-categories {
     background: #fff;
     padding: 40px 0;
-    position: sticky;
-    top: 70px;
-    z-index: 100;
+    /* position: sticky; */  /* 제거 */
+    /* top: 70px; */         /* 제거 */
+    /* z-index: 100; */      /* 제거 */
     margin-top: 15px;
 }
 
@@ -56,7 +56,7 @@
 
 /* Featured Post */
 .featured-post {
-    background: #f8f8f8;
+    background: #ffffff;
     padding: 60px 0;
 }
 
@@ -95,12 +95,19 @@
 .featured-badge {
     position: absolute;
     top: 20px;
-    left: 20px;
+    right: 20px;  /* left를 right로 변경 */
     background: #667eea;
     color: white;
     padding: 8px 16px;
     border-radius: 20px;
     font-size: 0.9em;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3); /* 그림자 효과 추가 */
+    transition: transform 0.3s ease; /* 호버 효과를 위한 트랜지션 */
+}
+
+.featured-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
 }
 
 .featured-text {

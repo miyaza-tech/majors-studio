@@ -136,8 +136,8 @@ nav {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 90px; /* 헤더 영역 피하기 */
-    gap: 25px;
+    padding-top: 80px; /* 헤더 영역 피하기 */
+    gap: 15px;
     z-index: 1000;
 }
 
