@@ -1087,7 +1087,6 @@ footer {
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
-    /* 히어로 섹션 */
     .hero {
         min-height: 50vh;
         padding-top: 70px;
@@ -1131,120 +1130,33 @@ footer {
        height: 16px;
    }
 
-    /* 모바일 메뉴 */
-    .mobile-menu-btn {
-        display: flex !important;
-    }
+   .mobile-menu-btn {
+       display: flex !important;
+   }
 
-    .nav-links {
-        display: none;
-    }
+   .nav-links {
+       display: none;
+   }
 
-    .nav-links.mobile-active {
-        display: flex;
-    }
+   .nav-links.mobile-active {
+       display: flex;
+   }
 
-    /* 섹션별 모바일 중앙정렬 */
-    .projects, .gallery, .services, .clients, .testimonials {
-        text-align: center;
-        padding: 60px 0;
-    }
+   .contact-form {
+       padding: 30px 20px;
+   }
 
-    /* 그리드 레이아웃 수정 */
-    .projects-grid, .gallery-grid, .services-grid, .testimonials-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-        max-width: 100%;
-    }
+   .form-row {
+       grid-template-columns: 1fr;
+   }
 
-    /* 아이템 스타일 */
-    .project-item, .gallery-item, .service-item, .testimonial-item {
-        width: 100%;
-        max-width: 350px;
-        margin: 0 auto;
-    }
-
-    /* 클라이언트 그리드 */
-    .clients-grid {
-        grid-template-columns: repeat(2, 1fr);
-        justify-items: center;
-        gap: 14px;
-    }
-
-    /* 섹션 제목 스타일 */
-    .projects h2, .gallery h2, .services h2, 
-    .clients h2, .testimonials h2 {
-        text-align: center;
-        margin: 0 auto 40px;
-        font-size: 2.2em;
-    }
-}
-
-/* 작은 모바일 화면 (480px 이하) */
-@media (max-width: 480px) {
-    /* 히어로 섹션 */
-    .hero {
-        padding-top: 60px;
-    }
-
-    .hero h1 {
-        font-size: 2em;
-    }
-
-    .hero .subtitle {
-        font-size: 0.9em;
-    }
-
-    /* 네비게이션 */
-    .nav-links {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    /* 버튼 */
-    .submit-btn {
-        padding: 12px 30px;
-        font-size: 0.9em;
-    }
-
-    /* 섹션 패딩 */
-    .projects, .gallery, .services, .clients, .testimonials {
-        padding: 50px 0;
-    }
-}
-
-/* 테블릿 사이즈 (768px ~ 992px) */
-@media (min-width: 769px) and (max-width: 992px) {
-    /* 히어로 섹션 */
-    .hero {
-        padding-top: 80px;
-    }
-
-    .hero h1 {
-        font-size: 3em;
-    }
-
-    .hero .subtitle {
-        font-size: 1.1em;
-    }
-
-    /* 네비게이션 */
-    .nav-links {
-        gap: 25px;
-    }
-
-    /* 버튼 */
-    .submit-btn {
-        padding: 14px 35px;
-        font-size: 1em;
-    }
-
-    /* 섹션 패딩 */
-    .projects, .gallery, .services, .clients, .testimonials {
-        padding: 70px 0;
-    }
+   .back-to-top {
+       bottom: 20px;
+       right: 20px;
+       width: 45px;
+       height: 45px;
+       font-size: 16px;
+   }
 }
 
 /* ===== VIDEO OPTIMIZATION STYLES ===== */
