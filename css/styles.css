@@ -371,13 +371,13 @@ nav {
 }
 
 .about-content {
-    max-width: 800px;
+    max-width: 840px;
     margin: 0 auto;
     text-align: center;
 }
 
 .about h2 {
-    font-size: 2.5em;
+    font-size: 2.0em;
     margin-bottom: 30px;
     color: #333;
 }
@@ -397,7 +397,7 @@ nav {
 
 .services h2 {
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2.0em;
     margin-bottom: 50px;
     color: #333;
 }
@@ -440,7 +440,7 @@ nav {
 
 .projects h2 {
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2.0em;
     margin-bottom: 50px;
 }
 
@@ -560,7 +560,7 @@ nav {
 
 .gallery h2 {
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2.0em;
     margin-bottom: 20px;
     color: #333;
 }
@@ -687,7 +687,7 @@ nav {
 
 .clients h2 {
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2.0em;
     margin-bottom: 50px;
     color: #333;
 }
@@ -774,7 +774,7 @@ nav {
 
 .testimonials h2 {
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2.0em;
     margin-bottom: 60px;
     color: #333;
 }
@@ -853,7 +853,7 @@ nav {
 
 /* Contact Left - Information */
 .contact-left h2 {
-    font-size: 2.2em;
+    font-size: 2.0em;
     margin-bottom: 30px;
     font-weight: 300;
     color: #333;
@@ -919,7 +919,7 @@ nav {
 
 /* Contact Right - Form */
 .contact-right h2 {
-    font-size: 2.2em;
+    font-size: 2.0em;
     margin-bottom: 30px;
     font-weight: 300;
     color: #333;
