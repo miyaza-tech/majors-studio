@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사진 촬영 가이드 - Excel 형식</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+        
+        .download-section {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: #e8f4fd;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .download-btn {
+            background: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px;
+        }
+        
+        .download-btn:hover {
+            background: #219a52;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background: white;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .concept-cell {
+            background-color: #ecf0f1;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .settings-cell {
+            font-family: 'Courier New', monospace;
+            background-color: #f8f9fa;
+        }
+        
+        .camera-cell {
+            color: #34495e;
+        }
+        
+        .film-cell {
+            color: #27ae60;
+            font-weight: 500;
+        }
+        
+        .special-table th {
+            background-color: #e74c3c;
+        }
+        
+        .instant-table th {
+            background-color: #9b59b6;
+        }
+        
+        .characteristics-table th {
+            background-color: #f39c12;
+        }
+        
+        .copy-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        
+        .copy-btn:hover {
+            background: #2980b9;
+        }
+        
+        .table-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .excel-tip {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .excel-tip h3 {
+            color: #856404;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📸 사진 촬영 컨셉별 카메라 및 필름 가이드</h1>
+        
+        <div class="excel-tip">
+            <h3>💡 Excel 사용 팁</h3>
+            <p>• 아래 표들을 복사하여 Excel에 붙여넣기 하실 수 있습니다.</p>
+            <p>• 각 표 제목 옆의 "복사" 버튼을 클릭하면 해당 표가 클립보드로 복사됩니다.</p>
+            <p>• Excel에서 데이터 > 텍스트 나누기 기능을 사용하여 탭으로 구분된 데이터를 정리할 수 있습니다.</p>
+        </div>
+        
+        <div class="table-section">
+            <h2 class="section-title">📋 메인 촬영 설정 가이드 
+                <button class="copy-btn" onclick="copyTable('main-table')">복사</button>
+            </h2>
+            <table id="main-table">
+                <thead>
+                    <tr>
+                        <th>촬영 컨셉</th>
+                        <th>카메라 설정</th>
+                        <th>디지털 카메라</th>
+                        <th>필름 카메라</th>
+                        <th>추천 필름</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="concept-cell">인물 사진</td>
+                        <td class="settings-cell">f/2.8, 1/125s, ISO 400</td>
+                        <td class="camera-cell">Sony Alpha 7 III<br>Canon EOS 6D Mark II</td>
+                        <td class="camera-cell">Leica M6<br>Pentax 67</td>
+                        <td class="film-cell">Kodak Portra 800<br>Fujifilm Pro 400H<br>Kodak Portra 400<br>Ilford HP5 Plus</td>
+                    </tr>
+                    <tr>
+                        <td class="concept-cell">매크로 사진</td>
+                        <td class="settings-cell">f/4, 1/2000s, ISO 200</td>
+                        <td class="camera-cell">Canon EOS 90D<br>Sony Alpha 6400</td>
+                        <td class="camera-cell">Pentax 67<br>Mamiya RB67</td>
+                        <td class="film-cell">Kodak Ektar 100<br>Fuji Velvia 50<br>Fujifilm Provia 100F<br>Kodak Ektachrome</td>
+                    </tr>
+                    <tr>
+                        <td class="concept-cell">식품 사진</td>
+                        <td class="settings-cell">f/6.3, 1/200s, ISO 100</td>
+                        <td class="camera-cell">Canon EOS 5D Mark IV<br>Nikon Z7</td>
+                        <td class="camera-cell">Hasselblad 500C/M<br>Mamiya RZ67</td>
+                        <td class="film-cell">Kodak Ektar 100<br>Fujifilm Pro 400H<br>Fuji Velvia 50<br>Fujifilm Provia 100F</td>
+                    </tr>
+                    <tr>
+                        <td class="concept-cell">스포츠 사진</td>
+                        <td class="settings-cell">f/3.5, 1/1000s, ISO 1600</td>
+                        <td class="camera-cell">Nikon D6<br>Canon EOS-1D X Mark III</td>
+                        <td class="camera-cell">Nikon F5<br>Canon EOS-1N</td>
+                        <td class="film-cell">Ilford Delta 3200<br>Lomography Color Negative 800<br>Fuji Superia X-TRA<br>Kodak Vision3 500T</td>
+                    </tr>
+                    <tr>
+                        <td class="concept-cell">아동 사진</td>
+                        <td class="settings-cell">f/3.5, 1/250s, ISO 200</td>
+                        <td class="camera-cell">Canon EOS 90D<br>Sony Alpha 6400</td>
+                        <td class="camera-cell">Leica M3<br>Contax T2</td>
+                        <td class="film-cell">Kodak Gold 200<br>Agfa Vista Plus 200<br>Fuji Superia 200<br>Lomography X-Pro 200</td>
+                    </tr>
+                    <tr>
+                        <td class="concept-cell">야경 사진</td>
+                        <td class="settings-cell">f/11, 15s, ISO 800</td>
+                        <td class="camera-cell">Nikon D750<br>Sony Alpha 7R IV</td>
+                        <td class="camera-cell">Nikon F6<br>Canon EOS-1V</td>
+                        <td class="film-cell">CineStill 800T<br>Kodak Portra 800<br>Lomography Color Negative 800<br>Fuji Superia 1600</td>
+                    </tr>
+                    <tr>
+                        <td class="concept-cell">풍경 사진</td>
+                        <td class="settings-cell">f/11, 1/30s, ISO 100</td>
+                        <td class="camera-cell">Canon EOS 5D Mark IV<br>Nikon D850</td>
+                        <td class="camera-cell">Hasselblad X-Pan<br>Contax G2</td>
+                        <td class="film-cell">Kodak Ektar 100<br>Fuji Velvia 50<br>Fujifilm Provia 100F<br>Kodak Ektachrome</td>
+                    </tr>
+                    <tr>
+                        <td class="concept-cell">고요한 자연</td>
+                        <td class="settings-cell">f/11, 1/125s, ISO 400</td>
+                        <td class="camera-cell">Nikon D750<br>Canon EOS 6D</td>
+                        <td class="camera-cell">Pentax 645N<br>Bronica ETRSi</td>
+                        <td class="film-cell">Kodak Portra 160<br>Fujifilm Pro 400H<br>Fuji Pro 160NS<br>Agfa Vista 400</td>
+                    </tr>
+                    <tr>
+                        <td class="concept-cell">스트리트 포토</td>
+                        <td class="settings-cell">f/2.8, 1/500s, ISO 800</td>
+                        <td class="camera-cell">Leica M10<br>Fujifilm X100V</td>
+                        <td class="camera-cell">Leica M2<br>Olympus Trip 35</td>
+                        <td class="film-cell">Kodak Tri-X 400<br>Lomography Color Negative 800<br>Fuji Superia 400<br>Agfa Vista 400</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="table-section">
+            <h2 class="section-title">🎨 특수 효과 필름 
+                <button class="copy-btn" onclick="copyTable('special-table')">복사</button>
+            </h2>
+            <table id="special-table" class="special-table">
+                <thead>
+                    <tr>
+                        <th>필름 종류</th>
+                        <th>특징</th>
+                        <th>추천 용도</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="film-cell">Lomography Redscale</td>
+                        <td>붉은 톤의 독특한 색감</td>
+                        <td>실험적 촬영, 아티스틱한 표현</td>
+                    </tr>
+                    <tr>
+                        <td class="film-cell">Revolog Kolor</td>
+                        <td>무지개 색상 효과</td>
+                        <td>창의적 촬영, 예술 작품</td>
+                    </tr>
+                    <tr>
+                        <td class="film-cell">Adox Color Implosion</td>
+                        <td>강렬한 색상 대비</td>
+                        <td>임팩트 있는 작품, 포스터형 이미지</td>
+                    </tr>
+                    <tr>
+                        <td class="film-cell">Lomography Diana F+</td>
+                        <td>빈티지한 분위기</td>
+                        <td>로모그래피, 드림적인 표현</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="table-section">
+            <h2 class="section-title">📷 즉석 사진 필름 
+                <button class="copy-btn" onclick="copyTable('instant-table')">복사</button>
+            </h2>
+            <table id="instant-table" class="instant-table">
+                <thead>
+                    <tr>
+                        <th>필름 종류</th>
+                        <th>특징</th>
+                        <th>호환 카메라</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="film-cell">Polaroid Originals</td>
+                        <td>클래식한 즉석 사진</td>
+                        <td>Polaroid 카메라 전용</td>
+                    </tr>
+                    <tr>
+                        <td class="film-cell">Fujifilm Instax Mini</td>
+                        <td>소형 즉석 사진</td>
+                        <td>Fujifilm Instax 시리즈</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="table-section">
+            <h2 class="section-title">📊 필름별 상세 특성 
+                <button class="copy-btn" onclick="copyTable('characteristics-table')">복사</button>
+            </h2>
+            <table id="characteristics-table" class="characteristics-table">
+                <thead>
+                    <tr>
+                        <th>필름 종류</th>
+                        <th>카테고리</th>
+                        <th>ISO</th>
+                        <th>특성</th>
+                        <th>최적 용도</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="film-cell">CineStill 800T</td>
+                        <td>컬러 네거티브</td>
+                        <td>800</td>
+                        <td>야간 촬영, 텅스텐 조명 최적화</td>
+                        <td>야경, 실내 조명</td>
+                    </tr>
+                    <tr>
+                        <td class="film-cell">Kodak Portra 800</td>
+                        <td>컬러 네거티브</td>
+                        <td>800</td>
+                        <td>고감도에서도 자연스러운 인물 톤</td>
+                        <td>인물, 저조도 환경</td>
+                    </tr>
+                    <tr>
+                        <td class="film-cell">Lomography X-Pro 200</td>
+                        <td>컬러 네거티브</td>
+                        <td>200</td>
+                        <td>크로스 프로세싱 효과</td>
+                        <td>실험적 표현</td>
+                    </tr>
+                    <tr>
+                        <td class="film-cell">Kodak Ektachrome</td>
+                        <td>컬러 리버설</td>
+                        <td>100</td>
+                        <td>생생한 색상과 높은 해상도</td>
+                        <td>풍경, 정밀한 색 재현</td>
+                    </tr>
+                    <tr>
+                        <td class="film-cell">Fujifilm Pro 400H</td>
+                        <td>컬러 네거티브</td>
+                        <td>400</td>
+                        <td>부드러운 색조와 넓은 관용도</td>
+                        <td>인물, 웨딩</td>
+                    </tr>
+                    <tr>
+                        <td class="film-cell">Lomography Color Negative 800</td>
+                        <td>컬러 네거티브</td>
+                        <td>800</td>
+                        <td>독특한 색감과 그레인</td>
+                        <td>스트리트, 로모그래피</td>
+                    </tr>
+                    <tr>
+                        <td class="film-cell">Kodak Ektar 100</td>
+                        <td>컬러 네거티브</td>
+                        <td>100</td>
+                        <td>세밀한 해상도와 선명한 색상</td>
+                        <td>풍경, 매크로</td>
+                    </tr>
+                    <tr>
+                        <td class="film-cell">Fujifilm Velvia 50</td>
+                        <td>컬러 리버설</td>
+                        <td>50</td>
+                        <td>극도로 선명한 색상</td>
+                        <td>풍경, 자연</td>
+                    </tr>
+                    <tr>
+                        <td class="film-cell">Fujifilm Superia X-TRA</td>
+                        <td>컬러 네거티브</td>
+                        <td>400</td>
+                        <td>일상 촬영용, 안정적인 성능</td>
+                        <td>스냅샷, 일반 촬영</td>
+                    </tr>
+                    <tr>
+                        <td class="film-cell">Kodak Gold 200</td>
+                        <td>컬러 네거티브</td>
+                        <td>200</td>
+                        <td>따뜻한 색조</td>
+                        <td>일상, 인물</td>
+                    </tr>
+                    <tr>
+                        <td class="film-cell">Fujifilm Provia 100F</td>
+                        <td>컬러 리버설</td>
+                        <td>100</td>
+                        <td>자연스러운 색 재현</td>
+                        <td>포트레이트, 상업 촬영</td>
+                    </tr>
+                    <tr>
+                        <td class="film-cell">Agfa Vista Plus 200</td>
+                        <td>컬러 네거티브</td>
+                        <td>200</td>
+                        <td>유럽풍의 독특한 색감</td>
+                        <td>여행, 스트리트</td>
+                    </tr>
+                    <tr>
+                        <td class="film-cell">Agfa Vista 400</td>
+                        <td>컬러 네거티브</td>
+                        <td>400</td>
+                        <td>따뜻하고 선명한 색상</td>
+                        <td>일반 촬영, 인물</td>
+                    </tr>
+                    <tr>
+                        <td class="film-cell">Kodak Vision3 500T</td>
+                        <td>시네마 필름</td>
+                        <td>500</td>
+                        <td>영화용 필름, 독특한 색감</td>
+                        <td>시네마틱 표현</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="download-section">
+            <h3>📥 Excel 파일 다운로드</h3>
+            <p>아래 버튼을 클릭하여 모든 데이터를 복사한 후 Excel에 붙여넣기 하세요.</p>
+            <button class="download-btn" onclick="copyAllData()">전체 데이터 복사</button>
+            <button class="download-btn" onclick="downloadCSV()">CSV 파일 다운로드</button>
+        </div>
+    </div>
+    
+    <script>
+        function copyTable(tableId) {
+            const table = document.getElementById(tableId);
+            const range = document.createRange();
+            range.selectNode(table);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();
+            
+            // 복사 완료 알림
+            const btn = event.target;
+            const originalText = btn.textContent;
+            btn.textContent = '복사됨!';
+            btn.style.background = '#27ae60';
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = '#3498db';
+            }, 2000);
+        }
+        
+        function copyAllData() {
+            const tables = document.querySelectorAll('table');
+            let allData = '';
+            
+            tables.forEach((table, index) => {
+                const rows = table.querySelectorAll('tr');
+                rows.forEach(row => {
+                    const cells = row.querySelectorAll('th, td');
+                    const rowData = Array.from(cells).map(cell => 
+                        cell.textContent.replace(/\n/g, ' | ').trim()
+                    ).join('\t');
+                    allData += rowData + '\n';
+                });
+                allData += '\n'; // 테이블 사이 간격
+            });
+            
+            navigator.clipboard.writeText(allData).then(() => {
+                const btn = event.target;
+                btn.textContent = '복사 완료!';
+                btn.style.background = '#27ae60';
+                setTimeout(() => {
+                    btn.textContent = '전체 데이터 복사';
+                    btn.style.background = '#27ae60';
+                }, 3000);
+            });
+        }
+        
+        function downloadCSV() {
+            const tables = document.querySelectorAll('table');
+            let csvContent = '';
+            
+            tables.forEach((table, index) => {
+                // 테이블 제목 추가
+                const sectionTitle = table.closest('.table-section').querySelector('.section-title').textContent.replace('복사', '').trim();
+                csvContent += sectionTitle + '\n';
+                
+                const rows = table.querySelectorAll('tr');
+                rows.forEach(row => {
+                    const cells = row.querySelectorAll('th, td');
+                    const rowData = Array.from(cells).map(cell => {
+                        let text = cell.textContent.replace(/\n/g, ' | ').trim();
+                        // CSV용 따옴표 처리
+                        if (text.includes(',') || text.includes('"') || text.includes('\n')) {
+                            text = '"' + text.replace(/"/g, '""') + '"';
+                        }
+                        return text;
+                    }).join(',');
+                    csvContent += rowData + '\n';
+                });
+                csvContent += '\n';
+            });
+            
+            // CSV 파일 다운로드
+            const blob = new Blob(['\uFEFF' + csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+            link.setAttribute('href', url);
+            link.setAttribute('download', '사진촬영가이드.csv');
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
