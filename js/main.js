@@ -1,568 +1,447 @@
+// ===== MAJORS STUDIO - MAIN.JS =====
+// 깔끔하게 재작성된 메인 스크립트
+
+// ===== GLOBAL VARIABLES =====
+let currentHeroSlide = 0;
+let heroSlideInterval;
+let isSubmitting = false; // 이메일 전송 중복 방지
+
 // ===== UTILITY FUNCTIONS =====
-function safeQuerySelector(selector, callback) {
+function safeQuery(selector) {
     try {
-        const element = document.querySelector(selector);
-        if (element && typeof callback === 'function') {
-            callback(element);
-        }
-        return element;
+        return document.querySelector(selector);
     } catch (error) {
-        console.warn(`Error selecting ${selector}:`, error);
+        console.warn(`Query error for ${selector}:`, error);
         return null;
     }
 }
 
-function addSafeEventListener(element, event, handler) {
-    if (element && typeof handler === 'function') {
-        element.addEventListener(event, handler);
+function safeQueryAll(selector) {
+    try {
+        return document.querySelectorAll(selector);
+    } catch (error) {
+        console.warn(`QueryAll error for ${selector}:`, error);
+        return [];
     }
 }
 
-// ===== MOBILE MENU FUNCTIONALITY =====
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const navLinks = document.getElementById('navLinks');
-
-function toggleMobileMenu() {
-    if (!mobileMenuBtn || !navLinks) return;
+// ===== MOBILE MENU =====
+function initializeMobileMenu() {
+    const menuBtn = safeQuery('#mobileMenuBtn');
+    const navLinks = safeQuery('#navLinks');
     
-    mobileMenuBtn.classList.toggle('active');
-    navLinks.classList.toggle('mobile-active');
-
-    // Prevent body scroll when menu is open
-    if (navLinks.classList.contains('mobile-active')) {
-        document.body.style.overflow = 'hidden';
-    } else {
+    if (!menuBtn || !navLinks) return;
+    
+    function toggleMenu() {
+        menuBtn.classList.toggle('active');
+        navLinks.classList.toggle('mobile-active');
+        document.body.style.overflow = navLinks.classList.contains('mobile-active') ? 'hidden' : 'auto';
+    }
+    
+    function closeMenu() {
+        menuBtn.classList.remove('active');
+        navLinks.classList.remove('mobile-active');
         document.body.style.overflow = 'auto';
     }
-}
-
-function closeMobileMenu() {
-    if (!mobileMenuBtn || !navLinks) return;
     
-    mobileMenuBtn.classList.remove('active');
-    navLinks.classList.remove('mobile-active');
-    document.body.style.overflow = 'auto';
-}
-
-// Mobile menu button click
-addSafeEventListener(mobileMenuBtn, 'click', toggleMobileMenu);
-
-// Close menu when clicking on nav links
-addSafeEventListener(navLinks, 'click', (e) => {
-    if (e.target.tagName === 'A') {
-        closeMobileMenu();
-    }
-});
-
-// Close menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (navLinks && navLinks.classList.contains('mobile-active')) {
-        if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-            closeMobileMenu();
+    // 이벤트 리스너
+    menuBtn.addEventListener('click', toggleMenu);
+    navLinks.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') closeMenu();
+    });
+    
+    // 외부 클릭으로 메뉴 닫기
+    document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('mobile-active') && 
+            !navLinks.contains(e.target) && 
+            !menuBtn.contains(e.target)) {
+            closeMenu();
         }
-    }
-});
-
-// Close menu on window resize
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-        closeMobileMenu();
-    }
-});
-
-// ===== HERO SLIDER FUNCTIONALITY =====
-let currentHeroSlide = 0;
-const heroSlides = document.querySelectorAll('.hero-slide');
-const heroDots = document.querySelectorAll('.hero-dot');
-const totalHeroSlides = heroSlides.length;
-let heroSlideInterval;
-
-// Optimize video handling when changing slides
-function showHeroSlide(index) {
-    if (totalHeroSlides === 0) return;
+    });
     
-    heroSlides.forEach((slide, i) => {
-        const video = slide.querySelector('.hero-video');
+    // 화면 크기 변경 시 메뉴 닫기
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) closeMenu();
+    });
+}
+
+// ===== HERO SLIDER =====
+function initializeHeroSlider() {
+    const heroSlides = safeQueryAll('.hero-slide');
+    const heroDots = safeQueryAll('.hero-dot');
+    const heroSection = safeQuery('.hero');
+    
+    if (heroSlides.length === 0) return;
+    
+    function showSlide(index) {
+        heroSlides.forEach((slide, i) => {
+            const video = slide.querySelector('.hero-video');
+            
+            if (i === index) {
+                slide.classList.add('active');
+                if (video && video.readyState >= 2) {
+                    video.play().catch(() => {});
+                }
+            } else {
+                slide.classList.remove('active');
+                if (video) video.pause();
+            }
+        });
         
-        if (i === index) {
-            slide.classList.add('active');
-            if (video && video.readyState >= 2) {
-                // Only play the video if it is fully loaded
-                video.play().catch(e => console.log('Play prevented:', e));
-            }
-        } else {
-            slide.classList.remove('active');
-            if (video) {
-                video.pause();
+        heroDots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+        
+        currentHeroSlide = index;
+    }
+    
+    function nextSlide() {
+        const nextIndex = (currentHeroSlide + 1) % heroSlides.length;
+        showSlide(nextIndex);
+    }
+    
+    function startSlider() {
+        if (heroSlides.length > 1) {
+            heroSlideInterval = setInterval(nextSlide, 6000);
+        }
+    }
+    
+    function stopSlider() {
+        clearInterval(heroSlideInterval);
+    }
+    
+    // 네비게이션 이벤트
+    heroDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            stopSlider();
+            setTimeout(startSlider, 10000);
+        });
+    });
+    
+    // 화살표 네비게이션
+    window.nextHeroSlideManual = () => {
+        nextSlide();
+        stopSlider();
+        setTimeout(startSlider, 8000);
+    };
+    
+    window.prevHeroSlide = () => {
+        const prevIndex = (currentHeroSlide - 1 + heroSlides.length) % heroSlides.length;
+        showSlide(prevIndex);
+        stopSlider();
+        setTimeout(startSlider, 8000);
+    };
+    
+    // 호버 시 슬라이더 일시정지
+    if (heroSection) {
+        heroSection.addEventListener('mouseenter', stopSlider);
+        heroSection.addEventListener('mouseleave', startSlider);
+    }
+    
+    // 탭 변경 시 비디오 제어
+    document.addEventListener('visibilitychange', () => {
+        const activeVideo = safeQuery('.hero-slide.active .hero-video');
+        if (activeVideo) {
+            if (document.hidden) {
+                activeVideo.pause();
+            } else {
+                activeVideo.play().catch(() => {});
             }
         }
     });
     
-    heroDots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-    });
-
-    currentHeroSlide = index;
+    // 슬라이더 시작
+    startSlider();
 }
 
-function nextHeroSlide() {
-    if (totalHeroSlides === 0) return;
-    const nextIndex = (currentHeroSlide + 1) % totalHeroSlides;
-    showHeroSlide(nextIndex);
-}
-
-function prevHeroSlide() {
-    if (totalHeroSlides === 0) return;
-    const prevIndex = (currentHeroSlide - 1 + totalHeroSlides) % totalHeroSlides;
-    showHeroSlide(prevIndex);
-}
-
-function nextHeroSlideManual() {
-    nextHeroSlide();
-    stopHeroSlider();
-    setTimeout(startHeroSlider, 8000); // 8초 후 자동 슬라이드 재시작
-}
-
-function startHeroSlider() {
-    if (totalHeroSlides > 1) {
-        heroSlideInterval = setInterval(nextHeroSlide, 6000); // 6초마다 슬라이드 변경
-    }
-}
-
-function stopHeroSlider() {
-    clearInterval(heroSlideInterval);
-}
-
-// ===== OPTIMIZED HERO VIDEO LOADING =====
+// ===== HERO VIDEO LOADING =====
 function initializeHeroVideos() {
-    const videos = document.querySelectorAll('.hero-video');
+    const videos = safeQueryAll('.hero-video');
     
     videos.forEach((video, index) => {
         video.muted = true;
         video.loop = true;
         video.playsInline = true;
-        video.setAttribute('webkit-playsinline', '');
         
-        // 첫 번째 영상만 즉시 로드, 나머지는 lazy loading
         if (index === 0) {
             video.preload = 'auto';
-            video.autoplay = true;
-            
-            // 첫 번째 영상 우선 로드
-            video.addEventListener('loadeddata', function() {
-                console.log(`✅ First video ready`);
-                this.style.display = 'block';
-                const fallback = this.nextElementSibling;
-                if (fallback && fallback.classList.contains('video-fallback')) {
+            video.addEventListener('loadeddata', () => {
+                console.log('First video ready');
+                video.style.display = 'block';
+                const fallback = video.nextElementSibling;
+                if (fallback?.classList.contains('video-fallback')) {
                     fallback.style.display = 'none';
                 }
+                video.play().catch(() => {});
                 
-                // 첫 영상 재생 시도
-                this.play().catch(e => {
-                    console.log('Autoplay blocked, trying muted play');
-                    this.muted = true;
-                    this.play().catch(err => console.log('Play failed:', err));
-                });
-                
-                // 첫 영상 로드 후 다음 영상들 순차적으로 로드
-                loadNextVideos();
+                // 나머지 비디오들 순차 로딩
+                setTimeout(() => {
+                    videos.forEach((v, i) => {
+                        if (i > 0) {
+                            setTimeout(() => {
+                                v.preload = 'auto';
+                                v.load();
+                            }, i * 2000);
+                        }
+                    });
+                }, 1000);
             });
         } else {
-            // 나머지 영상들은 metadata만 로드
             video.preload = 'metadata';
-            video.autoplay = false;
-            
-            video.addEventListener('loadeddata', function() {
-                console.log(`✅ Video ${index + 1} ready`);
-                this.style.display = 'block';
-                const fallback = this.nextElementSibling;
-                if (fallback && fallback.classList.contains('video-fallback')) {
+            video.addEventListener('loadeddata', () => {
+                video.style.display = 'block';
+                const fallback = video.nextElementSibling;
+                if (fallback?.classList.contains('video-fallback')) {
                     fallback.style.display = 'none';
                 }
-            }, { once: true });
+            });
         }
-
-        // 에러 처리
-        video.addEventListener('error', function() {
-            console.log(`❌ Video ${index + 1} failed`);
-            this.style.display = 'none';
-            const fallback = this.nextElementSibling;
-            if (fallback && fallback.classList.contains('video-fallback')) {
+        
+        // 비디오 로딩 실패 시 폴백
+        video.addEventListener('error', () => {
+            video.style.display = 'none';
+            const fallback = video.nextElementSibling;
+            if (fallback?.classList.contains('video-fallback')) {
                 fallback.style.display = 'flex';
             }
         });
     });
+}
+
+// ===== EMAIL FUNCTIONALITY =====
+function initializeEmailJS() {
+    if (typeof emailjs === 'undefined') {
+        console.warn('EmailJS not loaded');
+        return false;
+    }
     
-    // 순차적 영상 로딩 함수
-    function loadNextVideos() {
-        videos.forEach((video, index) => {
-            if (index > 0) {
-                // 2초 간격으로 나머지 영상들 로드
-                setTimeout(() => {
-                    video.preload = 'auto';
-                    video.load();
-                }, index * 2000);
-            }
-        });
+    emailjs.init("Bn7_gkZzr5mpW9QM4");
+    console.log('EmailJS initialized');
+    return true;
+}
+
+function initializeContactForm() {
+    const contactForm = safeQuery('#contactForm');
+    if (!contactForm) return;
+    
+    // 기존 이벤트 리스너 제거 (중복 방지)
+    const newForm = contactForm.cloneNode(true);
+    contactForm.parentNode.replaceChild(newForm, contactForm);
+    
+    newForm.addEventListener('submit', handleFormSubmit);
+    console.log('Contact form initialized');
+}
+
+function handleFormSubmit(e) {
+    e.preventDefault();
+    
+    // 중복 전송 방지
+    if (isSubmitting) {
+        console.log('Email already sending...');
+        return;
     }
-}
-
-
-// Dot click functionality
-heroDots.forEach((dot, index) => {
-    addSafeEventListener(dot, 'click', () => {
-        showHeroSlide(index);
-        stopHeroSlider();
-        setTimeout(startHeroSlider, 10000); // 10초 후 자동 슬라이드 재시작
-    });
-});
-
-// Pause slider on hero hover
-const heroSection = document.querySelector('.hero');
-if (heroSection) {
-    addSafeEventListener(heroSection, 'mouseenter', stopHeroSlider);
-    addSafeEventListener(heroSection, 'mouseleave', startHeroSlider);
-}
-
-// Handle visibility change (pause videos when tab is not active)
-document.addEventListener('visibilitychange', function () {
-    const activeVideo = document.querySelector('.hero-slide.active .hero-video');
-    if (activeVideo) {
-        if (document.hidden) {
-            activeVideo.pause();
-        } else {
-            activeVideo.play().catch(e => console.log('Video resume prevented:', e));
-        }
+    
+    // 폼 데이터 검증
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+    
+    if (!data.name || !data.email || !data.projectType || !data.message) {
+        alert('Please fill in all required fields.');
+        return;
     }
-});
-
-// ===== SMOOTH SCROLLING FOR NAVIGATION =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    addSafeEventListener(anchor, 'click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// ===== BACK TO TOP BUTTON =====
-const backToTopButton = document.getElementById('backToTop');
-
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
-
-// Show/hide back to top button based on scroll position
-function toggleBackToTopButton() {
-    if (backToTopButton) {
-        if (window.scrollY > 300) {
-            backToTopButton.classList.add('show');
-        } else {
-            backToTopButton.classList.remove('show');
-        }
-    }
-}
-
-// Add click event to back to top button
-addSafeEventListener(backToTopButton, 'click', scrollToTop);
-
-// Add scroll event listener for back to top button
-window.addEventListener('scroll', toggleBackToTopButton);
-
-// ===== ACTIVE NAVIGATION HIGHLIGHT =====
-function updateActiveNavigation() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (window.scrollY >= sectionTop - 100) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
+    
+    // 전송 시작
+    isSubmitting = true;
+    
+    const submitBtn = e.target.querySelector('.submit-btn');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'SENDING...';
+    submitBtn.disabled = true;
+    
+    console.log('Sending email...');
+    
+    // EmailJS 전송
+    emailjs.sendForm(
+        'service_0ahp61o',
+        'template_uc1mm7x',
+        e.target
+    ).then((response) => {
+        console.log('Email sent successfully:', response.status);
+        alert('문의가 성공적으로 전송되었습니다!\n24시간 내에 답변드리겠습니다.');
+        e.target.reset();
+    }).catch((error) => {
+        console.error('Email send failed:', error);
+        alert('전송 중 오류가 발생했습니다.\n다시 시도해주세요.');
+    }).finally(() => {
+        // 상태 복원
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        isSubmitting = false;
+        console.log('Email form reset');
     });
 }
 
-// Add scroll event listener for active navigation
-window.addEventListener('scroll', updateActiveNavigation);
-
-// ===== PROJECT NAVIGATION FUNCTIONALITY =====
-function goToProject(projectId) {
-    // Store the project ID in sessionStorage to open the modal on the projects page
-    sessionStorage.setItem('openProject', projectId);
-    // Navigate to projects page
-    window.location.href = 'projects.html';
-}
-
-// ===== ENHANCED IMAGE LOADING =====
+// ===== PROJECT IMAGES =====
 function initializeProjectImages() {
-    const projectImages = [
-        { 
-            selector: '.main-project1', 
-            paths: [
-                'assets/image/project01/01.png',  // 🔸 올바른 경로
-                './assets/image/project01/01.png',
-                '../assets/image/project01/01.png'
-            ],
+    const projects = [
+        {
+            selector: '.main-project1',
+            image: 'assets/image/project01/01.png',
             fallback: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
         },
-        { 
+        {
             selector: '.main-project2', 
-            paths: [
-                'assets/image/project02/01.png',
-                './assets/image/project02/01.png',
-                '../assets/image/project02/01.png'
-            ],
+            image: 'assets/image/project02/01.png',
             fallback: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
         },
-        { 
-            selector: '.main-project3', 
-            paths: [
-                'assets/image/project03/01.png',
-                './assets/image/project03/01.png',
-                '../assets/image/project03/01.png'
-            ],
+        {
+            selector: '.main-project3',
+            image: 'assets/image/project03/01.png', 
             fallback: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
         }
     ];
     
-    console.log('🔍 이미지 로딩 시작...');
-    console.log('현재 위치:', window.location.pathname);
-    
-    projectImages.forEach((project, index) => {
-        const element = safeQuerySelector(project.selector);
-        if (element) {
-            console.log(`✅ 요소 발견: ${project.selector}`);
-            
-            // 플레이스홀더 생성
-            const placeholder = document.createElement('div');
-            placeholder.className = 'project-placeholder';
-            placeholder.style.cssText = `
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: ${project.fallback};
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                font-weight: 500;
-                z-index: 1;
-            `;
-            placeholder.textContent = `프로젝트 ${index + 1}`;
-            
-            element.style.position = 'relative';
-            element.appendChild(placeholder);
-            
-            tryImagePaths(element, project.paths, project.fallback, 0, placeholder);
-        }
+    projects.forEach((project, index) => {
+        const element = safeQuery(project.selector);
+        if (!element) return;
+        
+        element.style.position = 'relative';
+        
+        const img = new Image();
+        img.onload = () => {
+            element.style.backgroundImage = `url('${project.image}')`;
+            element.style.backgroundSize = 'cover';
+            element.style.backgroundPosition = 'center';
+            console.log(`Project ${index + 1} image loaded`);
+        };
+        
+        img.onerror = () => {
+            element.style.background = project.fallback;
+            console.log(`Project ${index + 1} using fallback`);
+        };
+        
+        img.src = project.image;
     });
 }
 
-function tryImagePaths(element, paths, fallback, index, placeholder) {
-    if (index >= paths.length) {
-        console.log(`⚠️ 모든 경로 실패 - 폴백 사용`);
-        return;
+// ===== SMOOTH SCROLLING =====
+function initializeSmoothScrolling() {
+    safeQueryAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = safeQuery(anchor.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+}
+
+// ===== BACK TO TOP BUTTON =====
+function initializeBackToTop() {
+    const backToTop = safeQuery('#backToTop');
+    if (!backToTop) return;
+    
+    function toggleVisibility() {
+        if (window.scrollY > 300) {
+            backToTop.classList.add('show', 'visible');
+        } else {
+            backToTop.classList.remove('show', 'visible');
+        }
     }
     
-    const img = new Image();
-    const currentPath = paths[index];
-    
-    console.log(`🔄 시도 중: ${currentPath}`);
-    
-    img.onload = function() {
-        console.log(`✅ 이미지 로딩 성공: ${currentPath}`);
-        
-        element.style.backgroundImage = `url('${currentPath}')`;
-        element.style.backgroundSize = 'cover';
-        element.style.backgroundPosition = 'center';
-        element.style.backgroundRepeat = 'no-repeat';
-        
-        if (placeholder && placeholder.parentNode) {
-            placeholder.style.transition = 'opacity 0.5s ease';
-            placeholder.style.opacity = '0';
-            setTimeout(() => placeholder.parentNode?.removeChild(placeholder), 500);
-        }
-        
-        element.style.opacity = '0';
-        setTimeout(() => {
-            element.style.transition = 'opacity 0.5s ease';
-            element.style.opacity = '1';
-        }, 100);
+    window.scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
     
-    img.onerror = function() {
-        console.log(`❌ 로딩 실패: ${currentPath}`);
-        tryImagePaths(element, paths, fallback, index + 1, placeholder);
-    };
+    backToTop.addEventListener('click', window.scrollToTop);
+    window.addEventListener('scroll', toggleVisibility);
     
-    img.src = currentPath;
+    // 초기 상태 설정
+    toggleVisibility();
 }
 
-// ===== FORM HANDLING =====
-// EmailJS 초기화 함수
-function initializeEmailJS() {
-    // 여기에 본인의 Public Key 입력
-    emailjs.init("Bn7_gkZzr5mpW9QM4");
-    console.log('📧 EmailJS 초기화 완료');
-}
-
-// 수정된 contact form 함수
-function initializeContactForm() {
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // 폼 데이터 검증
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            if (!data.name || 
-                !data.email || 
-                !data.projectType || 
-                !data.message) {
-                alert('Please fill in all required fields.');
-                return;
+// ===== ACTIVE NAVIGATION =====
+function initializeActiveNavigation() {
+    function updateActiveNav() {
+        const sections = safeQueryAll('section[id]');
+        const navLinks = safeQueryAll('.nav-links a');
+        
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (window.scrollY >= sectionTop - 100) {
+                current = section.getAttribute('id');
             }
-            
-            // 버튼 상태 변경
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'SENDING...';
-            submitBtn.disabled = true;
-            
-            console.log('📤 이메일 전송 시작...');
-            
-            // EmailJS로 이메일 전송
-            emailjs.sendForm(
-                'service_0ahp61o',     // 서비스 ID
-                'template_uc1mm7x',    // 템플릿 ID
-                this                   // 폼 엘리먼트
-            ).then(function(response) {
-                console.log('✅ 전송 성공:', 
-                    response.status, response.text);
-                alert('문의가 성공적으로 전송되었습니다!\n' + 
-                      '24시간 내에 답변드리겠습니다.');
-                contactForm.reset();
-            }, function(error) {
-                console.error('❌ 전송 실패:', error);
-                alert('전송 중 오류가 발생했습니다.\n' + 
-                      '다시 시도해주세요.');
-            }).finally(function() {
-                // 버튼 상태 복원
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-                console.log('🔄 버튼 상태 복원 완료');
-            });
         });
         
-        console.log('📝 Contact form 이벤트 등록 완료');
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
     }
+    
+    window.addEventListener('scroll', updateActiveNav);
 }
 
-// ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
+// ===== SCROLL ANIMATIONS =====
 function initializeScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
-    };
-
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate-in');
             }
         });
-    }, observerOptions);
-
-    // Observe elements that should animate on scroll
-    const animateElements = document.querySelectorAll('.service-item, .project-item, .testimonial-item');
-    animateElements.forEach(el => observer.observe(el));
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    });
+    
+    safeQueryAll('.service-item, .project-item, .testimonial-item').forEach(el => {
+        observer.observe(el);
+    });
 }
 
-// ===== INITIALIZATION ===== (하나로 통합!)
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('🔧 Main.js 시작');
-    
-    // ✅ EmailJS 초기화 추가
-    initializeEmailJS();
-    
-    if (heroSlides.length > 0) {
-        initializeHeroVideos();
-        startHeroSlider();
-    }
-    
-    setTimeout(() => {
-        console.log('🖼️ 프로젝트 이미지 로딩 시작...');
-        initializeProjectImages();
-    }, 200);
-    
-    initializeContactForm();
-    initializeScrollAnimations();
-    toggleBackToTopButton();
-    
-    console.log('🎉 모든 컴포넌트 초기화 완료');
-});
+// ===== PROJECT NAVIGATION =====
+function initializeProjectNavigation() {
+    window.goToProject = (projectId) => {
+        sessionStorage.setItem('openProject', projectId);
+        window.location.href = 'projects.html';
+    };
+}
 
-// ===== ERROR HANDLING =====
-window.addEventListener('error', function(e) {
-    console.warn('JavaScript error caught:', e.error);
-});
-
-// ===== PERFORMANCE MONITORING =====
-window.addEventListener('load', function() {
-    console.log('Page fully loaded');
+// ===== GALLERY FUNCTIONALITY =====
+function initializeGallery() {
+    const filterBtns = safeQueryAll('.gallery .filter-btn');
+    const galleryItems = safeQueryAll('.gallery-item');
     
-    // Optional: Add performance monitoring
-    if ('performance' in window) {
-        const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
-        console.log(`Page load time: ${loadTime}ms`);
-    }
-});
-
-
-
-// gallery Filter Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const filterBtns = document.querySelectorAll('.gallery .filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
+    if (filterBtns.length === 0) return;
     
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Remove active class from all buttons
+            // 활성 버튼 변경
             filterBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
             btn.classList.add('active');
             
             const filter = btn.getAttribute('data-filter');
             
-            // Filter gallery items
-            galleryItems.forEach(item => {
-                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+            // 갤러리 아이템 필터링
+            galleryItems.forEach((item, index) => {
+                const category = item.getAttribute('data-category');
+                const shouldShow = filter === 'all' || category === filter;
+                
+                if (shouldShow) {
                     item.style.display = 'block';
                     setTimeout(() => {
                         item.style.opacity = '1';
                         item.style.transform = 'scale(1)';
-                    }, 100);
+                    }, index * 50);
                 } else {
                     item.style.opacity = '0';
                     item.style.transform = 'scale(0.8)';
@@ -573,55 +452,118 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-});
-
-
-
-// gallery item click to go to gallery page
-document.querySelectorAll('.gallery .gallery-item').forEach(item => {
-    item.addEventListener('click', () => {
-        window.location.href = 'gallery.html';
+    
+    // 갤러리 아이템 클릭
+    safeQueryAll('.gallery .gallery-item').forEach(item => {
+        item.addEventListener('click', () => {
+            window.location.href = 'gallery.html';
+        });
     });
-});
+}
 
-// 프로젝트 페이지 비디오 호버 재생
-document.addEventListener('DOMContentLoaded', function() {
-    const projectVideos = document.querySelectorAll('.project-card .project-video');
+// ===== PROJECT VIDEOS =====
+function initializeProjectVideos() {
+    const projectVideos = safeQueryAll('.project-card .project-video');
     
     projectVideos.forEach(video => {
         const card = video.closest('.project-card');
+        if (!card) return;
         
-        if (card) {
-            card.addEventListener('mouseenter', () => {
-                video.play().catch(e => console.log('Video play failed'));
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                video.pause();
-                video.currentTime = 0;
-            });
-        }
+        card.addEventListener('mouseenter', () => {
+            video.play().catch(() => {});
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            video.pause();
+            video.currentTime = 0;
+        });
     });
-});
+}
 
-// Intersection Observer를 활용한 영상 일시 정지
-const videoObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        const video = entry.target.querySelector('.hero-video.active');
-        if (video) {
-            if (entry.isIntersecting) {
-                video.play().catch(() => {});
-            } else {
-                video.pause();
+// ===== VIDEO INTERSECTION OBSERVER =====
+function initializeVideoObserver() {
+    const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const video = entry.target.querySelector('.hero-video.active');
+            if (video) {
+                if (entry.isIntersecting) {
+                    video.play().catch(() => {});
+                } else {
+                    video.pause();
+                }
             }
-        }
-    });
-}, { threshold: 0.5 });
-
-// Hero 섹션 관찰
-document.addEventListener('DOMContentLoaded', () => {
-    const heroSection = document.querySelector('.hero');
+        });
+    }, { threshold: 0.5 });
+    
+    const heroSection = safeQuery('.hero');
     if (heroSection) {
         videoObserver.observe(heroSection);
+    }
+}
+
+// ===== ERROR HANDLING =====
+function initializeErrorHandling() {
+    window.addEventListener('error', (e) => {
+        console.warn('JavaScript error:', e.error);
+    });
+    
+    window.addEventListener('unhandledrejection', (e) => {
+        console.warn('Unhandled promise rejection:', e.reason);
+    });
+}
+
+// ===== PERFORMANCE MONITORING =====
+function initializePerformanceMonitoring() {
+    window.addEventListener('load', () => {
+        console.log('Page fully loaded');
+        
+        if ('performance' in window) {
+            const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+            console.log(`Page load time: ${loadTime}ms`);
+        }
+    });
+}
+
+// ===== MAIN INITIALIZATION =====
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('MAJORS STUDIO - Initializing...');
+    
+    try {
+        // 기본 기능들
+        initializeMobileMenu();
+        initializeSmoothScrolling();
+        initializeBackToTop();
+        initializeActiveNavigation();
+        initializeScrollAnimations();
+        initializeProjectNavigation();
+        initializeErrorHandling();
+        
+        // EmailJS 초기화 및 Contact Form
+        if (initializeEmailJS()) {
+            initializeContactForm();
+        }
+        
+        // Hero 슬라이더 (존재하는 경우에만)
+        const heroSlides = safeQueryAll('.hero-slide');
+        if (heroSlides.length > 0) {
+            initializeHeroVideos();
+            initializeHeroSlider();
+        }
+        
+        // 프로젝트 이미지 (지연 로딩)
+        setTimeout(() => {
+            initializeProjectImages();
+        }, 200);
+        
+        // 페이지별 기능들
+        initializeGallery();
+        initializeProjectVideos();
+        initializeVideoObserver();
+        initializePerformanceMonitoring();
+        
+        console.log('MAJORS STUDIO - All components initialized successfully');
+        
+    } catch (error) {
+        console.error('Initialization error:', error);
     }
 });
