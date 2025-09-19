@@ -455,7 +455,7 @@ function initializeContactForm() {
             // EmailJS로 이메일 전송
             emailjs.sendForm(
                 'service_0ahp61o',     // 서비스 ID
-                'ejs-test-mail-service',    // 템플릿 ID
+                'template_uc1mm7x',    // 템플릿 ID
                 this                   // 폼 엘리먼트
             ).then(function(response) {
                 console.log('✅ 전송 성공:', 
