@@ -136,9 +136,14 @@ nav {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 80px; /* 헤더 영역 피하기 */
-    gap: 15px;
+    padding-top: 70px; /* 헤더 영역 피하기 */
+    padding-bottom: 20px; /* 하단 여백 추가 */
+    gap: 12px;
     z-index: 1000;
+
+    /* 스크롤 가능하게 */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .nav-links.mobile-active li {
@@ -146,20 +151,34 @@ nav {
 }
 
 .nav-links.mobile-active a {
-    font-size: 1.3em;
+    font-size: 1.1em;
     color: #fff;
     text-decoration: none;
-    padding: 12px 25px;
+    padding: 8px 20px;
     border-radius: 8px;
     transition: all 0.3s ease;
     display: block;
     text-align: center;
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
 }
 
 .nav-links.mobile-active a:hover,
 .nav-links.mobile-active a.active {
     background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
     color: white;
+}
+
+/* 매우 작은 화면 (아이폰 미니 포함) */
+@media (max-height: 550px) {
+    .nav-links.mobile-active {
+        padding-top: 50px;
+        gap: 5px;
+    }
+    
+    .nav-links.mobile-active a {
+        font-size: 0.95em;
+        padding: 5px 12px;
+    }
 }
 
 /* ===== HERO SECTION ===== */
