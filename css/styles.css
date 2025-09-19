@@ -165,31 +165,6 @@ nav {
     color: white;
 }
 
-/* 아이폰 미니 (375x812) 최적화 */
-@media (max-height: 700px) {
-    .nav-links.mobile-active {
-        gap: 6px;
-    }
-    
-    .nav-links.mobile-active a {
-        font-size: 0.95em;
-        padding: 5px 12px;
-    }
-}
-
-/* 매우 작은 화면용 초컴팩트 모드 */
-@media (max-height: 600px) {
-    .nav-links.mobile-active {
-        gap: 4px;
-        padding: 15px;
-    }
-    
-    .nav-links.mobile-active a {
-        font-size: 0.9em;
-        padding: 4px 10px;
-    }
-}
-
 /* ===== HERO SECTION ===== */
 .hero {
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
