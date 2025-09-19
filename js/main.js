@@ -479,32 +479,6 @@ function initializeContactForm() {
     }
 }
 
-// ===== INITIALIZATION =====
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('🔧 Main.js 시작');
-    
-    // ✅ EmailJS 초기화 추가
-    initializeEmailJS();
-    
-    if (heroSlides.length > 0) {
-        initializeHeroVideos();
-        startHeroSlider();
-    }
-    
-    setTimeout(() => {
-        console.log('🖼️ 프로젝트 이미지 로딩 시작...');
-        initializeProjectImages();
-    }, 200);
-    
-    // 이미 있는 함수 (수정된 버전으로)
-    initializeContactForm();
-    initializeScrollAnimations();
-    toggleBackToTopButton();
-    
-    console.log('🎉 모든 컴포넌트 초기화 완료');
-});
-
-
 // ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
 function initializeScrollAnimations() {
     const observerOptions = {
@@ -525,9 +499,12 @@ function initializeScrollAnimations() {
     animateElements.forEach(el => observer.observe(el));
 }
 
-// ===== INITIALIZATION =====
+// ===== INITIALIZATION ===== (하나로 통합!)
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('📍 Main.js 시작');
+    console.log('🔧 Main.js 시작');
+    
+    // ✅ EmailJS 초기화 추가
+    initializeEmailJS();
     
     if (heroSlides.length > 0) {
         initializeHeroVideos();
