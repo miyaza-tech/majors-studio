@@ -417,32 +417,93 @@ function tryImagePaths(element, paths, fallback, index, placeholder) {
 }
 
 // ===== FORM HANDLING =====
+// EmailJS 초기화 함수
+function initializeEmailJS() {
+    // 여기에 본인의 Public Key 입력
+    emailjs.init("Bn7_gkZzr5mpW9QM4");
+    console.log('📧 EmailJS 초기화 완료');
+}
+
+// 수정된 contact form 함수
 function initializeContactForm() {
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
-        addSafeEventListener(contactForm, 'submit', function(e) {
+        contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
+            // 폼 데이터 검증
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
             
-            // Simple validation
-            if (!data.name || !data.email || !data.projectType || !data.message) {
-    alert('Please fill in all required fields.');
-    return;
-}
+            if (!data.name || 
+                !data.email || 
+                !data.projectType || 
+                !data.message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
             
-            // Here you would typically send the data to a server
-            console.log('Form submitted:', data);
-            alert('Thank you for your inquiry! We will get back to you within 24 hours.');
+            // 버튼 상태 변경
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'SENDING...';
+            submitBtn.disabled = true;
             
-            // Reset form
-            this.reset();
+            console.log('📤 이메일 전송 시작...');
+            
+            // EmailJS로 이메일 전송
+            emailjs.sendForm(
+                'service_0ahp61o',     // 서비스 ID
+                'ejs-test-mail-service',    // 템플릿 ID
+                this                   // 폼 엘리먼트
+            ).then(function(response) {
+                console.log('✅ 전송 성공:', 
+                    response.status, response.text);
+                alert('문의가 성공적으로 전송되었습니다!\n' + 
+                      '24시간 내에 답변드리겠습니다.');
+                contactForm.reset();
+            }, function(error) {
+                console.error('❌ 전송 실패:', error);
+                alert('전송 중 오류가 발생했습니다.\n' + 
+                      '다시 시도해주세요.');
+            }).finally(function() {
+                // 버튼 상태 복원
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                console.log('🔄 버튼 상태 복원 완료');
+            });
         });
+        
+        console.log('📝 Contact form 이벤트 등록 완료');
     }
 }
+
+// ===== INITIALIZATION =====
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🔧 Main.js 시작');
+    
+    // ✅ EmailJS 초기화 추가
+    initializeEmailJS();
+    
+    if (heroSlides.length > 0) {
+        initializeHeroVideos();
+        startHeroSlider();
+    }
+    
+    setTimeout(() => {
+        console.log('🖼️ 프로젝트 이미지 로딩 시작...');
+        initializeProjectImages();
+    }, 200);
+    
+    // 이미 있는 함수 (수정된 버전으로)
+    initializeContactForm();
+    initializeScrollAnimations();
+    toggleBackToTopButton();
+    
+    console.log('🎉 모든 컴포넌트 초기화 완료');
+});
+
 
 // ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
 function initializeScrollAnimations() {
