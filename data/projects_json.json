@@ -2,15 +2,36 @@
   "projects": [
     {
       "id": "project1",
-      "title": "Epic Fantasy Adventure",
-      "description": "몰입감 있는 판타지 세계관을 구축한 대규모 게임 프로젝트입니다. 독창적인 아트 스타일과 디테일한 환경 디자인으로 플레이어를 매혹적인 모험의 세계로 인도합니다.",
+      "title": {
+        "en": "Epic Fantasy Adventure",
+        "ko": "에픽 판타지 어드벤처"
+      },
+      "description": {
+        "en": "A large-scale game project that builds an immersive fantasy world. It guides players into a captivating world of adventure with original art style and detailed environmental design.",
+        "ko": "몰입감 있는 판타지 세계관을 구축한 대규모 게임 프로젝트입니다. 독창적인 아트 스타일과 디테일한 환경 디자인으로 플레이어를 매혹적인 모험의 세계로 인도합니다."
+      },
       "category": ["games", "concept"],
       "thumbnail": "assets/image/project01/01.png",
-      "client": "Creative Studio",
-      "duration": "3 months",
-      "services": "Art Direction, Concept Art, Visual Development",
-      "teamSize": "4 Artists",
-      "tags": ["Art Direction", "Concept Art", "Visual Development"],
+      "client": {
+        "en": "Creative Studio",
+        "ko": "크리에이티브 스튜디오"
+      },
+      "duration": {
+        "en": "3 months",
+        "ko": "3개월"
+      },
+      "services": {
+        "en": "Art Direction, Concept Art, Visual Development",
+        "ko": "아트 디렉션, 컨셉 아트, 비주얼 개발"
+      },
+      "teamSize": {
+        "en": "4 Artists",
+        "ko": "4명의 아티스트"
+      },
+      "tags": {
+        "en": ["Art Direction", "Concept Art", "Visual Development"],
+        "ko": ["아트 디렉션", "컨셉 아트", "비주얼 개발"]
+      },
       "media": [
         {
           "type": "image",
@@ -32,15 +53,36 @@
     },
     {
       "id": "project2",
-      "title": "Character Design Showcase",
-      "description": "다양한 장르와 스타일의 캐릭터 디자인 포트폴리오입니다. 각 캐릭터의 개성과 스토리를 시각적으로 표현하여 생동감 있는 캐릭터를 창조했습니다.",
+      "title": {
+        "en": "Character Design Showcase",
+        "ko": "캐릭터 디자인 쇼케이스"
+      },
+      "description": {
+        "en": "A character design portfolio featuring various genres and styles. Created vibrant characters by visually expressing each character's personality and story.",
+        "ko": "다양한 장르와 스타일의 캐릭터 디자인 포트폴리오입니다. 각 캐릭터의 개성과 스토리를 시각적으로 표현하여 생동감 있는 캐릭터를 창조했습니다."
+      },
       "category": ["games", "character"],
       "thumbnail": "assets/image/project02/01.png",
-      "client": "Design Agency",
-      "duration": "2 months",
-      "services": "Character Design, Illustration, Art Direction",
-      "teamSize": "3 Artists",
-      "tags": ["Character Design", "Illustration", "Art Direction"],
+      "client": {
+        "en": "Design Agency",
+        "ko": "디자인 에이전시"
+      },
+      "duration": {
+        "en": "2 months",
+        "ko": "2개월"
+      },
+      "services": {
+        "en": "Character Design, Illustration, Art Direction",
+        "ko": "캐릭터 디자인, 일러스트레이션, 아트 디렉션"
+      },
+      "teamSize": {
+        "en": "3 Artists",
+        "ko": "3명의 아티스트"
+      },
+      "tags": {
+        "en": ["Character Design", "Illustration", "Art Direction"],
+        "ko": ["캐릭터 디자인", "일러스트레이션", "아트 디렉션"]
+      },
       "media": [
         {
           "type": "image",
@@ -54,15 +96,36 @@
     },
     {
       "id": "project3",
-      "title": "Environmental Concept Art",
-      "description": "SF와 판타지가 융합된 독특한 세계관의 환경 컨셉 아트입니다. 미래적이면서도 신비로운 분위기를 연출하여 몰입감 있는 게임 환경을 구현했습니다.",
+      "title": {
+        "en": "Environmental Concept Art",
+        "ko": "환경 컨셉 아트"
+      },
+      "description": {
+        "en": "Environmental concept art featuring a unique worldview that blends sci-fi and fantasy. Implemented an immersive game environment by creating a futuristic yet mystical atmosphere.",
+        "ko": "SF와 판타지가 융합된 독특한 세계관의 환경 컨셉 아트입니다. 미래적이면서도 신비로운 분위기를 연출하여 몰입감 있는 게임 환경을 구현했습니다."
+      },
       "category": ["games", "concept"],
       "thumbnail": "assets/image/project03/01.png",
-      "client": "Production Company",
-      "duration": "4 months",
-      "services": "Concept Art, Environment Design, Visual Development",
-      "teamSize": "5 Artists",
-      "tags": ["Concept Art", "Environment Design", "Visual Development"],
+      "client": {
+        "en": "Production Company",
+        "ko": "프로덕션 컴퍼니"
+      },
+      "duration": {
+        "en": "4 months",
+        "ko": "4개월"
+      },
+      "services": {
+        "en": "Concept Art, Environment Design, Visual Development",
+        "ko": "컨셉 아트, 환경 디자인, 비주얼 개발"
+      },
+      "teamSize": {
+        "en": "5 Artists",
+        "ko": "5명의 아티스트"
+      },
+      "tags": {
+        "en": ["Concept Art", "Environment Design", "Visual Development"],
+        "ko": ["컨셉 아트", "환경 디자인", "비주얼 개발"]
+      },
       "media": [
         {
           "type": "image",
@@ -80,15 +143,36 @@
     },
     {
       "id": "project4",
-      "title": "Mobile Game Trailer",
-      "description": "모바일 게임을 위한 다이나믹한 트레일러 영상입니다. 게임의 핵심 요소를 시각적으로 전달하여 사용자의 관심을 끌어냅니다.",
+      "title": {
+        "en": "Mobile Game Trailer",
+        "ko": "모바일 게임 트레일러"
+      },
+      "description": {
+        "en": "A dynamic trailer video for a mobile game. Attracts user interest by visually conveying the core elements of the game.",
+        "ko": "모바일 게임을 위한 다이나믹한 트레일러 영상입니다. 게임의 핵심 요소를 시각적으로 전달하여 사용자의 관심을 끌어냅니다."
+      },
       "category": ["games", "promotional"],
       "thumbnail": "assets/image/project04/02.png",
-      "client": "Mobile Game Studio",
-      "duration": "2 weeks",
-      "services": "Motion Graphics, Video Editing, Sound Design",
-      "teamSize": "2 Artists",
-      "tags": ["Motion Graphics", "Trailer", "Promotional"],
+      "client": {
+        "en": "Mobile Game Studio",
+        "ko": "모바일 게임 스튜디오"
+      },
+      "duration": {
+        "en": "2 weeks",
+        "ko": "2주"
+      },
+      "services": {
+        "en": "Motion Graphics, Video Editing, Sound Design",
+        "ko": "모션 그래픽, 영상 편집, 사운드 디자인"
+      },
+      "teamSize": {
+        "en": "2 Artists",
+        "ko": "2명의 아티스트"
+      },
+      "tags": {
+        "en": ["Motion Graphics", "Trailer", "Promotional"],
+        "ko": ["모션 그래픽", "트레일러", "프로모션"]
+      },
       "media": [
         {
           "type": "video",

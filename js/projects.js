@@ -213,6 +213,22 @@ function createModalContent(project) {
     const modal = document.getElementById('projectModal');
     if (!modal) return;
     
+    // Get current language
+    const lang = localStorage.getItem('language') || 'en';
+    
+    // Helper function to get translated text
+    const getText = (field) => {
+        if (typeof field === 'object' && field !== null) {
+            return field[lang] || field['en'] || '';
+        }
+        return field || '';
+    };
+    
+    // Get translated tags
+    const tags = Array.isArray(project.tags) 
+        ? project.tags 
+        : (project.tags && project.tags[lang] ? project.tags[lang] : []);
+    
     const modalHTML = `
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal()">&times;</button>
@@ -250,25 +266,25 @@ function createModalContent(project) {
             </div>
             
             <div class="modal-info">
-                <h2 class="modal-title">${project.title}</h2>
-                <p class="modal-description">${project.description}</p>
+                <h2 class="modal-title">${getText(project.title)}</h2>
+                <p class="modal-description">${getText(project.description)}</p>
                 
                 <div class="modal-details">
                     <div class="detail-item">
-                        <h4>Client</h4>
-                        <p>${project.client}</p>
+                        <h4>${lang === 'ko' ? '클라이언트' : 'Client'}</h4>
+                        <p>${getText(project.client)}</p>
                     </div>
                     <div class="detail-item">
-                        <h4>Duration</h4>
-                        <p>${project.duration}</p>
+                        <h4>${lang === 'ko' ? '기간' : 'Duration'}</h4>
+                        <p>${getText(project.duration)}</p>
                     </div>
                     <div class="detail-item">
-                        <h4>Services</h4>
-                        <p>${project.services}</p>
+                        <h4>${lang === 'ko' ? '서비스' : 'Services'}</h4>
+                        <p>${getText(project.services)}</p>
                     </div>
                     <div class="detail-item">
-                        <h4>Team Size</h4>
-                        <p>${project.teamSize}</p>
+                        <h4>${lang === 'ko' ? '팀 규모' : 'Team Size'}</h4>
+                        <p>${getText(project.teamSize)}</p>
                     </div>
                 </div>
             </div>

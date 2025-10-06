@@ -51,6 +51,11 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li class="language-switcher">
+                    <button id="langEN" class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+                    <span class="lang-divider">|</span>
+                    <button id="langKO" class="lang-btn" onclick="switchLanguage('ko')">KR</button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -387,6 +392,7 @@
     <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
 
     <!-- JavaScript -->
+    <script src="js/language.js"></script>
     <script src="js/main.js"></script>
 
 </body>
