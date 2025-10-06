@@ -493,9 +493,10 @@ nav {
     border-radius: 8px !important;
     cursor: pointer !important;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
-    transition: transform 0.3s ease-in-out !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
     backface-visibility: hidden !important;
     transform: scale(1) !important;
+    will-change: transform !important;
 }
 
 .project-item:hover {
@@ -508,6 +509,7 @@ nav {
     height: 300px;
     object-fit: cover;
     display: block;
+    transition: none !important;
 }
 
 /* Project Overlay - Gallery Overlay와 동일 */
@@ -519,12 +521,12 @@ nav {
     background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
     color: white;
     padding: 20px;
-    transform: translateY(100%);
-    transition: transform 0.3s;
+    opacity: 0;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .project-item:hover .project-overlay {
-    transform: translateY(0);
+    opacity: 1;
 }
 
 .project-overlay h4 {
