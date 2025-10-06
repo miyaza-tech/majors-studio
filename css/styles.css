@@ -485,18 +485,19 @@ nav {
     margin-bottom: 50px;
 }
 
-.project-item {
+.projects .project-item {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    transform: scale(1);
 }
 
-.project-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+.projects .project-item:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
 }
 
 .project-item img {
