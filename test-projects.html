@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* 검은 배경 섹션 */
+        .test-section {
+            background: #1a1a1a;
+            padding: 80px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2em;
+        }
+
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .test-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+            background: white; /* 배경 추가 */
+        }
+
+        .test-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255,255,255,0.2); /* 흰색 그림자로 변경 */
+        }
+
+        .test-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .test-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .test-item:hover .test-overlay {
+            transform: translateY(0);
+        }
+
+        .test-overlay h4 {
+            margin-bottom: 5px;
+            font-size: 1.2em;
+        }
+
+        .info {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .info code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <section class="test-section">
+        <div class="container">
+            <h2>Projects Hover Test (검은 배경)</h2>
+            
+            <div class="info">
+                <h3>테스트 포인트:</h3>
+                <ul>
+                    <li>✅ 마우스 오버 시 <code>scale(1.05)</code> 작동하는가?</li>
+                    <li>✅ 그림자가 보이는가? (검은 배경에서는 흰색 그림자 사용)</li>
+                    <li>✅ 오버레이가 부드럽게 슬라이드 되는가?</li>
+                    <li>✅ 애니메이션이 끊기지 않는가?</li>
+                </ul>
+                <p><strong>변경사항:</strong></p>
+                <ul>
+                    <li>box-shadow 색상을 <code>rgba(255,255,255,0.2)</code>로 변경 (검은 배경에서 보이도록)</li>
+                    <li>transition에 <code>ease</code> 추가</li>
+                </ul>
+            </div>
+
+            <div class="test-grid">
+                <div class="test-item">
+                    <img src="assets/image/project01/01.png" alt="Project 1">
+                    <div class="test-overlay">
+                        <h4>게임 컨셉 아트</h4>
+                    </div>
+                </div>
+
+                <div class="test-item">
+                    <img src="assets/image/project02/01.png" alt="Project 2">
+                    <div class="test-overlay">
+                        <h4>캐릭터 일러스트</h4>
+                    </div>
+                </div>
+
+                <div class="test-item">
+                    <img src="assets/image/project03/01.png" alt="Project 3">
+                    <div class="test-overlay">
+                        <h4>배경 & 광고 애니메이션</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // 디버깅용 로그
+        const items = document.querySelectorAll('.test-item');
+        items.forEach((item, index) => {
+            item.addEventListener('mouseenter', () => {
+                const computed = window.getComputedStyle(item);
+                console.log(`Item ${index + 1} hover:`, {
+                    transform: computed.transform,
+                    boxShadow: computed.boxShadow,
+                    transition: computed.transition
+                });
+            });
+        });
+    </script>
+</body>
+</html>
