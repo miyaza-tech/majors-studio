@@ -491,13 +491,11 @@ nav {
     border-radius: 8px;
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    transform: scale(1);
+    transition: transform 0.3s;
 }
 
 .projects .project-item:hover {
-    transform: scale(1.05) !important;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+    transform: scale(1.05);
 }
 
 .project-item img {
