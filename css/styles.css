@@ -493,7 +493,7 @@ nav {
     border-radius: 8px !important;
     cursor: pointer !important;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
     backface-visibility: hidden !important;
     transform: scale(1) !important;
     will-change: transform !important;
@@ -522,7 +522,7 @@ nav {
     color: white;
     padding: 20px;
     opacity: 0;
-    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition: opacity 0.3s ease !important;
 }
 
 .project-item:hover .project-overlay {
