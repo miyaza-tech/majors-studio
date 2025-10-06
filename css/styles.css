@@ -478,6 +478,7 @@ nav {
     margin-bottom: 50px;
 }
 
+/* Projects Grid - Gallery와 동일 */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -485,29 +486,28 @@ nav {
     margin-bottom: 50px;
 }
 
-.projects .project-item {
+/* Project Item - Gallery Item과 동일 */
+.project-item {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    will-change: transform;
+    transition: transform 0.3s;
 }
 
-.projects .project-item:hover {
+.project-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
-.projects .project-item img {
+.project-item img {
     width: 100%;
     height: 300px;
     object-fit: cover;
     display: block;
 }
 
-/* Project Overlay - Gallery와 동일한 스타일 */
+/* Project Overlay - Gallery Overlay와 동일 */
 .project-overlay {
     position: absolute;
     bottom: 0;
@@ -532,25 +532,8 @@ nav {
 .project-overlay p {
     font-size: 0.9em;
     opacity: 0.9;
-    display: none; /* 타이틀만 표시 */
+    display: none;
 }
-
-/* 기존 project-image 클래스 유지 (하위 호환성) */
-.project-image {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2em;
-    color: white;
-    position: relative;
-}
-
-/* 🔴 이전 스타일 - 하위 호환성을 위해 유지 */
-/* 메인페이지 프로젝트 이미지 (사용 안함) */
 
 .projects-cta {
     text-align: center;
