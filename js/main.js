@@ -416,9 +416,9 @@ function initializeProjectNavigation() {
         window.location.href = 'projects.html';
     };
     
-    // index 페이지의 project-item에 이벤트 리스너 추가
-    const projectItems = document.querySelectorAll('.projects .project-item');
-    projectItems.forEach(item => {
+    // index 페이지의 latest-project-item에 이벤트 리스너 추가
+    const latestProjectItems = document.querySelectorAll('.latest-project-item');
+    latestProjectItems.forEach(item => {
         const projectId = item.getAttribute('data-project');
         if (projectId) {
             item.addEventListener('click', () => {

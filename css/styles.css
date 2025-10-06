@@ -465,50 +465,47 @@ nav {
     font-size: 0.95em;
 }
 
-/* ===== PROJECTS SECTION ===== */
-.projects {
+/* ===== LATEST PROJECTS SECTION (Gallery와 동일한 스타일) ===== */
+.latest-projects {
     background: #1a1a1a;
     color: white;
     padding: 80px 0;
 }
 
-.projects h2 {
+.latest-projects h2 {
     text-align: center;
     font-size: 2.0em;
     margin-bottom: 50px;
 }
 
-.projects-grid {
+.latest-projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-bottom: 50px;
 }
 
-.project-item {
+.latest-project-item {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(255,255,255,0.1);
-    transition: transform 0.3s ease;
-    transform: scale(1);
-    transform-origin: center center;
+    transition: transform 0.3s;
 }
 
-.project-item:hover {
+.latest-project-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(255,255,255,0.2);
 }
 
-.project-item img {
+.latest-project-item img {
     width: 100%;
     height: 300px;
     object-fit: cover;
     display: block;
 }
 
-.project-overlay {
+.latest-project-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -517,25 +514,25 @@ nav {
     color: white;
     padding: 20px;
     transform: translateY(100%);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
 }
 
-.project-item:hover .project-overlay {
+.latest-project-item:hover .latest-project-overlay {
     transform: translateY(0);
 }
 
-.project-overlay h4 {
+.latest-project-overlay h4 {
     margin-bottom: 5px;
     font-size: 1.2em;
 }
 
-.project-overlay p {
+.latest-project-overlay p {
     font-size: 0.9em;
     opacity: 0.9;
     display: none;
 }
 
-.projects-cta {
+.latest-projects-cta {
     text-align: center;
     margin-top: 40px;
 }
