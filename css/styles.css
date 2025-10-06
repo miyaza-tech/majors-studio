@@ -486,17 +486,53 @@ nav {
 }
 
 .project-item {
-    background: #2d2d2d;
-    border-radius: 8px;
+    position: relative;
     overflow: hidden;
-    transition: transform 0.3s;
+    border-radius: 8px;
     cursor: pointer;
+    transition: transform 0.3s;
 }
 
 .project-item:hover {
     transform: scale(1.05);
 }
 
+.project-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Project Overlay - Gallery와 동일한 스타일 */
+.project-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+
+.project-item:hover .project-overlay {
+    transform: translateY(0);
+}
+
+.project-overlay h4 {
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+.project-overlay p {
+    font-size: 0.9em;
+    opacity: 0.9;
+    display: none; /* 타이틀만 표시 */
+}
+
+/* 기존 project-image 클래스 유지 (하위 호환성) */
 .project-image {
     height: 200px;
     background-size: cover;
@@ -510,77 +546,8 @@ nav {
     position: relative;
 }
 
-/* 🔴 수정된 주석 - 한글 인코딩 수정 */
-/* 메인페이지 프로젝트 이미지 - 다중 경로 시도 */
-.main-project1 {
-    background-image: url('../assets/image/project01/01.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.main-project1:not([style*="background-image"]) {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.main-project2 {
-    background-image: url('../assets/image/project02/01.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.main-project2:not([style*="background-image"]) {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-}
-
-.main-project3 {
-    background-image: url('../assets/image/project03/01.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.main-project3:not([style*="background-image"]) {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-}
-
-/* 프로젝트 이미지 오버레이 */
-.project-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.2);
-    transition: background 0.3s;
-}
-
-.project-item:hover .project-image::before {
-    background: rgba(0,0,0,0);
-}
-
-.project-image span {
-    position: relative;
-    z-index: 2;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-}
-
-.project-content {
-    padding: 20px;
-}
-
-.project-content h3 {
-    margin-bottom: 10px;
-    color: #fff;
-}
-
-.project-content p {
-    color: #ccc;
-    font-size: 0.9em;
-    display: none; /* 마우스 오버 시 설명 텍스트 숨김 */
-}
+/* 🔴 이전 스타일 - 하위 호환성을 위해 유지 */
+/* 메인페이지 프로젝트 이미지 (사용 안함) */
 
 .projects-cta {
     text-align: center;
