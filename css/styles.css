@@ -490,7 +490,6 @@ nav {
     overflow: hidden;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s;
 }
 
@@ -598,7 +597,6 @@ nav {
     overflow: hidden;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s;
 }
 
