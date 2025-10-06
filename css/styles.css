@@ -14,8 +14,8 @@ html, body {
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #fff;
+    color: #222222;
+    background-color: #FAFAFA;
     display: flex;              /* Sticky footer를 위한 flexbox 설정 */
     flex-direction: column;     /* 세로 방향 정렬 */
     min-height: 100vh;         /* 최소 높이를 viewport 높이로 설정 */
@@ -41,7 +41,7 @@ body {
 
 /* ===== HEADER ===== */
 header {
-    background: #1a1a1a;
+    background: #222222;
     padding: 15px 0;
     position: fixed;
     width: 100%;
@@ -62,7 +62,7 @@ nav {
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #fff;
+    color: #FAFAFA;
     text-decoration: none;
 }
 
@@ -79,7 +79,7 @@ nav {
 }
 
 .nav-links a:hover {
-    color: #fff;
+    color: #FAFAFA;
 }
 
 .nav-links a.active {
@@ -110,7 +110,7 @@ nav {
 .hamburger-line {
     width: 26px;
     height: 2px;
-    background: #fff;
+    background: #FAFAFA;
     border-radius: 2px;
     transition: all 0.3s ease;
     position: absolute;
@@ -153,7 +153,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(26, 26, 26, 0.98);
+    background: rgba(34, 34, 34, 0.98);
     backdrop-filter: blur(10px);
     flex-direction: column;
     justify-content: flex-start;
@@ -173,7 +173,7 @@ nav {
 .nav-links.mobile-active a {
     font-size: 1.1rem;
     font-weight: 500;
-    color: #fff;
+    color: #FAFAFA;
     text-decoration: none;
     padding: 14px 24px;
     border-radius: 8px;
@@ -196,7 +196,7 @@ nav {
 
 /* ===== HERO SECTION ===== */
 .hero {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    background: linear-gradient(135deg, #222222 0%, #2d2d2d 100%);
     color: white;
     text-align: center;
     margin-top: -1px;
@@ -230,7 +230,7 @@ nav {
     height: 100%;
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
-    background: #1a1a1a;
+    background: #222222;
 }
 
 .hero-slide.active {
@@ -304,7 +304,7 @@ nav {
 
 .hero .subtitle {
     font-size: 1.2em;
-    color: #fff;
+    color: #FAFAFA;
     max-width: 600px;
     margin: 0 auto;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
@@ -398,7 +398,7 @@ nav {
 
 /* ===== ABOUT SECTION ===== */
 .about {
-    background: #fff;
+    background: #FAFAFA;
     padding: 80px 0;
 }
 
@@ -411,7 +411,7 @@ nav {
 .about h2 {
     font-size: 2.0em;
     margin-bottom: 30px;
-    color: #333;
+    color: #222222;
 }
 
 .about p {
@@ -425,7 +425,7 @@ nav {
 
 /* ===== SERVICES SECTION ===== */
 .services {
-    background: #f8f8f8;
+    background: #C07C56;
     padding: 80px 0;
 }
 
@@ -433,7 +433,7 @@ nav {
     text-align: center;
     font-size: 2.0em;
     margin-bottom: 50px;
-    color: #333;
+    color: #222222;
 }
 
 .services-grid {
@@ -457,7 +457,7 @@ nav {
 .service-item h3 {
     font-size: 1.3em;
     margin-bottom: 15px;
-    color: #333;
+    color: #222222;
 }
 
 .service-item p {
@@ -467,7 +467,7 @@ nav {
 
 /* ===== LATEST PROJECTS SECTION (Gallery와 동일한 스타일) ===== */
 .latest-projects {
-    background: #f8f8f8;
+    background: #C07C56;
     padding: 80px 0;
 }
 
@@ -475,7 +475,7 @@ nav {
     text-align: center;
     font-size: 2.0em;
     margin-bottom: 50px;
-    color: #333;
+    color: #222222;
 }
 
 .latest-projects-grid {
@@ -546,7 +546,7 @@ nav {
     text-align: center;
     font-size: 2.0em;
     margin-bottom: 20px;
-    color: #333;
+    color: #222222;
 }
 
 .section-subtitle {
@@ -665,7 +665,7 @@ nav {
 
 /* ===== CLIENTS SECTION ===== */
 .clients {
-    background: #fff;
+    background: #FAFAFA;
     padding: 80px 0;
 }
 
@@ -673,7 +673,7 @@ nav {
     text-align: center;
     font-size: 2.0em;
     margin-bottom: 50px;
-    color: #333;
+    color: #222222;
 }
 
 /* 🔴 수정된 주석 - 한글 인코딩 수정 */
@@ -752,7 +752,7 @@ nav {
 
 /* ===== TESTIMONIALS SECTION ===== */
 .testimonials {
-    background: #fff;
+    background: #FAFAFA;
     padding: 80px 0;
 }
 
@@ -760,7 +760,7 @@ nav {
     text-align: center;
     font-size: 2.0em;
     margin-bottom: 60px;
-    color: #333;
+    color: #222222;
 }
 
 /* 🔴 수정된 주석 - 한글 인코딩 수정 */
@@ -772,7 +772,7 @@ nav {
 }
 
 .testimonial-item {
-    background: #f8f8f8;
+    background: #C07C56;
     padding: 35px;
     border-radius: 8px;
     text-align: center;
@@ -802,7 +802,7 @@ nav {
 
 .testimonial-author {
     font-weight: 600;
-    color: #333;
+    color: #222222;
     font-size: 0.95em;
     margin-top: auto;
 }
@@ -822,8 +822,8 @@ nav {
 
 /* ===== CONTACT SECTION ===== */
 .contact-section {
-    background: #f8f8f8;
-    color: #333;
+    background: #C07C56;
+    color: #222222;
     padding: 100px 0;
 }
 
@@ -840,7 +840,7 @@ nav {
     font-size: 2.0em;
     margin-bottom: 30px;
     font-weight: 300;
-    color: #333;
+    color: #222222;
 }
 
 .contact-intro {
@@ -862,12 +862,12 @@ nav {
 }
 
 .contact-item p {
-    color: #333;
+    color: #222222;
     font-size: 1.1em;
 }
 
 .contact-item a {
-    color: #333;
+    color: #222222;
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -906,7 +906,7 @@ nav {
     font-size: 2.0em;
     margin-bottom: 30px;
     font-weight: 300;
-    color: #333;
+    color: #222222;
 }
 
 .contact-right .form-group {
@@ -927,7 +927,7 @@ nav {
     font-size: 1em;
     font-family: inherit;
     transition: all 0.3s;
-    color: #333;
+    color: #222222;
     box-sizing: border-box;
     height: 50px; /* 입력 필드 높이 통일 */
 }
@@ -959,7 +959,7 @@ nav {
 
 /* Submit Button */
 .submit-btn {
-    background: #333;
+    background: #222222;
     color: white;
     padding: 15px 40px;
     border: none;
@@ -1011,7 +1011,7 @@ nav {
 footer {
     flex-shrink: 0;  /* footer가 압축되지 않도록 설정 */
     margin-top: auto; /* 상단 여백 자동으로 설정 */
-    background: #1a1a1a;
+    background: #222222;
     color: white;
     padding: 50px 0;
     text-align: center;
