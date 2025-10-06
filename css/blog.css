@@ -1,0 +1,364 @@
+/* ===== BLOG PAGE STYLES ===== */
+
+/* Blog Hero */
+.blog-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 120px 0 80px;
+    text-align: center;
+}
+
+.blog-hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.blog-hero p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Blog Categories */
+.blog-categories {
+    background: #fff;
+    padding: 40px 0;
+    /* position: sticky; */  /* 제거 */
+    /* top: 70px; */         /* 제거 */
+    /* z-index: 100; */      /* 제거 */
+    margin-top: 15px;
+}
+
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.category-tab {
+    padding: 12px 24px;
+    background: #f5f5f5;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1em;
+    color: #666;
+}
+
+.category-tab:hover,
+.category-tab.active {
+    background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Featured Post */
+.featured-post {
+    background: #ffffff;
+    padding: 60px 0;
+}
+
+.featured-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.featured-content:hover {
+    transform: translateY(-5px);
+}
+
+/* 🔴 수정된 주석 - 한글 인코딩 수정 */
+/* 블로그 카드 링크 스타일 */
+.blog-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.featured-image {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.featured-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;  /* left를 right로 변경 */
+    background: #667eea;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3); /* 그림자 효과 추가 */
+    transition: transform 0.3s ease; /* 호버 효과를 위한 트랜지션 */
+}
+
+.featured-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.featured-text {
+    padding: 40px;
+}
+
+.featured-text h2 {
+    font-size: 2.2em;
+    margin: 15px 0 20px;
+    color: #333;
+}
+
+.featured-text p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Blog Posts Grid */
+.blog-posts {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+/* Blog Card */
+.blog-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+
+.blog-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.blog-image {
+   height: 220px;
+   background-size: cover;
+   background-position: center;
+   position: relative;
+}
+
+.blog-content {
+   padding: 25px;
+}
+
+.blog-content h3 {
+   font-size: 1.3em;
+   margin-bottom: 12px;
+   color: #333;
+   line-height: 1.4;
+}
+
+.blog-content p {
+   color: #666;
+   line-height: 1.6;
+   margin-bottom: 15px;
+}
+
+/* Post Category Badge */
+.post-category {
+   position: absolute;
+   top: 15px;
+   left: 15px;
+   background: rgba(0,0,0,0.7);
+   color: white;
+   padding: 5px 12px;
+   border-radius: 15px;
+   font-size: 0.85em;
+   text-transform: uppercase;
+   letter-spacing: 0.5px;
+}
+
+/* 🔴 수정된 이모지 - UTF-8 인코딩 */
+/* Post Meta */
+.post-meta {
+   display: flex;
+   gap: 15px;
+   font-size: 0.9em;
+   color: #999;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+.post-meta span {
+   display: flex;
+   align-items: center;
+}
+
+.post-date::before {
+   content: "📅 ";
+   margin-right: 5px;
+}
+
+.read-time::before {
+   content: "⏱ ";
+   margin-right: 5px;
+}
+
+.post-author::before {
+   content: "✏️ ";
+   margin-right: 5px;
+}
+
+/* Read More Button */
+.read-more-btn {
+   display: inline-block;
+   margin-top: 20px;
+   color: #667eea;
+   text-decoration: none;
+   font-weight: 600;
+   transition: all 0.3s;
+}
+
+.read-more-btn:hover {
+   transform: translateX(5px);
+}
+
+/* Newsletter Section */
+.newsletter {
+   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+   padding: 60px 0;
+   color: white;
+   text-align: center;
+}
+
+.newsletter-content h2 {
+   font-size: 2.2em;
+   margin-bottom: 15px;
+}
+
+.newsletter-content p {
+   font-size: 1.1em;
+   margin-bottom: 30px;
+   opacity: 0.9;
+}
+
+.newsletter-form {
+   display: flex;
+   gap: 15px;
+   max-width: 500px;
+   margin: 0 auto;
+}
+
+.newsletter-form input {
+   flex: 1;
+   padding: 15px;
+   border: none;
+   border-radius: 50px;
+   font-size: 1em;
+}
+
+.newsletter-form button {
+   padding: 15px 40px;
+   background: white;
+   color: #667eea;
+   border: none;
+   border-radius: 50px;
+   font-size: 1em;
+   font-weight: 600;
+   cursor: pointer;
+   transition: all 0.3s;
+}
+
+.newsletter-form button:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Load More Container */
+.load-more-container {
+   text-align: center;
+   margin-top: 50px;
+}
+
+.load-more-btn {
+   padding: 15px 40px;
+   background: white;
+   border: 2px solid #e0e0e0;
+   border-radius: 50px;
+   cursor: pointer;
+   transition: all 0.3s;
+   font-size: 1.1em;
+   color: #666;
+}
+
+.load-more-btn:hover {
+   background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+   color: white;
+   border-color: transparent;
+   transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+   .featured-content {
+       grid-template-columns: 1fr;
+   }
+   
+   .featured-image {
+       height: 300px;
+   }
+}
+
+@media (max-width: 768px) {
+   .blog-hero h1 {
+       font-size: 2.2em;
+   }
+   
+   .posts-grid {
+       grid-template-columns: 1fr;
+       gap: 30px;
+   }
+   
+   .category-tabs {
+       gap: 10px;
+   }
+   
+   .category-tab {
+       padding: 8px 18px;
+       font-size: 0.9em;
+   }
+   
+   .newsletter-form {
+       flex-direction: column;
+   }
+   
+   .newsletter-form button {
+       width: 100%;
+   }
+}

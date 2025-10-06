@@ -1,0 +1,104 @@
+{
+  "projects": [
+    {
+      "id": "project1",
+      "title": "Epic Fantasy Adventure",
+      "description": "몰입감 있는 판타지 세계관을 구축한 대규모 게임 프로젝트입니다. 독창적인 아트 스타일과 디테일한 환경 디자인으로 플레이어를 매혹적인 모험의 세계로 인도합니다.",
+      "category": ["games", "concept"],
+      "thumbnail": "assets/image/project01/01.png",
+      "client": "Creative Studio",
+      "duration": "3 months",
+      "services": "Art Direction, Concept Art, Visual Development",
+      "teamSize": "4 Artists",
+      "tags": ["Art Direction", "Concept Art", "Visual Development"],
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/image/project01/01.png"
+        },
+        {
+          "type": "video",
+          "src": "assets/videos/main_01.mp4"
+        },
+        {
+          "type": "image",
+          "src": "assets/image/project01/02.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/image/project01/03.png"
+        }
+      ]
+    },
+    {
+      "id": "project2",
+      "title": "Character Design Showcase",
+      "description": "다양한 장르와 스타일의 캐릭터 디자인 포트폴리오입니다. 각 캐릭터의 개성과 스토리를 시각적으로 표현하여 생동감 있는 캐릭터를 창조했습니다.",
+      "category": ["games", "character"],
+      "thumbnail": "assets/image/project02/01.png",
+      "client": "Design Agency",
+      "duration": "2 months",
+      "services": "Character Design, Illustration, Art Direction",
+      "teamSize": "3 Artists",
+      "tags": ["Character Design", "Illustration", "Art Direction"],
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/image/project02/01.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/image/project02/02.png"
+        }
+      ]
+    },
+    {
+      "id": "project3",
+      "title": "Environmental Concept Art",
+      "description": "SF와 판타지가 융합된 독특한 세계관의 환경 컨셉 아트입니다. 미래적이면서도 신비로운 분위기를 연출하여 몰입감 있는 게임 환경을 구현했습니다.",
+      "category": ["games", "concept"],
+      "thumbnail": "assets/image/project03/01.png",
+      "client": "Production Company",
+      "duration": "4 months",
+      "services": "Concept Art, Environment Design, Visual Development",
+      "teamSize": "5 Artists",
+      "tags": ["Concept Art", "Environment Design", "Visual Development"],
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/image/project03/01.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/image/project03/02.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/image/project03/03.png"
+        }
+      ]
+    },
+    {
+      "id": "project4",
+      "title": "Mobile Game Trailer",
+      "description": "모바일 게임을 위한 다이나믹한 트레일러 영상입니다. 게임의 핵심 요소를 시각적으로 전달하여 사용자의 관심을 끌어냅니다.",
+      "category": ["games", "promotional"],
+      "thumbnail": "assets/image/project04/02.png",
+      "client": "Mobile Game Studio",
+      "duration": "2 weeks",
+      "services": "Motion Graphics, Video Editing, Sound Design",
+      "teamSize": "2 Artists",
+      "tags": ["Motion Graphics", "Trailer", "Promotional"],
+      "media": [
+        {
+          "type": "video",
+          "src": "assets/image/project04/project04.mp4"
+        },
+        {
+          "type": "image",
+          "src": "assets/image/project04/02.png"
+        }
+      ]
+    }
+  ]
+}

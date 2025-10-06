@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | MAJORS STUDIO</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="MAJORS STUDIO 프로젝트 포트폴리오 - 게임, 캐릭터 디자인, 컨셉아트, 프로모션 등 다양한 창의적 비주얼 프로젝트를 확인하세요.">
+    <meta name="keywords" content="게임 아트, 캐릭터 디자인, 컨셉아트, 프로모션 디자인, 포트폴리오, 게임 개발, 일러스트레이션">
+    <meta name="author" content="MAJORS STUDIO">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Projects | MAJORS STUDIO">
+    <meta property="og:description" content="MAJORS STUDIO의 창의적 프로젝트 포트폴리오를 만나보세요.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://majors-studio.com/projects">
+    <meta property="og:image" content="https://majors-studio.com/assets/projects-og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/projects.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">MAJORS STUDIO</a>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+<main class="page-content">
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">All Projects</button>
+                <button class="filter-tab" data-filter="games">Games</button>
+                <button class="filter-tab" data-filter="character">Character Design</button>
+                <button class="filter-tab" data-filter="concept">Concept Art</button>
+                <button class="filter-tab" data-filter="promotional">Promotional</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+     <section class="projects-section">
+        <div class="container">
+            <div class="projects-grid">
+
+
+                <!-- Project 1 - Epic Fantasy Adventure -->
+                <div class="project-card" id="project1" data-category="games concept" onclick="openModal('project1')">
+                    <div class="project-image project1-bg" style="background-image: url('assets/image/project01/01.png');">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Epic Fantasy Adventure</h3>
+                        <p class="project-description">몰입감 있는 판타지 세계관을 구축한 대규모 게임 프로젝트입니다. 독창적인 아트 스타일과 디테일한 환경 디자인으로 플레이어를 매혹적인 모험의 세계로 인도합니다.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Art Direction</span>
+                            <span class="project-tag">Concept Art</span>
+                            <span class="project-tag">Visual Development</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Project 2 - Character Design Showcase -->
+                <div class="project-card" id="project2" data-category="games character" onclick="openModal('project2')">
+                    <div class="project-image project2-bg" style="background-image: url('assets/image/project02/01.png');">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Character Design Showcase</h3>
+                        <p class="project-description">다양한 장르와 스타일의 캐릭터 디자인 포트폴리오입니다. 각 캐릭터의 개성과 스토리를 시각적으로 표현하여 생동감 있는 캐릭터를 창조했습니다.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Character Design</span>
+                            <span class="project-tag">Illustration</span>
+                            <span class="project-tag">Art Direction</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Project 3 - Environmental Concept Art -->
+                <div class="project-card" id="project3" data-category="games concept" onclick="openModal('project3')">
+                    <div class="project-image project3-bg" style="background-image: url('assets/image/project03/01.png');">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Environmental Concept Art</h3>
+                        <p class="project-description">SF와 판타지가 융합된 독특한 세계관의 환경 컨셉 아트입니다. 미래적이면서도 신비로운 분위기를 연출하여 몰입감 있는 게임 환경을 구현했습니다.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Concept Art</span>
+                            <span class="project-tag">Environment Design</span>
+                            <span class="project-tag">Visual Development</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                 <!-- Project 4 - Video -->
+                 <div class="project-card" id="project4" data-category="games promotional" onclick="openModal('project4')">
+                      <div class="project-image project4-bg">
+                      <video class="project-video" muted loop playsinline>
+                      <source src="assets/image/project04/project04.mp4" type="video/mp4">
+                      </video>
+                      <div class="video-indicator">▶ Video</div>
+                 </div>
+                 <div class="project-info">
+                 <h3 class="project-title">Mobile Game Trailer</h3>
+                 <p class="project-description">모바일 게임을 위한 다이나믹한 트레일러 영상입니다. 게임의 핵심 요소를 시각적으로 전달하여 사용자의 관심을 끌어냅니다.</p>
+                 <div class="project-tags">
+                      <span class="project-tag">Motion Graphics</span>
+                      <span class="project-tag">Trailer</span>
+                      <span class="project-tag">Promotional</span>
+                </div>
+             </div>
+          </div>
+
+          </div> <!-- /.projects-grid -->
+          </div> <!-- /.container -->
+    </section>
+
+
+    <!-- Modal -->
+    <div class="modal" id="projectModal" style="display: none;" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+        <!-- Modal content will be dynamically generated by JavaScript -->
+    </div>
+</main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>MAJORS STUDIO</h3>
+                <p>© 2025 MAJORS STUDIO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
+
+    <!-- JavaScript 순서 중요! -->
+<script src="js/main.js"></script>
+<script src="js/projects.js"></script>
+</body>
+</html>

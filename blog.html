@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | MAJORS STUDIO</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="MAJORS STUDIO Blog - Game art insights, tutorials, industry trends, and creative process behind our projects">
+    <meta name="keywords" content="game art blog, concept art tutorials, character design, art direction, creative process">
+    <meta name="author" content="MAJORS STUDIO">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Blog | MAJORS STUDIO">
+    <meta property="og:description" content="Insights and tutorials from MAJORS STUDIO">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://majors-studio.com/blog">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/blog.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">MAJORS STUDIO</a>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-content">
+
+    <!-- Blog Categories -->
+    <section class="blog-categories">
+        <div class="container">
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all">All Posts</button>
+                <button class="category-tab" data-category="tutorials">Tutorials</button>
+                <button class="category-tab" data-category="process">Process</button>
+                <button class="category-tab" data-category="industry">Industry</button>
+                <button class="category-tab" data-category="showcase">Showcase</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="featured-post">
+        <div class="container">
+            <div class="featured-content">
+                <div class="featured-image" style="background-image: url('assets/image/blog/featured.jpg');">
+                    <span class="featured-badge">Featured</span>
+                </div>
+                <div class="featured-text">
+    <span class="post-category">Industry</span>
+    <h2>The Future of AI in Game Art Production</h2>
+    <p>Discover how we're combining 20 years of traditional art expertise...</p>
+    <div class="post-meta">
+        <span class="post-date">December 15, 2024</span>
+        <span class="post-author">By MAJORS Team</span>
+    </div>
+    <a href="blog_post.html" class="read-more-btn">Read More →</a>  <!-- 링크 추가 -->
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="blog-posts">
+        <div class="container">
+            <div class="posts-grid">
+
+                <!-- Blog Post 1 -->
+ <article class="blog-card" data-category="tutorials" onclick="location.href='blog_post_01.html';" style="cursor: pointer;">
+    <div class="blog-image" style="background-image: url('assets/image/blog/01.jpg');">
+        <span class="post-category">Tutorials</span>
+    </div>
+    <div class="blog-content">
+        <h3>Creating Compelling Character Silhouettes</h3>
+        <p>Learn the fundamental principles of character design through effective silhouette creation techniques.</p>
+        <div class="post-meta">
+            <span class="post-date">Dec 10, 2024</span>
+            <span class="read-time">8 min</span>
+        </div>
+    </div>
+</article>
+
+                <!-- Blog Post 2 -->
+<article class="blog-card" data-category="process" onclick="location.href='blog_post_02.html';" style="cursor: pointer;">
+                    <div class="blog-image" style="background-image: url('assets/image/blog/02.jpg');">
+                        <span class="post-category">Process</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Behind the Scenes: Fantasy World Building</h3>
+                        <p>A deep dive into our creative process for developing immersive fantasy environments.</p>
+                        <div class="post-meta">
+                            <span class="post-date">Dec 5, 2024</span>
+                            <span class="read-time">6 min</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+<article class="blog-card" data-category="process" onclick="location.href='blog_post_03.html';" style="cursor: pointer;">
+                    <div class="blog-image" style="background-image: url('assets/image/blog/03.jpg');">
+                        <span class="post-category">Industry</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>2024 Game Art Trends Analysis</h3>
+                        <p>Exploring the latest trends shaping the game art industry this year.</p>
+                        <div class="post-meta">
+                            <span class="post-date">Nov 28, 2024</span>
+                            <span class="read-time">7 min</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+<article class="blog-card" data-category="process" onclick="location.href='blog_post_04.html';" style="cursor: pointer;">
+                    <div class="blog-image" style="background-image: url('assets/image/blog/04.jpg');">
+                        <span class="post-category">Showcase</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Project Spotlight: Mobile RPG Art Direction</h3>
+                        <p>Showcasing our recent work on a major mobile RPG title's visual development.</p>
+                        <div class="post-meta">
+                            <span class="post-date">Nov 20, 2024</span>
+                            <span class="read-time">5 min</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 5 -->
+<article class="blog-card" data-category="process" onclick="location.href='blog_post_05.html';" style="cursor: pointer;">
+                    <div class="blog-image" style="background-image: url('assets/image/blog/05.jpg');">
+                        <span class="post-category">Tutorials</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Color Theory for Game Environments</h3>
+                        <p>Master the use of color to create mood and atmosphere in your game environments.</p>
+                        <div class="post-meta">
+                            <span class="post-date">Nov 15, 2024</span>
+                            <span class="read-time">10 min</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 6 -->
+<article class="blog-card" data-category="process" onclick="location.href='blog_post_06.html';" style="cursor: pointer;">
+                    <div class="blog-image" style="background-image: url('assets/image/blog/06.jpg');">
+                        <span class="post-category">Process</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>From Concept to Final: Asset Pipeline</h3>
+                        <p>Understanding our streamlined pipeline from initial concepts to production-ready assets.</p>
+                        <div class="post-meta">
+                            <span class="post-date">Nov 10, 2024</span>
+                            <span class="read-time">9 min</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button class="load-more-btn">Load More Posts</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for the latest insights and tutorials</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>MAJORS STUDIO</h3>
+                <p>© 2025 MAJORS STUDIO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>

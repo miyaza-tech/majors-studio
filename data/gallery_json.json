@@ -1,0 +1,84 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "Fantasy Illustration",
+      "description": "Digital Painting",
+      "category": "illustration",
+      "type": "image",
+      "image": "assets/image/gallery/01.png"
+    },
+    {
+      "id": 2,
+      "title": "Sci-Fi Environment",
+      "description": "Concept Art",
+      "category": "concept",
+      "type": "image",
+      "image": "assets/image/gallery/02.png"
+    },
+    {
+      "id": 3,
+      "title": "Character Design",
+      "description": "Character Concept",
+      "category": "character",
+      "type": "image",
+      "image": "assets/image/gallery/03.png"
+    },
+    {
+      "id": 4,
+      "title": "Fantasy Landscape",
+      "description": "Environment Art",
+      "category": "environment",
+      "type": "image",
+      "image": "assets/image/gallery/04.png"
+    },
+    {
+      "id": 5,
+      "title": "Game Key Art",
+      "description": "Promotional Art",
+      "category": "keyart",
+      "type": "image",
+      "image": "assets/image/gallery/05.png"
+    },
+    {
+      "id": 6,
+      "title": "Creature Design",
+      "description": "Concept Development",
+      "category": "concept",
+      "type": "image",
+      "image": "assets/image/gallery/06.png"
+    },
+    {
+      "id": 7,
+      "title": "Book Illustration",
+      "description": "Digital Art",
+      "category": "illustration",
+      "type": "image",
+      "image": "assets/image/gallery/07.png"
+    },
+    {
+      "id": 8,
+      "title": "Hero Character",
+      "description": "Character Art",
+      "category": "character",
+      "type": "image",
+      "image": "assets/image/gallery/08.png"
+    },
+    {
+      "id": 9,
+      "title": "Motion Concept",
+      "description": "Animation Reel",
+      "category": "concept",
+      "type": "video",
+      "media": "assets/videos/gallery_01.mp4"
+    },
+    {
+      "id": 10,
+      "title": "Character Animation",
+      "description": "Character Motion Study",
+      "category": "character",
+      "type": "video",
+      "media": "assets/videos/gallery_02.mp4"
+    }
+  ]
+}

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAJORS STUDIO | Creative Production Studio</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="MAJORS STUDIO - 창의적 비주얼 솔루션을 제공하는 프리미엄 아트 스튜디오. 20년 경험의 전문 아티스트들이 컨셉아트, 캐릭터디자인, 게임아트를 제공합니다.">
+    <meta name="keywords" content="컨셉아트, 캐릭터디자인, 게임아트, 일러스트레이션, 아트디렉션, concept art, character design, game art">
+    <meta name="author" content="MAJORS STUDIO">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="MAJORS STUDIO | Creative Production Studio">
+    <meta property="og:description" content="20년 경험의 전문 아티스트들이 제공하는 창의적 비주얼 솔루션">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://majors-studio.com">
+    <meta property="og:image" content="https://majors-studio.com/assets/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MAJORS STUDIO">
+    <meta name="twitter:description" content="창의적 비주얼 솔루션을 제공하는 프리미엄 아트 스튜디오">
+    <meta name="twitter:image" content="https://majors-studio.com/assets/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">MAJORS STUDIO</a>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+<main class="page-content">
+   <!-- Hero Section -->
+<section class="hero" id="home">
+    <!-- Background Slider -->
+    <div class="hero-slider">
+        <!-- 🔴 첫 번째 슬라이드: preload="auto" 유지 -->
+        <div class="hero-slide active">
+            <video class="hero-video" 
+                   muted 
+                   loop 
+                   playsinline 
+                   preload="auto">  <!-- ✅ 첫 번째만 auto -->
+                <source src="assets/videos/main_01.mp4" type="video/mp4">
+            </video>
+            <div class="video-fallback" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <!-- 텍스트 대신 이미지 폴백 -->
+                <img src="assets/image/hero_fallback_01.jpg" alt="Hero Background" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+        
+        <!-- 🔴 두 번째 슬라이드: preload="none"으로 변경 -->
+        <div class="hero-slide">
+            <video class="hero-video" 
+                   muted 
+                   loop 
+                   playsinline 
+                   preload="none">  <!-- ✅ none으로 변경 -->
+                <source src="assets/videos/main_02.mp4" type="video/mp4">
+            </video>
+            <div class="video-fallback" style="background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);">
+                <img src="assets/image/hero_fallback_02.jpg" alt="Character Design" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+
+        <!-- 🔴 세 번째 슬라이드: preload="none"으로 변경 -->
+        <div class="hero-slide">
+            <video class="hero-video" 
+                   muted 
+                   loop 
+                   playsinline 
+                   preload="none">  <!-- ✅ none으로 변경 -->
+                <source src="assets/videos/main_03.mp4" type="video/mp4">
+            </video>
+            <div class="video-fallback" style="background: linear-gradient(135deg, #00d4aa 0%, #00a8cc 100%);">
+                <img src="assets/image/hero_fallback_03.jpg" alt="Game Art" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+
+        <!-- 🔴 네 번째 슬라이드: preload="none"으로 변경 -->
+        <div class="hero-slide">
+            <video class="hero-video" 
+                   muted 
+                   loop 
+                   playsinline 
+                   preload="none">  <!-- ✅ none으로 변경 -->
+                <source src="assets/videos/main_04.mp4" type="video/mp4">
+            </video>
+            <div class="video-fallback" style="background: linear-gradient(135deg, #a8e6cf 0%, #88d8c0 100%);">
+                <img src="assets/image/hero_fallback_04.jpg" alt="Promotional" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+    </div>
+    
+        
+        <!-- Hero Overlay -->
+        <div class="hero-overlay"></div>
+        
+        <div class="container">
+            <h1>Creative Excellence</h1>
+            <p class="subtitle">MAJORS STUDIO is driven by the pursuit of quality and creative innovation. We are artists, designers, and creative professionals delivering outstanding visual solutions with modern aesthetics.</p>
+        </div>
+        
+        <!-- Hero Navigation Dots -->
+        <div class="hero-dots">
+            <span class="hero-dot active" data-slide="0"></span>
+            <span class="hero-dot" data-slide="1"></span>
+            <span class="hero-dot" data-slide="2"></span>
+            <span class="hero-dot" data-slide="3"></span>
+        </div>
+        
+        <!-- Hero Navigation Arrows -->
+        <button class="hero-arrow hero-arrow-left" onclick="prevHeroSlide()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <button class="hero-arrow hero-arrow-right" onclick="nextHeroSlideManual()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>About Us</h2>
+                <p>
+                프롬프트 몇 줄이면 이미지가 생성되고, 클릭 한 번으로 일러스트가 완성되는 시대. <br>
+                AI가 디자인의 문턱을 낮췄지만, 오히려 진짜 전문가와 아마추어의 경계는 더 선명해졌습니다. <br>
+                단순한 이미지 하나는 누구나 만들 수 있습니다. 하지만 그것은 결과물일 뿐, 작품이 될 수 없습니다. <br>
+                AI가 만들어낸 첫 번째 결과물에 만족하는 사람과, 그것을 시작점으로 보는 사람. 이 차이가 모든 것을 결정합니다. <br>
+                스타일의 일관성을 유지하면서 감정을 표현하는 것. 세계관과 분위기를 통일하며 브랜드 아이덴티티를 구축하는 것. 수많은 생성물 중에서 최적의 결과를 선별하며 완성도 높은 비주얼을 완성하는 것. <br>
+                여기서 크리에이터의 진짜 실력이 드러납니다. <br>
+                우리는 AI를 단순한 도구로 사용하지 않습니다. 우리는 AI와 협업하는 법을 압니다. <br>
+                20년의 게임 그래픽 경험이 방향을 제시하고, AI가 가능성을 확장하며, 다시 전문가의 감각이 완성합니다. 컨셉 아트부터 완성도 높은 일러스트레이션까지, 프로젝트의 모든 비주얼 요소에 걸쳐 일관된 품질을 보장합니다. AI 기반의 효율적인 워크플로우를 통해 더욱 합리적인 비용으로 더욱 빠른 결과물을 제공합니다. <br>
+                이것이 AI 시대, 진짜 프로페셔널의 영역입니다. <br>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2>Latest Projects</h2>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-item" onclick="goToProject('project1')">
+                    <div class="project-image main-project1">
+                        <!-- 플레이스홀더 추가 -->
+                        <div class="project-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <img src="assets/image/project01/01.png" 
+                                 alt="게임 컨셉 아트" 
+                                 style="width: 100%; height: 100%; object-fit: cover;"
+                                 onerror="this.style.display='none'; this.parentElement.style.opacity='1'">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>게임 컨셉 아트</h3>
+                        <p>20년 경험과 AI 기술을 결합한 신속하고 정확한 게임 컨셉 아트. 아이디어 스케치부터 최종 컨셉까지 빠른 시간 내에 고퀄리티 결과물을 제공합니다.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-item" onclick="goToProject('project2')">
+                    <div class="project-image main-project2">
+                        <div class="project-placeholder" style="background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);">
+                            <img src="assets/image/project02/01.png" 
+                                 alt="캐릭터 일러스트" 
+                                 style="width: 100%; height: 100%; object-fit: cover;"
+                                 onerror="this.style.display='none'; this.parentElement.style.opacity='1'">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>캐릭터 일러스트</h3>
+                        <p>게임과 광고에 최적화된 매력적인 캐릭터 디자인. 다양한 스타일과 용도에 맞춰 AI 워크플로우로 효율적이면서도 개성 있는 캐릭터를 제작합니다.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-item" onclick="goToProject('project3')">
+                    <div class="project-image main-project3">
+                        <div class="project-placeholder" style="background: linear-gradient(135deg, #00d4aa 0%, #00a8cc 100%);">
+                            <img src="assets/image/project03/01.png" 
+                                 alt="배경 & 광고 애니메이션" 
+                                 style="width: 100%; height: 100%; object-fit: cover;"
+                                 onerror="this.style.display='none'; this.parentElement.style.opacity='1'">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>배경 & 광고 애니메이션</h3>
+                        <p>몰입감 있는 배경 아트와 브랜드 가치를 높이는 광고용 애니메이션. 2D 아트워크를 기반으로 한 생동감 있는 모션 그래픽을 제공합니다.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- View All Projects Button -->
+            <div class="projects-cta">
+                <a href="projects.html" class="cta-button">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+
+<!-- gallery Section -->
+<section class="gallery" id="gallery">
+    <div class="container">
+        <h2>Gallery</h2>
+        <p class="section-subtitle"></p>
+               
+        <!-- gallery Grid -->
+        <div class="gallery-grid">
+            <div class="gallery-item" data-category="illustration" onclick="window.location.href='gallery.html'" style="cursor: pointer;">
+                <img src="assets/image/gallery/01.png" alt="gallery 1">
+                <div class="gallery-overlay">
+                    <h4>작품 제목 1</h4>
+                    <p>Illustration</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="concept" onclick="window.location.href='gallery.html'" style="cursor: pointer;">
+                <img src="assets/image/gallery/02.png" alt="gallery 2">
+                <div class="gallery-overlay">
+                    <h4>작품 제목 2</h4>
+                    <p>Concept Art</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="character" onclick="window.location.href='gallery.html'" style="cursor: pointer;">
+                <img src="assets/image/gallery/03.png" alt="gallery 3">
+                <div class="gallery-overlay">
+                    <h4>작품 제목 3</h4>
+                    <p>Character Design</p>
+                </div>
+            </div>
+            <!-- 더 많은 포트폴리오 아이템 추가 가능 -->
+        </div>
+        
+        <!-- Load More Button -->
+        <div class="gallery-cta">
+            <a href="gallery.html" class="cta-button">View Full gallery</a>  <!-- 링크 추가 -->
+        </div>
+    </div>
+</section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>게임 컨셉 아트</h3>
+                    <p>20년 경험의 전문 아티스트가 AI 기술과 결합하여 제작하는 고퀄리티 컨셉 아트. 빠른 아이디어 구현부터 디테일한 완성작까지 효율적으로 제공합니다.</p>
+                </div>
+                <div class="service-item">
+                    <h3>캐릭터 일러스트</h3>
+                    <p>게임과 광고에 특화된 매력적인 캐릭터 디자인. 다양한 스타일과 표현 기법을 구사하여 프로젝트 목적에 최적화된 캐릭터를 제작합니다.</p>
+                </div>
+                <div class="service-item">
+                    <h3>배경 아트</h3>
+                    <p>몰입감을 극대화하는 게임 배경과 환경 디자인. 컨셉부터 최종 완성까지 일관된 세계관을 구축하여 플레이어 경험을 향상시킵니다.</p>
+                </div>
+                <div class="service-item">
+                    <h3>광고용 애니메이션</h3>
+                    <p>브랜드 가치를 높이는 2D 모션 그래픽과 광고 애니메이션. 정적인 일러스트에 생동감을 더해 더욱 임팩트 있는 마케팅 자료를 제작합니다.</p>
+                </div>
+                <div class="service-item">
+                    <h3>AI 워크플로우</h3>
+                    <p>최신 AI 도구를 활용한 효율적인 제작 과정. 기존 대비 50% 빠른 작업 속도와 합리적인 비용으로 높은 퀄리티의 결과물을 보장합니다.</p>
+                </div>
+                <div class="service-item">
+                    <h3>통합 아트 솔루션</h3>
+                    <p>컨셉부터 완성까지 원스톱 서비스. 프로젝트의 모든 2D 그래픽 요소를 일관된 스타일과 퀄리티로 완성하여 통일감 있는 결과물을 제공합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+  <section class="clients">
+  <div class="container">
+    <h2>Our Clients</h2>
+    <div class="clients-grid">
+  <div class="client-logo"><img src="assets/image/client/1.png"  alt="Client 1"></div>
+  <div class="client-logo"><img src="assets/image/client/2.png"  alt="Client 2"></div>
+  <div class="client-logo"><img src="assets/image/client/3.png"  alt="Client 3"></div>
+  <div class="client-logo"><img src="assets/image/client/4.png"  alt="Client 4"></div>
+  <div class="client-logo"><img src="assets/image/client/5.png"  alt="Client 5"></div>
+  <div class="client-logo"><img src="assets/image/client/6.png"  alt="Client 6"></div>
+  <div class="client-logo"><img src="assets/image/client/7.png"  alt="Client 7"></div>
+  <div class="client-logo"><img src="assets/image/client/8.png"  alt="Client 8"></div>
+  <div class="client-logo"><img src="assets/image/client/9.png"  alt="Client 9"></div>
+  <div class="client-logo"><img src="assets/image/client/10.png" alt="Client 10"></div>
+  <div class="client-logo"><img src="assets/image/client/11.png" alt="Client 11"></div>
+  <div class="client-logo"><img src="assets/image/client/12.png" alt="Client 12"></div>
+</div>
+</div>
+</section>
+
+    <!-- Testimonials -->
+<section class="testimonials">
+    <div class="container">
+        <h2>Client Feedback</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-item">
+                <p>"MAJORS STUDIO's concept art has perfectly realized our game's vision. Their attention to detail and creative process exceeded our expectations with fervent enthusiasm."</p>
+                <div class="testimonial-author">- Major Game Developer</div>
+            </div>
+            <div class="testimonial-item">
+                <p>"Professional and reliable, always delivering high-quality results. MAJORS STUDIO has become an invaluable partner for our multiple projects. Fast, efficient and immensely talented."</p>
+                <div class="testimonial-author">- Mobile Game Publisher</div>
+            </div>
+            <div class="testimonial-item">
+                <p>"Their AI-powered workflow combined with 20 years of experience delivers exceptional results in record time. The perfect blend of traditional expertise and modern innovation."</p>
+                <div class="testimonial-author">- Design Studio</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+<section class="contact-section" id="contact">
+    <div class="container">
+        <div class="contact-wrapper">
+            <!-- 왼쪽: Contact Information -->
+            <div class="contact-left">
+                <h2>Contact information</h2>
+                <p class="contact-intro">Please use contact information below. If you want to send us a message, please use our contact form to the right and we will respond promptly.</p>
+                
+                <div class="contact-item">
+                    <h4>HQ Location:</h4>
+                    <p>Seongnam-si, Gyeonggi-do, Korea</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h4>Email:</h4>
+                    <p><a href="mailto:hello@majors-studio.com">hello@majors-studio.com</a></p>
+                </div>
+                
+                <div class="contact-item">
+                    <h4>Social links:</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                                        <a href="#" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 오른쪽: Contact Form -->
+<div class="contact-right">
+    <h2>Send us a message</h2>
+    <form id="contactForm">
+        <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Name *" required>
+        </div>
+        
+        <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="E-mail *" required>
+        </div>
+        
+                    <div class="form-group">
+                        <select id="projectType" name="projectType" required>
+                            <option value="">Project Type *</option>
+                            <option value="concept-art">Concept Art</option>
+                            <option value="character-design">Character Design</option>
+                            <option value="environment-design">Environment Design</option>
+                            <option value="illustration">Illustration</option>
+                            <option value="art-direction">Art Direction</option>
+                            <option value="multiple">Multiple Services</option>
+                            <option value="consultation">Consultation</option>
+                        </select>
+                    </div>
+        
+        <div class="form-group">
+            <textarea id="message" name="message" placeholder="Message *" rows="6" required></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">SEND MESSAGE</button>
+    </form>
+</div>
+
+        </div>
+    </div>
+</section>
+</main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>MAJORS STUDIO</h3>
+                <p>© 2025 MAJORS STUDIO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>
