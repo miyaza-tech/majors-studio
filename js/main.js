@@ -410,10 +410,23 @@ function initializeScrollAnimations() {
 
 // ===== PROJECT NAVIGATION =====
 function initializeProjectNavigation() {
+    // 기존 onclick 함수 유지 (다른 페이지에서 사용 가능)
     window.goToProject = (projectId) => {
         sessionStorage.setItem('openProject', projectId);
         window.location.href = 'projects.html';
     };
+    
+    // index 페이지의 project-item에 이벤트 리스너 추가
+    const projectItems = document.querySelectorAll('.projects .project-item');
+    projectItems.forEach(item => {
+        const projectId = item.getAttribute('data-project');
+        if (projectId) {
+            item.addEventListener('click', () => {
+                sessionStorage.setItem('openProject', projectId);
+                window.location.href = 'projects.html';
+            });
+        }
+    });
 }
 
 // ===== GALLERY FUNCTIONALITY =====

@@ -478,7 +478,6 @@ nav {
     margin-bottom: 50px;
 }
 
-/* Projects Grid - Gallery와 동일 */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -486,7 +485,6 @@ nav {
     margin-bottom: 50px;
 }
 
-/* Project Item - Gallery Item과 100% 동일 */
 .project-item {
     position: relative;
     overflow: hidden;
@@ -507,7 +505,6 @@ nav {
     display: block;
 }
 
-/* Project Overlay - Gallery Overlay와 100% 동일 */
 .project-overlay {
     position: absolute;
     bottom: 0;
