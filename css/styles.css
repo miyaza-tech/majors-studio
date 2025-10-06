@@ -488,16 +488,19 @@ nav {
 
 /* Project Item - Gallery Item과 동일 */
 .project-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    position: relative !important;
+    overflow: hidden !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
+    transition: transform 0.3s ease-in-out !important;
+    backface-visibility: hidden !important;
+    transform: scale(1) !important;
 }
 
 .project-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
 }
 
 .project-item img {
