@@ -50,17 +50,31 @@ function renderProjectCards(projects) {
     const projectsGrid = document.querySelector('.projects-grid');
     if (!projectsGrid) return;
     
-    // Clear existing cards (except if you want to keep them)
-    // projectsGrid.innerHTML = '';
+    // Clear existing cards
+    projectsGrid.innerHTML = '';
     
     Object.values(projects).forEach(project => {
         const card = createProjectCard(project);
-        // You can append dynamically if needed
-        // projectsGrid.appendChild(card);
+        projectsGrid.appendChild(card);
     });
 }
 
 function createProjectCard(project) {
+    const lang = localStorage.getItem('language') || 'en';
+    
+    // Helper function to get translated text
+    const getText = (field) => {
+        if (typeof field === 'object' && field !== null) {
+            return field[lang] || field['en'] || '';
+        }
+        return field || '';
+    };
+    
+    // Get translated tags
+    const tags = Array.isArray(project.tags) 
+        ? project.tags 
+        : (project.tags && project.tags[lang] ? project.tags[lang] : []);
+    
     const card = document.createElement('div');
     card.className = 'project-card';
     card.id = project.id;
@@ -80,15 +94,34 @@ function createProjectCard(project) {
             ` : ''}
         </div>
         <div class="project-info">
-            <h3 class="project-title">${project.title}</h3>
-            <p class="project-description">${project.description}</p>
+            <h3 class="project-title">${getText(project.title)}</h3>
+            <p class="project-description">${getText(project.description)}</p>
             <div class="project-tags">
-                ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+                ${tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
             </div>
         </div>
     `;
     
     return card;
+}
+
+// Update project cards when language changes
+function updateProjectCards() {
+    if (Object.keys(projectData).length > 0) {
+        renderProjectCards(projectData);
+        initializeProjectVideos();
+        
+        // Re-animate cards
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, index * 50);
+        });
+    }
 }
 
 // ===== FOCUS TRAP =====
@@ -443,6 +476,9 @@ document.addEventListener('DOMContentLoaded', async function() {
     // Load project data from JSON
     await loadProjectData();
     
+    // Render project cards with current language
+    renderProjectCards(projectData);
+    
     // Debug: Check if openModal is available
     console.log('🔍 openModal 함수 사용 가능:', typeof window.openModal === 'function');
     console.log('🔍 로드된 프로젝트 수:', Object.keys(projectData).length);
@@ -465,6 +501,11 @@ document.addEventListener('DOMContentLoaded', async function() {
     });
     
     console.log('🎉 모든 프로젝트 기능 로딩 완료');
+});
+
+// Listen for language changes
+window.addEventListener('languageChanged', function() {
+    updateProjectCards();
 });
 
 // ===== ERROR HANDLING =====

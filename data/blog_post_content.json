@@ -1,0 +1,224 @@
+{
+  "breadcrumb": {
+    "home": {
+      "en": "Home",
+      "ko": "Home"
+    },
+    "blog": {
+      "en": "Blog",
+      "ko": "Blog"
+    }
+  },
+  "posts": {
+    "featured": {
+      "breadcrumbTitle": {
+        "en": "The Future of AI in Game Art Production",
+        "ko": "The Future of AI in Game Art Production"
+      },
+      "category": {
+        "en": "Industry",
+        "ko": "Industry"
+      },
+      "date": {
+        "en": "December 15, 2024",
+        "ko": "December 15, 2024"
+      },
+      "title": {
+        "en": "The Future of AI in Game Art Production",
+        "ko": "The Future of AI in Game Art Production"
+      },
+      "subtitle": {
+        "en": "Discover how we're combining 20 years of traditional art expertise with cutting-edge AI tools to revolutionize game art production workflows.",
+        "ko": "20년의 전통적인 아트 전문성과 최첨단 AI 도구를 결합하여 게임 아트 제작 워크플로우를 혁신하는 방법을 알아보세요."
+      },
+      "author": {
+        "en": "MAJORS Team",
+        "ko": "MAJORS Team"
+      },
+      "readTime": {
+        "en": "5 min read",
+        "ko": "5 min read"
+      }
+    },
+    "post01": {
+      "breadcrumbTitle": {
+        "en": "Creating Compelling Character Silhouettes",
+        "ko": "Creating Compelling Character Silhouettes"
+      },
+      "category": {
+        "en": "Tutorials",
+        "ko": "Tutorials"
+      },
+      "date": {
+        "en": "Dec 10, 2024",
+        "ko": "Dec 10, 2024"
+      },
+      "title": {
+        "en": "Creating Compelling Character Silhouettes",
+        "ko": "Creating Compelling Character Silhouettes"
+      },
+      "subtitle": {
+        "en": "Learn the fundamental principles of character design through effective silhouette creation techniques.",
+        "ko": "효과적인 실루엣 생성 기법을 통해 캐릭터 디자인의 기본 원칙을 배워보세요."
+      },
+      "author": {
+        "en": "MAJORS Team",
+        "ko": "MAJORS Team"
+      },
+      "readTime": {
+        "en": "8 min read",
+        "ko": "8 min read"
+      }
+    },
+    "post02": {
+      "breadcrumbTitle": {
+        "en": "Behind the Scenes: Fantasy World Building",
+        "ko": "Behind the Scenes: Fantasy World Building"
+      },
+      "category": {
+        "en": "Process",
+        "ko": "Process"
+      },
+      "date": {
+        "en": "Dec 5, 2024",
+        "ko": "Dec 5, 2024"
+      },
+      "title": {
+        "en": "Behind the Scenes: Fantasy World Building",
+        "ko": "Behind the Scenes: Fantasy World Building"
+      },
+      "subtitle": {
+        "en": "A deep dive into our creative process for developing immersive fantasy environments.",
+        "ko": "몰입감 있는 판타지 환경을 개발하는 우리의 창작 과정을 깊이 있게 탐구합니다."
+      },
+      "author": {
+        "en": "MAJORS Team",
+        "ko": "MAJORS Team"
+      },
+      "readTime": {
+        "en": "6 min read",
+        "ko": "6 min read"
+      }
+    },
+    "post03": {
+      "breadcrumbTitle": {
+        "en": "2024 Game Art Trends Analysis",
+        "ko": "2024 Game Art Trends Analysis"
+      },
+      "category": {
+        "en": "Industry",
+        "ko": "Industry"
+      },
+      "date": {
+        "en": "Nov 28, 2024",
+        "ko": "Nov 28, 2024"
+      },
+      "title": {
+        "en": "2024 Game Art Trends Analysis",
+        "ko": "2024 Game Art Trends Analysis"
+      },
+      "subtitle": {
+        "en": "Exploring the latest trends shaping the game art industry this year.",
+        "ko": "올해 게임 아트 산업을 형성하고 있는 최신 트렌드를 탐구합니다."
+      },
+      "author": {
+        "en": "MAJORS Team",
+        "ko": "MAJORS Team"
+      },
+      "readTime": {
+        "en": "7 min read",
+        "ko": "7 min read"
+      }
+    },
+    "post04": {
+      "breadcrumbTitle": {
+        "en": "Project Spotlight: Mobile RPG Art Direction",
+        "ko": "Project Spotlight: Mobile RPG Art Direction"
+      },
+      "category": {
+        "en": "Showcase",
+        "ko": "Showcase"
+      },
+      "date": {
+        "en": "Nov 20, 2024",
+        "ko": "Nov 20, 2024"
+      },
+      "title": {
+        "en": "Project Spotlight: Mobile RPG Art Direction",
+        "ko": "Project Spotlight: Mobile RPG Art Direction"
+      },
+      "subtitle": {
+        "en": "Showcasing our recent work on a major mobile RPG title's visual development.",
+        "ko": "주요 모바일 RPG 타이틀의 비주얼 개발에 대한 최근 작업을 소개합니다."
+      },
+      "author": {
+        "en": "MAJORS Team",
+        "ko": "MAJORS Team"
+      },
+      "readTime": {
+        "en": "5 min read",
+        "ko": "5 min read"
+      }
+    },
+    "post05": {
+      "breadcrumbTitle": {
+        "en": "Color Theory for Game Environments",
+        "ko": "Color Theory for Game Environments"
+      },
+      "category": {
+        "en": "Tutorials",
+        "ko": "Tutorials"
+      },
+      "date": {
+        "en": "Nov 15, 2024",
+        "ko": "Nov 15, 2024"
+      },
+      "title": {
+        "en": "Color Theory for Game Environments",
+        "ko": "Color Theory for Game Environments"
+      },
+      "subtitle": {
+        "en": "Master the use of color to create mood and atmosphere in your game environments.",
+        "ko": "게임 환경에서 분위기와 무드를 만들어내는 색채 이론의 활용법을 마스터하세요."
+      },
+      "author": {
+        "en": "MAJORS Team",
+        "ko": "MAJORS Team"
+      },
+      "readTime": {
+        "en": "10 min read",
+        "ko": "10 min read"
+      }
+    },
+    "post06": {
+      "breadcrumbTitle": {
+        "en": "From Concept to Final: Asset Pipeline",
+        "ko": "From Concept to Final: Asset Pipeline"
+      },
+      "category": {
+        "en": "Process",
+        "ko": "Process"
+      },
+      "date": {
+        "en": "Nov 10, 2024",
+        "ko": "Nov 10, 2024"
+      },
+      "title": {
+        "en": "From Concept to Final: Asset Pipeline",
+        "ko": "From Concept to Final: Asset Pipeline"
+      },
+      "subtitle": {
+        "en": "Understanding our streamlined pipeline from initial concepts to production-ready assets.",
+        "ko": "초기 컨셉부터 프로덕션 준비 완료 에셋까지의 효율적인 파이프라인을 이해합니다."
+      },
+      "author": {
+        "en": "MAJORS Team",
+        "ko": "MAJORS Team"
+      },
+      "readTime": {
+        "en": "9 min read",
+        "ko": "9 min read"
+      }
+    }
+  }
+}

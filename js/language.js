@@ -46,9 +46,13 @@ function switchLanguage(lang) {
     // 페이지 콘텐츠 업데이트
     updatePageContent();
     updateProjectsPage();
+    updateBlogPage();
     
     // HTML lang 속성 업데이트
     document.documentElement.lang = lang === 'ko' ? 'ko' : 'en';
+    
+    // Dispatch custom event for other scripts to listen
+    window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
     
     console.log(`🌐 언어 전환: ${lang.toUpperCase()}`);
 }
@@ -104,24 +108,9 @@ function updatePageContent() {
 
 // 네비게이션 업데이트
 function updateNavigation() {
-    const nav = translations.nav;
-    if (!nav) return;
-    
-    const navLinks = {
-        'home': document.querySelector('a[href="#home"]'),
-        'about': document.querySelector('a[href="#about"]'),
-        'projects': document.querySelector('a[href="projects.html"]'),
-        'gallery': document.querySelector('a[href="gallery.html"]'),
-        'blog': document.querySelector('a[href="blog.html"]'),
-        'services': document.querySelector('a[href="#services"]'),
-        'contact': document.querySelector('a[href="#contact"]')
-    };
-    
-    Object.keys(navLinks).forEach(key => {
-        if (navLinks[key] && nav[key]) {
-            navLinks[key].textContent = nav[key][currentLang];
-        }
-    });
+    // 네비게이션 메뉴는 항상 영문으로 유지 (제목이므로)
+    // 메뉴는 HTML에 하드코딩되어 있고 항상 영문이므로 업데이트하지 않음
+    // 로고도 변경하지 않음 (MAJORS STUDIO로 고정)
 }
 
 // About 섹션 업데이트
@@ -395,25 +384,41 @@ function updateMetaTags() {
 
 // Projects 페이지 업데이트
 function updateProjectsPage() {
-    // Projects 페이지용 번역 데이터
-    const projectsTranslations = {
-        filterTabs: {
-            all: { en: 'All Projects', ko: '모든 프로젝트' },
-            games: { en: 'Games', ko: '게임' },
-            character: { en: 'Character Design', ko: '캐릭터 디자인' },
-            concept: { en: 'Concept Art', ko: '컨셉 아트' },
-            promotional: { en: 'Promotional', ko: '프로모션' }
-        }
-    };
-    
-    // 필터 탭 업데이트
+    // Projects 페이지의 필터 탭은 항상 영문으로 유지
+    // (제목이므로 영문으로 통일)
     const filterTabs = document.querySelectorAll('.filter-tab');
-    if (filterTabs.length > 0) {
-        filterTabs[0].textContent = projectsTranslations.filterTabs.all[currentLang];
-        filterTabs[1].textContent = projectsTranslations.filterTabs.games[currentLang];
-        filterTabs[2].textContent = projectsTranslations.filterTabs.character[currentLang];
-        filterTabs[3].textContent = projectsTranslations.filterTabs.concept[currentLang];
-        filterTabs[4].textContent = projectsTranslations.filterTabs.promotional[currentLang];
+    if (filterTabs.length > 0 && filterTabs.length === 5) {
+        // Projects page filter
+        filterTabs[0].textContent = 'All Projects';
+        filterTabs[1].textContent = 'Games';
+        filterTabs[2].textContent = 'Character Design';
+        filterTabs[3].textContent = 'Concept Art';
+        filterTabs[4].textContent = 'Promotional';
+    }
+}
+
+// Blog 페이지 업데이트
+function updateBlogPage() {
+    // Blog 페이지의 카테고리 탭은 항상 영문으로 유지
+    const categoryTabs = document.querySelectorAll('.category-tab');
+    if (categoryTabs.length > 0) {
+        categoryTabs[0].textContent = 'All Posts';
+        if (categoryTabs[1]) categoryTabs[1].textContent = 'Tutorials';
+        if (categoryTabs[2]) categoryTabs[2].textContent = 'Process';
+        if (categoryTabs[3]) categoryTabs[3].textContent = 'Industry';
+        if (categoryTabs[4]) categoryTabs[4].textContent = 'Showcase';
+    }
+    
+    // Gallery 페이지의 필터 탭은 항상 영문으로 유지
+    const galleryFilterTabs = document.querySelectorAll('.filter-tab');
+    if (galleryFilterTabs.length > 0 && galleryFilterTabs.length === 6) {
+        // Gallery page filter
+        galleryFilterTabs[0].textContent = 'All Works';
+        galleryFilterTabs[1].textContent = 'Illustration';
+        galleryFilterTabs[2].textContent = 'Concept Art';
+        galleryFilterTabs[3].textContent = 'Character';
+        galleryFilterTabs[4].textContent = 'Environment';
+        galleryFilterTabs[5].textContent = 'Key Art';
     }
 }
 
@@ -434,6 +439,7 @@ async function initLanguage() {
     if (currentLang === 'ko') {
         updatePageContent();
         updateProjectsPage();
+        updateBlogPage();
     }
     
     console.log(`✅ 언어 시스템 초기화 완료 (현재: ${currentLang.toUpperCase()})`);

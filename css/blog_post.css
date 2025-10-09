@@ -219,7 +219,7 @@
 }
 
 .article-body p {
-    font-size: 1.1em;
+    font-size: 1.045em; /* 1.1em * 0.95 */
     line-height: 1.8;
     color: #444;
     margin-bottom: 20px;

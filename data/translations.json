@@ -2,37 +2,37 @@
   "nav": {
     "home": {
       "en": "Home",
-      "ko": "홈"
+      "ko": "Home"
     },
     "about": {
       "en": "About",
-      "ko": "소개"
+      "ko": "About"
     },
     "projects": {
       "en": "Projects",
-      "ko": "프로젝트"
+      "ko": "Projects"
     },
     "gallery": {
       "en": "Gallery",
-      "ko": "갤러리"
+      "ko": "Gallery"
     },
     "blog": {
       "en": "Blog",
-      "ko": "블로그"
+      "ko": "Blog"
     },
     "services": {
       "en": "Services",
-      "ko": "서비스"
+      "ko": "Services"
     },
     "contact": {
       "en": "Contact",
-      "ko": "연락하기"
+      "ko": "Contact"
     }
   },
   "about": {
     "title": {
       "en": "About Us",
-      "ko": "회사 소개"
+      "ko": "About Us"
     },
     "content": {
       "en": "In an age where a few lines of prompts generate images and illustrations are completed with a single click, AI has lowered the barriers to design. Yet paradoxically, the line between true professionals and amateurs has become sharper than ever. Anyone can create a simple image now. But that's merely output—it cannot become art. The difference between those who settle for AI's first result and those who see it as a starting point determines everything. Maintaining stylistic consistency while expressing emotion. Unifying worldview and atmosphere while building brand identity. Selecting optimal results from countless generations and crafting high-quality visuals with refined completion. This is where a creator's true skill reveals itself. We don't simply use AI as a tool. We know how to collaborate with AI. Twenty years of game graphics experience provides direction, AI expands possibilities, and professional instinct completes the vision. From concept art to polished illustrations, we ensure consistent quality across every visual element of a project. Through AI-powered efficient workflows, we deliver faster results at more reasonable costs. This is the domain of true professionals in the AI era.",
@@ -42,41 +42,41 @@
   "latestProjects": {
     "title": {
       "en": "Latest Projects",
-      "ko": "최신 프로젝트"
+      "ko": "Latest Projects"
     },
     "viewAll": {
       "en": "View All Projects",
-      "ko": "모든 프로젝트 보기"
+      "ko": "View All Projects"
     },
     "items": [
       {
         "title": {
           "en": "Game Concept Art",
-          "ko": "게임 컨셉 아트"
+          "ko": "Game Concept Art"
         },
         "category": {
           "en": "Concept Art",
-          "ko": "컨셉 아트"
+          "ko": "Concept Art"
         }
       },
       {
         "title": {
           "en": "Character Illustration",
-          "ko": "캐릭터 일러스트"
+          "ko": "Character Illustration"
         },
         "category": {
           "en": "Character Design",
-          "ko": "캐릭터 디자인"
+          "ko": "Character Design"
         }
       },
       {
         "title": {
           "en": "Environment & Promotional Animation",
-          "ko": "환경 & 프로모션 애니메이션"
+          "ko": "Environment & Promotional Animation"
         },
         "category": {
           "en": "Environment & Animation",
-          "ko": "환경 & 애니메이션"
+          "ko": "Environment & Animation"
         }
       }
     ]
@@ -84,41 +84,41 @@
   "gallery": {
     "title": {
       "en": "Gallery",
-      "ko": "갤러리"
+      "ko": "Gallery"
     },
     "viewFull": {
       "en": "View Full gallery",
-      "ko": "전체 갤러리 보기"
+      "ko": "View Full gallery"
     },
     "items": [
       {
         "title": {
           "en": "Artwork Title 1",
-          "ko": "작품 제목 1"
+          "ko": "Artwork Title 1"
         },
         "category": {
           "en": "Illustration",
-          "ko": "일러스트"
+          "ko": "Illustration"
         }
       },
       {
         "title": {
           "en": "Artwork Title 2",
-          "ko": "작품 제목 2"
+          "ko": "Artwork Title 2"
         },
         "category": {
           "en": "Concept Art",
-          "ko": "컨셉 아트"
+          "ko": "Concept Art"
         }
       },
       {
         "title": {
           "en": "Artwork Title 3",
-          "ko": "작품 제목 3"
+          "ko": "Artwork Title 3"
         },
         "category": {
           "en": "Character Design",
-          "ko": "캐릭터 디자인"
+          "ko": "Character Design"
         }
       }
     ]
@@ -126,13 +126,13 @@
   "services": {
     "title": {
       "en": "Our Services",
-      "ko": "서비스 소개"
+      "ko": "Our Services"
     },
     "items": [
       {
         "title": {
           "en": "Game Concept Art",
-          "ko": "게임 컨셉 아트"
+          "ko": "Game Concept Art"
         },
         "description": {
           "en": "High-quality concept art created by expert artists with 20 years of experience combined with AI technology. From rapid ideation to detailed finished works, delivered efficiently.",
@@ -142,7 +142,7 @@
       {
         "title": {
           "en": "Character Illustration",
-          "ko": "캐릭터 일러스트"
+          "ko": "Character Illustration"
         },
         "description": {
           "en": "Captivating character designs specialized for games and advertising. Creating characters optimized for project objectives using diverse styles and expression techniques.",
@@ -152,7 +152,7 @@
       {
         "title": {
           "en": "Environment Art",
-          "ko": "환경 아트"
+          "ko": "Environment Art"
         },
         "description": {
           "en": "Game backgrounds and environment designs that maximize immersion. Building consistent worldviews from concept to final completion to enhance player experience.",
@@ -162,7 +162,7 @@
       {
         "title": {
           "en": "Promotional Animation",
-          "ko": "프로모션 애니메이션"
+          "ko": "Promotional Animation"
         },
         "description": {
           "en": "2D motion graphics and promotional animations that elevate brand value. Adding vitality to static illustrations to create more impactful marketing materials.",
@@ -172,7 +172,7 @@
       {
         "title": {
           "en": "AI Workflow",
-          "ko": "AI 워크플로우"
+          "ko": "AI Workflow"
         },
         "description": {
           "en": "Efficient production process utilizing the latest AI tools. Guaranteeing high-quality results with 50% faster work speed and reasonable costs compared to traditional methods.",
@@ -182,7 +182,7 @@
       {
         "title": {
           "en": "Integrated Art Solution",
-          "ko": "통합 아트 솔루션"
+          "ko": "Integrated Art Solution"
         },
         "description": {
           "en": "One-stop service from concept to completion. Delivering cohesive results by finishing all 2D graphic elements of a project with consistent style and quality.",
@@ -194,13 +194,13 @@
   "clients": {
     "title": {
       "en": "Our Clients",
-      "ko": "주요 클라이언트"
+      "ko": "Our Clients"
     }
   },
   "testimonials": {
     "title": {
       "en": "Client Feedback",
-      "ko": "클라이언트 후기"
+      "ko": "Client Feedback"
     },
     "items": [
       {
@@ -210,7 +210,7 @@
         },
         "author": {
           "en": "- Major Game Developer",
-          "ko": "- 대형 게임 개발사"
+          "ko": "- Major Game Developer"
         }
       },
       {
@@ -220,7 +220,7 @@
         },
         "author": {
           "en": "- Mobile Game Publisher",
-          "ko": "- 모바일 게임 퍼블리셔"
+          "ko": "- Mobile Game Publisher"
         }
       },
       {
@@ -230,7 +230,7 @@
         },
         "author": {
           "en": "- Design Studio",
-          "ko": "- 디자인 스튜디오"
+          "ko": "- Design Studio"
         }
       }
     ]
@@ -238,7 +238,7 @@
   "contact": {
     "infoTitle": {
       "en": "Contact information",
-      "ko": "연락처 정보"
+      "ko": "Contact information"
     },
     "intro": {
       "en": "Please use contact information below. If you want to send us a message, please use our contact form to the right and we will respond promptly.",
@@ -246,7 +246,7 @@
     },
     "location": {
       "en": "HQ Location:",
-      "ko": "본사 위치:"
+      "ko": "HQ Location:"
     },
     "locationText": {
       "en": "Seongnam-si, Gyeonggi-do, Korea",
@@ -254,65 +254,65 @@
     },
     "email": {
       "en": "Email:",
-      "ko": "이메일:"
+      "ko": "Email:"
     },
     "social": {
       "en": "Social links:",
-      "ko": "소셜 링크:"
+      "ko": "Social links:"
     },
     "formTitle": {
       "en": "Send us a message",
-      "ko": "메시지 보내기"
+      "ko": "Send us a message"
     },
     "namePlaceholder": {
       "en": "Name *",
-      "ko": "이름 *"
+      "ko": "Name *"
     },
     "emailPlaceholder": {
       "en": "E-mail *",
-      "ko": "이메일 *"
+      "ko": "E-mail *"
     },
     "projectTypePlaceholder": {
       "en": "Project Type *",
-      "ko": "프로젝트 유형 *"
+      "ko": "Project Type *"
     },
     "projectTypes": {
       "conceptArt": {
         "en": "Concept Art",
-        "ko": "컨셉 아트"
+        "ko": "Concept Art"
       },
       "characterDesign": {
         "en": "Character Design",
-        "ko": "캐릭터 디자인"
+        "ko": "Character Design"
       },
       "environmentDesign": {
         "en": "Environment Design",
-        "ko": "환경 디자인"
+        "ko": "Environment Design"
       },
       "illustration": {
         "en": "Illustration",
-        "ko": "일러스트레이션"
+        "ko": "Illustration"
       },
       "artDirection": {
         "en": "Art Direction",
-        "ko": "아트 디렉션"
+        "ko": "Art Direction"
       },
       "multiple": {
         "en": "Multiple Services",
-        "ko": "복합 서비스"
+        "ko": "Multiple Services"
       },
       "consultation": {
         "en": "Consultation",
-        "ko": "상담"
+        "ko": "Consultation"
       }
     },
     "messagePlaceholder": {
       "en": "Message *",
-      "ko": "메시지 *"
+      "ko": "Message *"
     },
     "submitButton": {
       "en": "SEND MESSAGE",
-      "ko": "메시지 전송"
+      "ko": "SEND MESSAGE"
     }
   },
   "footer": {

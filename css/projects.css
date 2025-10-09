@@ -251,6 +251,7 @@
     color: #666;
     line-height: 1.6;
     margin-bottom: 20px;
+    font-size: 0.95em;
 }
 
 .project-tags {
@@ -452,7 +453,7 @@
 }
 
 .modal-description {
-    font-size: 1.1em;
+    font-size: 1.045em; /* 1.1em * 0.95 */
     line-height: 1.8;
     color: #666;
     margin-bottom: 30px;

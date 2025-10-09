@@ -4,7 +4,7 @@
       "id": "project1",
       "title": {
         "en": "Epic Fantasy Adventure",
-        "ko": "에픽 판타지 어드벤처"
+        "ko": "Epic Fantasy Adventure"
       },
       "description": {
         "en": "A large-scale game project that builds an immersive fantasy world. It guides players into a captivating world of adventure with original art style and detailed environmental design.",
@@ -14,23 +14,23 @@
       "thumbnail": "assets/image/project01/01.png",
       "client": {
         "en": "Creative Studio",
-        "ko": "크리에이티브 스튜디오"
+        "ko": "Creative Studio"
       },
       "duration": {
         "en": "3 months",
-        "ko": "3개월"
+        "ko": "3 months"
       },
       "services": {
         "en": "Art Direction, Concept Art, Visual Development",
-        "ko": "아트 디렉션, 컨셉 아트, 비주얼 개발"
+        "ko": "Art Direction, Concept Art, Visual Development"
       },
       "teamSize": {
         "en": "4 Artists",
-        "ko": "4명의 아티스트"
+        "ko": "4 Artists"
       },
       "tags": {
         "en": ["Art Direction", "Concept Art", "Visual Development"],
-        "ko": ["아트 디렉션", "컨셉 아트", "비주얼 개발"]
+        "ko": ["Art Direction", "Concept Art", "Visual Development"]
       },
       "media": [
         {
@@ -55,7 +55,7 @@
       "id": "project2",
       "title": {
         "en": "Character Design Showcase",
-        "ko": "캐릭터 디자인 쇼케이스"
+        "ko": "Character Design Showcase"
       },
       "description": {
         "en": "A character design portfolio featuring various genres and styles. Created vibrant characters by visually expressing each character's personality and story.",
@@ -65,23 +65,23 @@
       "thumbnail": "assets/image/project02/01.png",
       "client": {
         "en": "Design Agency",
-        "ko": "디자인 에이전시"
+        "ko": "Design Agency"
       },
       "duration": {
         "en": "2 months",
-        "ko": "2개월"
+        "ko": "2 months"
       },
       "services": {
         "en": "Character Design, Illustration, Art Direction",
-        "ko": "캐릭터 디자인, 일러스트레이션, 아트 디렉션"
+        "ko": "Character Design, Illustration, Art Direction"
       },
       "teamSize": {
         "en": "3 Artists",
-        "ko": "3명의 아티스트"
+        "ko": "3 Artists"
       },
       "tags": {
         "en": ["Character Design", "Illustration", "Art Direction"],
-        "ko": ["캐릭터 디자인", "일러스트레이션", "아트 디렉션"]
+        "ko": ["Character Design", "Illustration", "Art Direction"]
       },
       "media": [
         {
@@ -98,7 +98,7 @@
       "id": "project3",
       "title": {
         "en": "Environmental Concept Art",
-        "ko": "환경 컨셉 아트"
+        "ko": "Environmental Concept Art"
       },
       "description": {
         "en": "Environmental concept art featuring a unique worldview that blends sci-fi and fantasy. Implemented an immersive game environment by creating a futuristic yet mystical atmosphere.",
@@ -108,23 +108,23 @@
       "thumbnail": "assets/image/project03/01.png",
       "client": {
         "en": "Production Company",
-        "ko": "프로덕션 컴퍼니"
+        "ko": "Production Company"
       },
       "duration": {
         "en": "4 months",
-        "ko": "4개월"
+        "ko": "4 months"
       },
       "services": {
         "en": "Concept Art, Environment Design, Visual Development",
-        "ko": "컨셉 아트, 환경 디자인, 비주얼 개발"
+        "ko": "Concept Art, Environment Design, Visual Development"
       },
       "teamSize": {
         "en": "5 Artists",
-        "ko": "5명의 아티스트"
+        "ko": "5 Artists"
       },
       "tags": {
         "en": ["Concept Art", "Environment Design", "Visual Development"],
-        "ko": ["컨셉 아트", "환경 디자인", "비주얼 개발"]
+        "ko": ["Concept Art", "Environment Design", "Visual Development"]
       },
       "media": [
         {
@@ -145,7 +145,7 @@
       "id": "project4",
       "title": {
         "en": "Mobile Game Trailer",
-        "ko": "모바일 게임 트레일러"
+        "ko": "Mobile Game Trailer"
       },
       "description": {
         "en": "A dynamic trailer video for a mobile game. Attracts user interest by visually conveying the core elements of the game.",
@@ -155,23 +155,23 @@
       "thumbnail": "assets/image/project04/02.png",
       "client": {
         "en": "Mobile Game Studio",
-        "ko": "모바일 게임 스튜디오"
+        "ko": "Mobile Game Studio"
       },
       "duration": {
         "en": "2 weeks",
-        "ko": "2주"
+        "ko": "2 weeks"
       },
       "services": {
         "en": "Motion Graphics, Video Editing, Sound Design",
-        "ko": "모션 그래픽, 영상 편집, 사운드 디자인"
+        "ko": "Motion Graphics, Video Editing, Sound Design"
       },
       "teamSize": {
         "en": "2 Artists",
-        "ko": "2명의 아티스트"
+        "ko": "2 Artists"
       },
       "tags": {
         "en": ["Motion Graphics", "Trailer", "Promotional"],
-        "ko": ["모션 그래픽", "트레일러", "프로모션"]
+        "ko": ["Motion Graphics", "Trailer", "Promotional"]
       },
       "media": [
         {

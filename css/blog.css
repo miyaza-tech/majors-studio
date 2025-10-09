@@ -15,7 +15,7 @@
 }
 
 .blog-hero p {
-    font-size: 1.2em;
+    font-size: 1.14em; /* 1.2em * 0.95 */
     opacity: 0.9;
 }
 
@@ -121,7 +121,7 @@
 }
 
 .featured-text p {
-    font-size: 1.1em;
+    font-size: 1.045em; /* 1.1em * 0.95 */
     line-height: 1.8;
     color: #666;
     margin-bottom: 25px;
@@ -188,6 +188,7 @@
    color: #666;
    line-height: 1.6;
    margin-bottom: 15px;
+   font-size: 0.95em;
 }
 
 /* Post Category Badge */

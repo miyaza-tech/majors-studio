@@ -1,5 +1,89 @@
 // ===== BLOG POST PAGE FUNCTIONALITY =====
 
+let blogPostData = null;
+let currentPostId = 'featured'; // Default post ID
+
+// ===== LOAD BLOG POST DATA =====
+async function loadBlogPostData() {
+    try {
+        const response = await fetch('data/blog_post_content.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        blogPostData = await response.json();
+        console.log('✅ Blog post data loaded successfully');
+        return blogPostData;
+    } catch (error) {
+        console.error('❌ Failed to load blog post data:', error);
+        return null;
+    }
+}
+
+// ===== DETECT CURRENT POST ID FROM URL =====
+function detectCurrentPost() {
+    const currentPage = window.location.pathname.split('/').pop();
+    
+    if (currentPage === 'blog_post.html') {
+        return 'featured';
+    } else if (currentPage === 'blog_post_01.html') {
+        return 'post01';
+    } else if (currentPage === 'blog_post_02.html') {
+        return 'post02';
+    } else if (currentPage === 'blog_post_03.html') {
+        return 'post03';
+    } else if (currentPage === 'blog_post_04.html') {
+        return 'post04';
+    } else if (currentPage === 'blog_post_05.html') {
+        return 'post05';
+    } else if (currentPage === 'blog_post_06.html') {
+        return 'post06';
+    }
+    
+    return 'featured';
+}
+
+// ===== UPDATE POST CONTENT =====
+function updatePostContent() {
+    if (!blogPostData) return;
+    
+    const lang = localStorage.getItem('language') || 'en';
+    const postData = blogPostData.posts[currentPostId];
+    
+    if (!postData) return;
+    
+    // Helper function to get translated text
+    const getText = (field) => {
+        if (typeof field === 'object' && field !== null) {
+            return field[lang] || field['en'] || '';
+        }
+        return field || '';
+    };
+    
+    // Update breadcrumb
+    const breadcrumbHome = document.querySelector('.breadcrumb a[href="index.html"]');
+    const breadcrumbBlog = document.querySelector('.breadcrumb a[href="blog.html"]');
+    const breadcrumbCurrent = document.querySelector('.breadcrumb span');
+    
+    if (breadcrumbHome) breadcrumbHome.textContent = getText(blogPostData.breadcrumb.home);
+    if (breadcrumbBlog) breadcrumbBlog.textContent = getText(blogPostData.breadcrumb.blog);
+    if (breadcrumbCurrent) breadcrumbCurrent.textContent = getText(postData.breadcrumbTitle);
+    
+    // Update article header
+    const articleCategory = document.querySelector('.article-category');
+    const articleDate = document.querySelector('.article-date');
+    const articleTitle = document.querySelector('.article-header h1');
+    const articleSubtitle = document.querySelector('.article-subtitle');
+    const authorName = document.querySelector('.author-name');
+    const readTime = document.querySelector('.read-time');
+    
+    if (articleCategory) articleCategory.textContent = getText(postData.category);
+    if (articleDate) articleDate.textContent = getText(postData.date);
+    if (articleTitle) articleTitle.textContent = getText(postData.title);
+    if (articleSubtitle) articleSubtitle.textContent = getText(postData.subtitle);
+    if (authorName) authorName.textContent = getText(postData.author);
+    if (readTime) readTime.textContent = '⏱ ' + getText(postData.readTime);
+}
+
 // Table of Contents - Active section highlighting
 function initTableOfContents() {
     const tocLinks = document.querySelectorAll('.table-of-contents a');
@@ -209,7 +293,16 @@ function scrollToTop() {
 }
 
 // Initialize everything on page load
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    // Detect current post
+    currentPostId = detectCurrentPost();
+    
+    // Load blog post data
+    await loadBlogPostData();
+    
+    // Update content with current language
+    updatePostContent();
+    
     initTableOfContents();
     initShareButtons();
     initRelatedPosts();
@@ -227,6 +320,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+});
+
+// Listen for language changes
+window.addEventListener('languageChanged', function() {
+    updatePostContent();
 });
 
 console.log('Blog-post.js loaded successfully');
