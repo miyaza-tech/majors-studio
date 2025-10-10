@@ -1055,6 +1055,7 @@ nav {
     color: #222222;
     box-sizing: border-box;
     height: 50px; /* 입력 필드 높이 통일 */
+    line-height: 1.2; /* 텍스트가 잘리지 않도록 line-height 추가 */
 }
 
 .contact-right textarea {
