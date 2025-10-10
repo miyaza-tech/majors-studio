@@ -116,6 +116,7 @@ nav {
     transition: all 0.3s;
     border: none;
     cursor: pointer;
+    display: inline-block;
 }
 
 .contact-btn:hover {
@@ -129,34 +130,36 @@ nav {
     align-items: center;
     gap: 8px;
     margin-left: 20px;
+    background: #000000;
+    border-radius: 50px;
+    padding: 4px;
 }
 
 .lang-btn {
     background: transparent;
     border: none;
-    color: #666666;
+    color: #999999;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
     cursor: pointer;
-    padding: 0;
-    transition: color 0.3s ease;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
     outline: none;
     font-family: 'Arial', sans-serif;
+    border-radius: 50px;
 }
 
 .lang-btn:hover {
-    color: #000000;
+    color: #ffffff;
 }
 
 .lang-btn.active {
+    background: #ffffff;
     color: #000000;
-    font-weight: 500;
 }
 
 .lang-divider {
-    color: #cccccc;
-    font-size: 14px;
-    user-select: none;
+    display: none;
 }
 
 /* Language Dropdown (legacy - keep for compatibility) */
@@ -1304,6 +1307,20 @@ footer {
    .language-switcher {
        justify-content: center;
        margin-top: 20px;
+       background: #ffffff;
+   }
+
+   .lang-btn {
+       color: #666666;
+   }
+
+   .lang-btn.active {
+       background: #000000;
+       color: #ffffff;
+   }
+
+   .contact-btn {
+       display: none;
    }
 
    .contact-form {
