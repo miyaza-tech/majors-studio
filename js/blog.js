@@ -253,6 +253,21 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
     
+    // Blog Cards 클릭 이벤트 추가
+    const blogCards = document.querySelectorAll('.blog-card');
+    blogCards.forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', (e) => {
+            // onclick 속성이 있으면 실행되도록 함
+            const onclickAttr = card.getAttribute('onclick');
+            if (onclickAttr) {
+                eval(onclickAttr);
+            } else {
+                window.location.href = 'blog_post.html';
+            }
+        });
+    });
+    
     console.log('🎉 Blog 로딩 완료');
 });
 
