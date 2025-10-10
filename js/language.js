@@ -59,17 +59,24 @@ function switchLanguage(lang) {
 
 // 언어 버튼 활성화 상태 업데이트
 function updateLanguageButtons() {
+    // 모바일 버전 (햄버거 메뉴 안)
     const enBtn = document.getElementById('langEN');
     const koBtn = document.getElementById('langKO');
     
-    if (enBtn && koBtn) {
-        if (currentLang === 'en') {
-            enBtn.classList.add('active');
-            koBtn.classList.remove('active');
-        } else {
-            enBtn.classList.remove('active');
-            koBtn.classList.add('active');
-        }
+    // 데스크톱 버전 (오른쪽)
+    const enBtnDesktop = document.getElementById('langEN-desktop');
+    const koBtnDesktop = document.getElementById('langKO-desktop');
+    
+    if (currentLang === 'en') {
+        if (enBtn) enBtn.classList.add('active');
+        if (koBtn) koBtn.classList.remove('active');
+        if (enBtnDesktop) enBtnDesktop.classList.add('active');
+        if (koBtnDesktop) koBtnDesktop.classList.remove('active');
+    } else {
+        if (enBtn) enBtn.classList.remove('active');
+        if (koBtn) koBtn.classList.add('active');
+        if (enBtnDesktop) enBtnDesktop.classList.remove('active');
+        if (koBtnDesktop) koBtnDesktop.classList.add('active');
     }
 }
 

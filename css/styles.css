@@ -96,11 +96,11 @@ nav {
 }
 
 .nav-links a:hover {
-    color: #ffffff;
+    color: #667eea;
 }
 
 .nav-links a.active {
-    color: #ffffff;
+    color: #667eea;
     font-weight: 500;
 }
 
@@ -132,6 +132,28 @@ nav {
     background: #ffffff;
     border-radius: 50px;
     padding: 3px;
+}
+
+/* Desktop: 언어 변경을 li가 아닌 별도 div로 표시 */
+@media (min-width: 769px) {
+    .nav-links .language-switcher {
+        display: none !important;
+    }
+    
+    nav > .language-switcher {
+        display: flex !important;
+    }
+}
+
+/* Mobile: 햄버거 메뉴 밖의 언어 변경 숨김 */
+@media (max-width: 768px) {
+    nav > .language-switcher {
+        display: none !important;
+    }
+    
+    .nav-links .language-switcher {
+        display: none;
+    }
 }
 
 .lang-btn {
@@ -252,7 +274,7 @@ nav {
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 1001;
+    z-index: 10000;
     transition: transform 0.3s ease;
     position: relative;
 }
@@ -302,50 +324,101 @@ nav {
 
 /* Mobile Navigation Overlay */
 .nav-links.mobile-active {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(34, 34, 34, 0.98);
-    backdrop-filter: blur(10px);
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 80px 20px 20px;
-    gap: 20px;
-    z-index: 1000;
-    overflow-y: auto;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    background: #222222 !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    padding: 100px 20px 20px !important;
+    gap: 20px !important;
+    z-index: 9999 !important;
+    overflow-y: auto !important;
+    margin: 0 !important;
+    transform: none !important;
 }
 
 .nav-links.mobile-active li {
-    list-style: none;
-    width: 100%;
-    max-width: 280px;
+    list-style: none !important;
+    width: 100% !important;
+    max-width: 280px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
 
 .nav-links.mobile-active a {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #FAFAFA;
-    text-decoration: none;
-    padding: 14px 24px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    display: block;
-    text-align: center;
-    white-space: nowrap;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.1rem !important;
+    font-weight: 500 !important;
+    color: #FAFAFA !important;
+    text-decoration: none !important;
+    padding: 14px 24px !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    display: block !important;
+    text-align: center !important;
+    width: 100% !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    position: relative !important;
+    z-index: 1 !important;
 }
 
 .nav-links.mobile-active a:hover,
 .nav-links.mobile-active a.active {
-    background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border-color: transparent;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    background: linear-gradient(45deg, #667eea 0%, #764ba2 100%) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border-color: transparent !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4) !important;
+    z-index: 2 !important;
+    font-weight: 600 !important;
+}
+
+/* 모바일 메뉴에서 언어 변경 스타일 */
+.nav-links.mobile-active .language-switcher {
+    display: flex !important;
+    width: 100% !important;
+    max-width: 280px !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    justify-content: center !important;
+    margin-top: 0 !important;
+    gap: 0 !important;
+}
+
+.nav-links.mobile-active .lang-btn {
+    color: #FAFAFA !important;
+    font-size: 1.1rem !important;
+    font-weight: 500 !important;
+    padding: 14px 24px !important;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.3s ease !important;
+    flex: 1 !important;
+    margin: 0 4px !important;
+}
+
+.nav-links.mobile-active .lang-btn:hover,
+.nav-links.mobile-active .lang-btn.active {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: none !important;
+    font-weight: 600 !important;
+}
+
+.nav-links.mobile-active .lang-divider {
+    display: none !important;
 }
 
 /* ===== HERO SECTION ===== */
@@ -567,7 +640,7 @@ nav {
     background: #F5F5F5;
     padding: 40px;
     border-radius: 8px;
-    font-size: 1.045em; /* 1.1em * 0.95 */
+    font-size: 14px;
     line-height: 1.8;
     color: #666;
     text-align: justify;
@@ -624,7 +697,7 @@ nav {
 
 .service-item p {
     color: #666;
-    font-size: 0.9025em; /* 0.95em * 0.95 */
+    font-size: 14px;
 }
 
 /* ===== LATEST PROJECTS SECTION (Projects 페이지와 동일한 스타일) ===== */
@@ -687,7 +760,7 @@ nav {
 }
 
 .latest-project-overlay p {
-    font-size: 0.95em;
+    font-size: 14px;
     color: #888;
     margin: 0;
 }
@@ -944,7 +1017,7 @@ nav {
 }
 
 .testimonial-item p {
-    font-size: 0.95em; /* 1em * 0.95 */
+    font-size: 14px;
     line-height: 1.8;
     color: #666;
     margin-bottom: 20px;
@@ -964,7 +1037,7 @@ nav {
 .testimonial-author {
     font-weight: 600;
     color: #222222;
-    font-size: 0.95em;
+    font-size: 14px;
     margin-top: auto;
 }
 
@@ -1012,7 +1085,7 @@ nav {
     color: #666;
     line-height: 1.6;
     margin-bottom: 40px;
-    font-size: 0.95em;
+    font-size: 14px;
 }
 
 .contact-item {

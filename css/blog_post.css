@@ -219,7 +219,7 @@
 }
 
 .article-body p {
-    font-size: 1.045em; /* 1.1em * 0.95 */
+    font-size: 14px;
     line-height: 1.8;
     color: #444;
     margin-bottom: 20px;
@@ -302,7 +302,7 @@ blockquote cite {
 
 .stat-label {
     color: #666;
-    font-size: 0.95em;
+    font-size: 14px;
 }
 
 /* Author Bio */

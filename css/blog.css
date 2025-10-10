@@ -5,7 +5,12 @@
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     padding: 120px 0 80px;
-    text-align: center;
+  .post-content p {
+   color: #666;
+   line-height: 1.6;
+   margin-bottom: 15px;
+   font-size: 14px;
+}-align: center;
 }
 
 .blog-hero h1 {
@@ -15,7 +20,7 @@
 }
 
 .blog-hero p {
-    font-size: 1.14em; /* 1.2em * 0.95 */
+    font-size: 14px;
     opacity: 0.9;
 }
 
@@ -121,7 +126,7 @@
 }
 
 .featured-text p {
-    font-size: 1.045em; /* 1.1em * 0.95 */
+    font-size: 14px;
     line-height: 1.8;
     color: #666;
     margin-bottom: 25px;

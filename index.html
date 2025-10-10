@@ -56,12 +56,17 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li class="language-switcher">
+                    <button id="langEN" class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+                    <span class="lang-divider">|</span>
+                    <button id="langKO" class="lang-btn" onclick="switchLanguage('ko')">KR</button>
+                </li>
             </ul>
             
             <div class="language-switcher">
-                <button id="langEN" class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+                <button id="langEN-desktop" class="lang-btn active" onclick="switchLanguage('en')">EN</button>
                 <span class="lang-divider">|</span>
-                <button id="langKO" class="lang-btn" onclick="switchLanguage('ko')">KR</button>
+                <button id="langKO-desktop" class="lang-btn" onclick="switchLanguage('ko')">KR</button>
             </div>
         </nav>
     </header>

@@ -300,8 +300,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Load blog post data
     await loadBlogPostData();
     
-    // Update content with current language
-    updatePostContent();
+    // Wait a bit for language.js to initialize
+    setTimeout(() => {
+        updatePostContent();
+    }, 100);
     
     initTableOfContents();
     initShareButtons();
@@ -323,7 +325,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // Listen for language changes
-window.addEventListener('languageChanged', function() {
+window.addEventListener('languageChanged', function(e) {
+    console.log('Language changed to:', e.detail.lang);
     updatePostContent();
 });
 
