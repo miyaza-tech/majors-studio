@@ -517,24 +517,37 @@ nav {
 }
 
 .about-content {
-    max-width: 840px;
+    max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
+    padding: 0 20px;
 }
 
 .about h2 {
     font-size: 2.0em;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     color: #222222;
+    text-align: center;
 }
 
 .about p {
+    background: #F5F5F5;
+    padding: 40px;
+    border-radius: 8px;
     font-size: 1.045em; /* 1.1em * 0.95 */
     line-height: 1.8;
-    margin-bottom: 20px;
     color: #666;
     text-align: justify;
     text-justify: inter-word;
+    margin: 0;
+    position: relative;
+}
+
+.about p::before {
+    content: '"';
+    font-size: 2em;
+    color: #667eea;
+    display: block;
+    margin-bottom: -10px;
 }
 
 /* ===== SERVICES SECTION ===== */
@@ -930,6 +943,10 @@ nav {
     
     .testimonial-item {
         min-height: auto;
+    }
+
+    .about p {
+        padding: 30px 25px;
     }
 }
 
