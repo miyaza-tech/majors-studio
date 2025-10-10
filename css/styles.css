@@ -1262,6 +1262,11 @@ footer {
        display: flex;
    }
 
+   .language-switcher {
+       justify-content: center;
+       margin-top: 20px;
+   }
+
    .contact-form {
        padding: 30px 20px;
    }
