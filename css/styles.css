@@ -1045,7 +1045,7 @@ nav {
 .contact-right textarea,
 .contact-right select {
     width: 100%;
-    padding: 15px;
+    padding: 12px 15px;
     background: #f5f5f5;
     border: 1px solid #e0e0e0;
     border-radius: 0;
@@ -1055,7 +1055,7 @@ nav {
     color: #222222;
     box-sizing: border-box;
     height: 50px; /* 입력 필드 높이 통일 */
-    line-height: 1.2; /* 텍스트가 잘리지 않도록 line-height 추가 */
+    line-height: normal; /* 텍스트가 잘리지 않도록 normal line-height */
 }
 
 .contact-right textarea {
