@@ -519,7 +519,6 @@ nav {
 .about-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
 .about h2 {
@@ -531,14 +530,14 @@ nav {
 
 .about p {
     background: #F5F5F5;
-    padding: 40px;
+    padding: 40px 20px;
     border-radius: 8px;
     font-size: 1.045em; /* 1.1em * 0.95 */
     line-height: 1.8;
     color: #666;
     text-align: justify;
     text-justify: inter-word;
-    margin: 0;
+    margin: 0 20px;
     position: relative;
 }
 
@@ -947,7 +946,8 @@ nav {
     }
 
     .about p {
-        padding: 30px 25px;
+        padding: 30px 20px;
+        margin: 0 20px;
     }
 }
 
