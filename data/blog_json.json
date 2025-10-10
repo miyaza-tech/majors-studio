@@ -56,7 +56,7 @@
         "ko": "8 min"
       },
       "image": "assets/image/blog/01.jpg",
-      "url": "blog_post_01.html"
+      "url": "blog_post.html?id=post01"
     },
     {
       "id": 2,
@@ -85,7 +85,7 @@
         "ko": "6 min"
       },
       "image": "assets/image/blog/02.jpg",
-      "url": "blog_post_02.html"
+      "url": "blog_post.html?id=post02"
     },
     {
       "id": 3,
@@ -114,7 +114,7 @@
         "ko": "7 min"
       },
       "image": "assets/image/blog/03.jpg",
-      "url": "blog_post_03.html"
+      "url": "blog_post.html?id=post03"
     },
     {
       "id": 4,
@@ -143,7 +143,7 @@
         "ko": "5 min"
       },
       "image": "assets/image/blog/04.jpg",
-      "url": "blog_post_04.html"
+      "url": "blog_post.html?id=post04"
     },
     {
       "id": 5,
@@ -172,7 +172,7 @@
         "ko": "10 min"
       },
       "image": "assets/image/blog/05.jpg",
-      "url": "blog_post_05.html"
+      "url": "blog_post.html?id=post05"
     },
     {
       "id": 6,
@@ -201,7 +201,7 @@
         "ko": "9 min"
       },
       "image": "assets/image/blog/06.jpg",
-      "url": "blog_post_06.html"
+      "url": "blog_post.html?id=post06"
     }
   ]
 }

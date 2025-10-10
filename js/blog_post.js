@@ -21,24 +21,17 @@ async function loadBlogPostData() {
 
 // ===== DETECT CURRENT POST ID FROM URL =====
 function detectCurrentPost() {
-    const currentPage = window.location.pathname.split('/').pop();
+    // URL 파라미터에서 id 가져오기 (예: blog_post.html?id=post01)
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = urlParams.get('id');
     
-    if (currentPage === 'blog_post.html') {
-        return 'featured';
-    } else if (currentPage === 'blog_post_01.html') {
-        return 'post01';
-    } else if (currentPage === 'blog_post_02.html') {
-        return 'post02';
-    } else if (currentPage === 'blog_post_03.html') {
-        return 'post03';
-    } else if (currentPage === 'blog_post_04.html') {
-        return 'post04';
-    } else if (currentPage === 'blog_post_05.html') {
-        return 'post05';
-    } else if (currentPage === 'blog_post_06.html') {
-        return 'post06';
+    // id 파라미터가 있으면 사용, 없으면 featured 기본값
+    if (postId) {
+        console.log('📌 Loading post ID from URL:', postId);
+        return postId;
     }
     
+    console.log('📌 No post ID in URL, using featured post');
     return 'featured';
 }
 

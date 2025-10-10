@@ -242,27 +242,30 @@ document.addEventListener('DOMContentLoaded', async () => {
     initializeNewsletter();
     
     // Featured Post 클릭
+    // Featured Post 클릭 이벤트
     const featured = document.querySelector('.featured-content');
     if (featured) {
         featured.style.cursor = 'pointer';
         featured.addEventListener('click', (e) => {
             if (!e.target.classList.contains('read-more-btn')) {
                 e.preventDefault();
+                // Featured post는 항상 기본 blog_post.html (파라미터 없음)
                 window.location.href = 'blog_post.html';
             }
         });
     }
     
-    // Blog Cards 클릭 이벤트 추가
+    // Blog Cards 클릭 이벤트 추가 - URL 파라미터 방식
     const blogCards = document.querySelectorAll('.blog-card');
-    blogCards.forEach(card => {
+    blogCards.forEach((card, index) => {
         card.style.cursor = 'pointer';
         card.addEventListener('click', (e) => {
-            // onclick 속성이 있으면 실행되도록 함
-            const onclickAttr = card.getAttribute('onclick');
-            if (onclickAttr) {
-                eval(onclickAttr);
+            // blogData.posts 배열에서 해당 포스트의 URL 가져오기
+            if (blogData.posts && blogData.posts[index]) {
+                const postUrl = blogData.posts[index].url;
+                window.location.href = postUrl;
             } else {
+                // 데이터가 없으면 기본 페이지로
                 window.location.href = 'blog_post.html';
             }
         });
