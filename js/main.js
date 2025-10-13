@@ -216,7 +216,12 @@ function initializeEmailJS() {
         return false;
     }
     
-    emailjs.init("Bn7_gkZzr5mpW9QM4");
+    if (typeof EMAIL_CONFIG === 'undefined') {
+        console.error('⚠️ EMAIL_CONFIG not found. Please create js/config.js file.');
+        return false;
+    }
+    
+    emailjs.init(EMAIL_CONFIG.publicKey);
     console.log('EmailJS initialized');
     return true;
 }
@@ -263,8 +268,8 @@ function handleFormSubmit(e) {
     
     // EmailJS 전송
     emailjs.sendForm(
-        'service_0ahp61o',
-        'template_uc1mm7x',
+        EMAIL_CONFIG.serviceId,
+        EMAIL_CONFIG.templateId,
         e.target
     ).then((response) => {
         console.log('Email sent successfully:', response.status);
