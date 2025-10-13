@@ -1,8 +1,15 @@
 # 🔒 EmailJS 설정 가이드
 
+## 🌍 환경별 설정 구조
+
+프로젝트는 **로컬 개발**과 **프로덕션(GitHub Pages)** 환경을 자동으로 구분합니다:
+
+- **로컬 개발**: `js/config.js` 사용 (Git 제외)
+- **프로덕션**: `js/config.production.js` 사용 (Git 포함)
+
 ## 📋 초기 설정 방법
 
-### 1. 설정 파일 생성
+### 1. 로컬 개발용 설정 파일 생성
 ```bash
 # config.example.js를 config.js로 복사
 cp js/config.example.js js/config.js

@@ -401,7 +401,26 @@
     <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
 
     <!-- JavaScript -->
-    <script src="js/config.js"></script>
+    <!-- 환경별 설정 파일 로드 -->
+    <script>
+        // 로컬 개발 환경 확인
+        const isLocalhost = window.location.hostname === 'localhost' || 
+                           window.location.hostname === '127.0.0.1';
+        
+        // 환경에 맞는 config 파일 로드
+        const configScript = document.createElement('script');
+        configScript.src = isLocalhost ? 'js/config.js' : 'js/config.production.js';
+        configScript.onerror = function() {
+            // config.js 로드 실패 시 폴백
+            if (isLocalhost) {
+                console.warn('⚠️ config.js not found. Using config.production.js as fallback.');
+                const fallbackScript = document.createElement('script');
+                fallbackScript.src = 'js/config.production.js';
+                document.head.appendChild(fallbackScript);
+            }
+        };
+        document.head.appendChild(configScript);
+    </script>
     <script src="js/language.js"></script>
     <script src="js/main.js"></script>
 

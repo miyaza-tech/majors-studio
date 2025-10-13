@@ -1,7 +1,8 @@
 # ===== MAJORS STUDIO - Git Ignore =====
 
-# EmailJS 설정 파일 (API 키 포함)
+# EmailJS 로컬 개발 설정 파일 (API 키 포함)
 js/config.js
+# 주의: config.production.js는 Git에 포함됨 (GitHub Pages용)
 
 # 환경 설정 파일
 .env
