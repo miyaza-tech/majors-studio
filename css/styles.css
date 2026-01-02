@@ -56,10 +56,10 @@ header {
 
 /* 스크롤 시 헤더 배경 */
 header.scrolled {
-    background: rgba(250, 250, 250, 0.95);
+    background: #222222;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 nav.container {
@@ -109,7 +109,7 @@ nav.container {
 
 .nav-links a {
     font-family: 'Bebas Neue', sans-serif;
-    color: #1a1a2e;
+    color: #ffffff;
     text-decoration: none;
     transition: color 0.3s;
     font-size: 24px;
@@ -125,10 +125,10 @@ nav.container {
     color: #667eea;
 }
 
-/* ?�래??구분??*/
+/* 슬래시 구분자 */
 .nav-divider {
     font-family: 'Bebas Neue', sans-serif;
-    color: #1a1a2e;
+    color: #ffffff;
     font-size: 24px;
     padding: 0 10px;
     user-select: none;
@@ -146,7 +146,7 @@ nav.container {
     background: transparent;
     border: none;
     font-family: 'Bebas Neue', sans-serif;
-    color: #1a1a2e;
+    color: #ffffff;
     font-size: 24px;
     font-weight: 400;
     cursor: pointer;
@@ -209,64 +209,6 @@ nav.container {
     .language-switcher-nav {
         display: none !important;
     }
-}
-
-.lang-btn {
-    background: transparent;
-    border: none;
-    font-family: 'Bebas Neue', sans-serif;
-    color: #1a1a2e;
-    font-size: 24px;
-    font-weight: 400;
-    cursor: pointer;
-    padding: 0;
-    transition: color 0.3s ease;
-    outline: none;
-    letter-spacing: 1px;
-}
-
-.lang-btn:hover {
-    color: #667eea;
-}
-
-.lang-btn.active {
-    color: #667eea;
-    background: transparent;
-}
-
-.lang-divider {
-    display: none;
-}
-    .nav-links .language-switcher-nav {
-        display: none;
-    }
-}
-
-.lang-btn {
-    background: transparent;
-    border: none;
-    font-family: 'Bebas Neue', sans-serif;
-    color: #1a1a2e;
-    font-size: 24px;
-    font-weight: 400;
-    cursor: pointer;
-    padding: 0;
-    transition: color 0.3s ease;
-    outline: none;
-    letter-spacing: 1px;
-}
-
-.lang-btn:hover {
-    color: #667eea;
-}
-
-.lang-btn.active {
-    color: #667eea;
-    background: transparent;
-}
-
-.lang-divider {
-    display: none;
 }
 
 /* Language Dropdown (legacy - keep for compatibility) */
@@ -375,7 +317,7 @@ nav.container {
 .hamburger-line {
     width: 26px;
     height: 2px;
-    background: #1a1a2e;
+    background: #ffffff;
     border-radius: 2px;
     transition: all 0.3s ease;
     position: absolute;
@@ -618,6 +560,62 @@ nav.container {
     line-height: 1.6;
 }
 
+/* Hero Text */
+.hero-text {
+    position: absolute;
+    bottom: 60px;
+    right: 60px;
+    z-index: 3;
+    text-align: right;
+    pointer-events: none;
+}
+
+.hero-text-line {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 70px;
+    font-weight: 400;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.0;
+    margin: 0;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* 모바일 Hero Text 최적화 */
+@media (max-width: 768px) {
+    .hero-text {
+        bottom: 30px;
+        right: 20px;
+        left: 20px;
+    }
+    
+    .hero-text-line {
+        font-size: 24px;
+    }
+}
+
+/* 태블릿 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-text-line {
+        font-size: 50px;
+    }
+}
+
+/* 중간 데스크톱 */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .hero-text-line {
+        font-size: 60px;
+    }
+}
+
+/* 대형 데스크톱 (1440px 이상) */
+@media (min-width: 1441px) {
+    .hero-text-line {
+        font-size: 80px;
+    }
+}
+
 /* Hero Navigation Dots */
 .hero-dots {
     position: absolute;
@@ -839,8 +837,8 @@ nav.container {
 
 .about p {
     background: #F5F5F5;
-    padding: 60px;
-    padding-bottom: 100px;
+    padding: 40px 60px;
+    padding-bottom: 133px;
     border-radius: 12px;
     font-size: 16px;
     line-height: 2.0;
@@ -848,7 +846,9 @@ nav.container {
     text-align: justify;
     text-justify: inter-word;
     margin: 0;
+    margin-bottom: 0;
     position: relative;
+    overflow: visible;
 }
 
 .about p::before {
@@ -858,6 +858,27 @@ nav.container {
     display: block;
     text-align: center;
     margin-bottom: -10px;
+}
+
+.about-author {
+    font-weight: 600;
+    color: #222222;
+    font-size: 14px;
+    text-align: center;
+    margin-top: -75px;
+    padding-bottom: 30px;
+    position: relative;
+    z-index: 10;
+}
+
+.about-author a {
+    color: #222222;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.about-author a:hover {
+    color: #667eea;
 }
 
 /* ===== SERVICES SECTION ===== */
@@ -901,6 +922,7 @@ nav.container {
     font-size: 1.5em;
     margin-bottom: 20px;
     color: #222222;
+    white-space: nowrap;
 }
 
 .service-item p {
@@ -1466,13 +1488,14 @@ nav.container {
 
 .contact-item p {
     color: #222222;
-    font-size: 1.1em;
+    font-size: 0.9em;
 }
 
 .contact-item a {
     color: #222222;
     text-decoration: none;
     transition: color 0.3s;
+    font-size: 0.9em;
 }
 
 .contact-item a:hover {

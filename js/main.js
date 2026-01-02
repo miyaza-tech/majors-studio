@@ -402,12 +402,12 @@ function initializeBackToTop() {
     if (!backToTop) return;
     
     function toggleVisibility() {
-        // 스크롤이 100px 이상이거나, 페이지가 viewport보다 크면 표시
-        const pageHeight = document.documentElement.scrollHeight;
-        const viewportHeight = window.innerHeight;
-        const hasScroll = pageHeight > viewportHeight + 100;
+        // Hero 섹션 높이 가져오기
+        const heroSection = safeQuery('.hero');
+        const heroHeight = heroSection ? heroSection.offsetHeight : window.innerHeight;
         
-        if (window.scrollY > 100 || hasScroll) {
+        // Hero 섹션의 1/3을 지나면 버튼 표시
+        if (window.scrollY > heroHeight / 3) {
             backToTop.classList.add('show', 'visible');
         } else {
             backToTop.classList.remove('show', 'visible');

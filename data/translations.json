@@ -35,8 +35,8 @@
       "ko": "About Us"
     },
     "content": {
-      "en": "In an age where a few lines of prompts generate images and illustrations are completed with a single click, AI has lowered the barriers to design. Yet paradoxically, the line between true professionals and amateurs has become sharper than ever. Anyone can create a simple image now. But that's merely output—it cannot become art. The difference between those who settle for AI's first result and those who see it as a starting point determines everything. Maintaining stylistic consistency while expressing emotion. Unifying worldview and atmosphere while building brand identity. Selecting optimal results from countless generations and crafting high-quality visuals with refined completion. This is where a creator's true skill reveals itself. We don't simply use AI as a tool. We know how to collaborate with AI. Twenty years of game graphics experience provides direction, AI expands possibilities, and professional instinct completes the vision. From concept art to polished illustrations, we ensure consistent quality across every visual element of a project. Through AI-powered efficient workflows, we deliver faster results at more reasonable costs. This is the domain of true professionals in the AI era.",
-      "ko": "몇 줄의 프롬프트로 이미지가 생성되고, 클릭 한 번에 일러스트가 완성되는 시대. AI는 디자인의 문턱을 낮췄지만, 역설적으로 진짜 프로와 아마추어의 경계는 그 어느 때보다 명확해졌습니다. 이제 누구나 간단한 이미지를 만들 수 있습니다. 하지만 그것은 단순한 결과물일 뿐, 작품이 될 수는 없습니다. AI가 만든 첫 결과에 만족하는 사람과, 그것을 시작점으로 삼는 사람의 차이가 모든 것을 결정합니다. 감성을 담으면서도 스타일의 일관성을 유지하고, 세계관과 분위기를 통일하며 브랜드 아이덴티티를 구축하는 일. 수많은 생성 결과에서 최적을 선별하고, 세련된 완성도로 고퀄리티 비주얼을 만드는 것. 여기서 크리에이터의 진짜 실력이 드러납니다. 우리는 AI를 단순히 도구로 사용하지 않습니다. AI와 협업하는 방법을 알고 있습니다. 20년간의 게임 그래픽 경험이 방향을 제시하고, AI가 가능성을 확장하며, 전문가의 감각이 완성합니다. 컨셉 아트부터 완성도 높은 일러스트까지, 프로젝트의 모든 비주얼 요소를 일관된 품질로 보장합니다. AI 기반 효율적 워크플로우를 통해 더 빠르고, 합리적인 비용으로 결과물을 제공합니다. 이것이 AI 시대 진정한 프로페셔널의 영역입니다."
+      "en": "Twenty years ago, we took our first steps into the industry. Moving between comics, animation, and games, we experienced every stage of the graphics pipeline. That journey made us who we are today. Now, we run a small studio working with a new tool called AI. We live in an era where a few lines of prompt can generate an image. AI has lowered the barrier to design, but paradoxically, the line between true professionals and amateurs has never been clearer. Anyone can create an image now. But there's a real difference between those who settle for AI's first output and those who treat it as a starting point. Maintaining stylistic consistency while capturing emotion. Unifying worldview and brand identity. Selecting the best from countless generated results and refining them to a polished finish. This is where a creator's true skill shows. AI opens possibilities. Twenty years of experience sets the direction. Two people's sensibilities complete the work. From concept to final art, we ensure consistent quality across your entire project—delivered faster and at a more reasonable cost. Game studios, video production companies, advertising agencies—we work with creators building their own worlds.",
+      "ko": "20년 전 업계에 첫발을 내딛고, 만화, 애니메이션, 게임을 오가며 그래픽의 모든 과정을 경험했고 그 시간이 지금의 우리를 만들었습니다. 이제 작은 스튜디오에서 AI라는 새로운 도구와 함께 일하고 있습니다. 몇 줄의 프롬프트로 이미지가 생성되는 시대입니다. AI는 디자인의 문턱을 낮췄지만, 역설적으로 진짜 프로와 아마추어의 경계는 더 명확해졌습니다. 누구나 이미지를 만들 수 있지만, AI가 만든 첫 결과에 만족하는 사람과 그것을 시작점으로 삼는 사람 사이에는 분명한 차이가 있습니다. 스타일의 일관성을 유지하면서 감성을 담고, 세계관과 브랜드 아이덴티티를 통일하는 일. 수많은 생성 결과에서 최적을 선별해 세련된 완성도로 끌어올리는 것. 여기서 크리에이터의 진짜 실력이 드러납니다. AI가 가능성을 열어주면, 20년의 경험이 방향을 잡고, 두 사람의 감각이 완성합니다. 컨셉부터 최종 아트까지, 프로젝트 전체에 걸쳐 일관된 품질을 보장하면서도 더 빠르게, 더 합리적인 비용으로 전달합니다. 게임 개발사, 영상 프로덕션, 광고 에이전시—자신만의 세계를 만들어가는 창작자들과 함께합니다."
     }
   },
   "latestProjects": {
@@ -131,8 +131,8 @@
     "items": [
       {
         "title": {
-          "en": "Game Concept Art",
-          "ko": "Game Concept Art"
+          "en": "Concept Art",
+          "ko": "Concept Art"
         },
         "description": {
           "en": "High-quality concept art created by expert artists with 20 years of experience combined with AI technology. From rapid ideation to detailed finished works, delivered efficiently.",
@@ -141,12 +141,12 @@
       },
       {
         "title": {
-          "en": "Character Illustration",
-          "ko": "Character Illustration"
+          "en": "Character & IP Development",
+          "ko": "Character & IP Development"
         },
         "description": {
-          "en": "Captivating character designs specialized for games and advertising. Creating characters optimized for project objectives using diverse styles and expression techniques.",
-          "ko": "게임과 광고에 특화된 매력적인 캐릭터 디자인. 다양한 스타일과 표현 기법으로 프로젝트 목적에 최적화된 캐릭터를 제작합니다."
+          "en": "From compelling character design to original IP development. We create tailored visuals for games, advertising, animation, and more.",
+          "ko": "매력적인 캐릭터 디자인부터 독창적인 IP 개발까지. 게임, 광고, 애니메이션 등 프로젝트의 목적에 맞춰 제작합니다."
         }
       },
       {
@@ -161,8 +161,8 @@
       },
       {
         "title": {
-          "en": "Promotional Animation",
-          "ko": "Promotional Animation"
+          "en": "Promotional Video",
+          "ko": "Promotional Video"
         },
         "description": {
           "en": "2D motion graphics and promotional animations that elevate brand value. Adding vitality to static illustrations to create more impactful marketing materials.",
@@ -171,12 +171,12 @@
       },
       {
         "title": {
-          "en": "AI Workflow",
-          "ko": "AI Workflow"
+          "en": "Fast-Track Production",
+          "ko": "Fast-Track Production"
         },
         "description": {
-          "en": "Efficient production process utilizing the latest AI tools. Guaranteeing high-quality results with 50% faster work speed and reasonable costs compared to traditional methods.",
-          "ko": "최신 AI 도구를 활용한 효율적인 제작 프로세스. 기존 방식 대비 50% 빠른 작업 속도와 합리적인 비용으로 고품질 결과물을 보장합니다."
+          "en": "Rapid production powered by AI-enhanced workflows. Deliver high-quality results up to 50% faster than traditional methods, meeting tight deadlines without sacrificing artistic quality.",
+          "ko": "AI 기반 워크플로우로 빠른 제작을 실현합니다. 기존 방식 대비 최대 50% 빠른 속도로 고품질 결과물을 제공하여, 촉박한 일정에서도 예술적 품질을 유지합니다."
         }
       },
       {
