@@ -216,7 +216,12 @@ function initializeEmailJS() {
         return false;
     }
     
-    emailjs.init("Bn7_gkZzr5mpW9QM4");
+    if (typeof EMAIL_CONFIG === 'undefined') {
+        console.error('⚠️ EMAIL_CONFIG not found. Please create js/config.js file.');
+        return false;
+    }
+    
+    emailjs.init(EMAIL_CONFIG.publicKey);
     console.log('EmailJS initialized');
     return true;
 }
@@ -236,15 +241,28 @@ function initializeContactForm() {
 function handleFormSubmit(e) {
     e.preventDefault();
     
+    // 🔍 디버그: 폼 제출 시작
+    console.log('🔵 Form submit started');
+    
     // 중복 전송 방지
     if (isSubmitting) {
-        console.log('Email already sending...');
+        console.log('⚠️ Email already sending...');
         return;
     }
+    
+    // 🔍 디버그: EMAIL_CONFIG 확인
+    if (typeof EMAIL_CONFIG === 'undefined') {
+        console.error('❌ EMAIL_CONFIG is not defined!');
+        alert('Configuration error. Please check console.');
+        return;
+    }
+    console.log('✅ EMAIL_CONFIG found:', EMAIL_CONFIG);
     
     // 폼 데이터 검증
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
+    
+    console.log('📝 Form data:', data);
     
     if (!data.name || !data.email || !data.projectType || !data.message) {
         alert('Please fill in all required fields.');
@@ -259,20 +277,27 @@ function handleFormSubmit(e) {
     submitBtn.textContent = 'SENDING...';
     submitBtn.disabled = true;
     
-    console.log('Sending email...');
+    console.log('📧 Sending email with config:', {
+        serviceId: EMAIL_CONFIG.serviceId,
+        templateId: EMAIL_CONFIG.templateId
+    });
     
     // EmailJS 전송
     emailjs.sendForm(
-        'service_0ahp61o',
-        'template_uc1mm7x',
+        EMAIL_CONFIG.serviceId,
+        EMAIL_CONFIG.templateId,
         e.target
     ).then((response) => {
-        console.log('Email sent successfully:', response.status);
+        console.log('✅ Email sent successfully!', response);
+        console.log('   Status:', response.status);
+        console.log('   Text:', response.text);
         alert('문의가 성공적으로 전송되었습니다!\n24시간 내에 답변드리겠습니다.');
         e.target.reset();
     }).catch((error) => {
-        console.error('Email send failed:', error);
-        alert('전송 중 오류가 발생했습니다.\n다시 시도해주세요.');
+        console.error('❌ Email send failed!');
+        console.error('   Error:', error);
+        console.error('   Error text:', error.text || error.message);
+        alert('전송 중 오류가 발생했습니다.\n다시 시도해주세요.\n\nError: ' + (error.text || error.message));
     }).finally(() => {
         // 상태 복원
         submitBtn.textContent = originalText;
