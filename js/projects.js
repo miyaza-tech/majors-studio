@@ -276,7 +276,18 @@ function createModalContent(project) {
             <div class="modal-images">
                 <div class="image-slider" id="imageSlider">
                     ${project.media.map((item, index) => {
-                        if (item.type === 'video') {
+                        if (item.type === 'youtube') {
+                            return `
+                                <div class="modal-slide modal-video modal-youtube">
+                                    <iframe 
+                                        src="https://www.youtube.com/embed/${item.src}?autoplay=0&mute=1&loop=1&playlist=${item.src}&controls=1&rel=0"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                            `;
+                        } else if (item.type === 'video') {
                             return `
                                 <div class="modal-slide modal-video">
                                     <video src="${item.src}" muted loop playsinline controls>
