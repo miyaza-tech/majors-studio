@@ -85,12 +85,13 @@ function createProjectCard(project) {
     const isVideo = thumbnail.type === 'video';
     
     card.innerHTML = `
-        <div class="project-image ${project.id}-bg" style="background-image: url('${project.thumbnail}');">
+        ${isVideo ? `<div class="video-indicator">Video</div>` : ''}
+        <div class="project-image">
+            <div class="project-image-inner" style="background-image: url('${project.thumbnail}');"></div>
             ${isVideo ? `
                 <video class="project-video" muted loop playsinline>
                     <source src="${thumbnail.src}" type="video/mp4">
                 </video>
-                <div class="video-indicator">▶ Video</div>
             ` : ''}
         </div>
         <div class="project-info">
@@ -163,25 +164,31 @@ function initializeFilters() {
             
             const filter = tab.getAttribute('data-filter');
             
-            // Filter projects
-            projectCards.forEach((card, index) => {
-                const categories = card.getAttribute('data-category') || '';
-                const shouldShow = filter === 'all' || categories.includes(filter);
-                
-                if (shouldShow) {
-                    card.style.display = 'block';
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, index * 50);
-                } else {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 300);
-                }
+            // 먼저 모든 카드를 fade out
+            projectCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
             });
+            
+            // 잠시 후 필터링 및 fade in
+            setTimeout(() => {
+                let visibleIndex = 0;
+                projectCards.forEach((card) => {
+                    const categories = card.getAttribute('data-category') || '';
+                    const shouldShow = filter === 'all' || categories.includes(filter);
+                    
+                    if (shouldShow) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, visibleIndex * 80);
+                        visibleIndex++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }, 300);
         });
     });
 }
@@ -207,7 +214,7 @@ function openModal(projectId) {
     currentSlide = 0;
     
     createModalContent(project);
-    modal.style.display = 'block';
+    modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
     
     setTimeout(() => {
@@ -401,7 +408,7 @@ function initializeProjectVideos() {
 function initializeKeyboardNav() {
     document.addEventListener('keydown', (e) => {
         const modal = document.getElementById('projectModal');
-        if (!modal || modal.style.display !== 'block') return;
+        if (!modal || modal.style.display !== 'flex') return;
         
         switch(e.key) {
             case 'Escape':
@@ -428,28 +435,7 @@ function initializeModalOutsideClick() {
 }
 
 // ===== SCROLL TO TOP =====
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
-
-window.scrollToTop = scrollToTop;
-
-// ===== BACK TO TOP BUTTON =====
-function initializeBackToTop() {
-    const backToTop = document.getElementById('backToTop');
-    if (!backToTop) return;
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTop.classList.add('visible');
-        } else {
-            backToTop.classList.remove('visible');
-        }
-    });
-}
+// main.js에서 처리하므로 여기서는 제거
 
 // ===== PROJECT NAVIGATION FROM MAIN PAGE =====
 function handleProjectNavigation() {
@@ -488,7 +474,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     initializeProjectVideos();
     initializeKeyboardNav();
     initializeModalOutsideClick();
-    initializeBackToTop();
     handleProjectNavigation();
     
     // Animate project cards

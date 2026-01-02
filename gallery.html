@@ -22,7 +22,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
@@ -32,7 +32,7 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <a href="index.html" class="logo">MAJORS STUDIO</a>
+            <a href="index.html#home" class="logo"><img src="assets/image/logo.png" alt="MAJORS STUDIO" onmouseover="this.src='assets/image/logo_up.png'" onmouseout="this.src='assets/image/logo.png'"></a>
             
             <!-- Mobile Menu Button -->
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -41,29 +41,39 @@
                 <span class="hamburger-line"></span>
             </button>
             
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="gallery.html" class="active">Gallery</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li class="language-switcher">
-                    <button id="langEN" class="lang-btn active" onclick="switchLanguage('en')">EN</button>
-                    <span class="lang-divider">|</span>
-                    <button id="langKO" class="lang-btn" onclick="switchLanguage('ko')">KR</button>
-                </li>
-            </ul>
-            
-            <div class="language-switcher">
-                <button id="langEN-desktop" class="lang-btn active" onclick="switchLanguage('en')">EN</button>
-                <span class="lang-divider">|</span>
-                <button id="langKO-desktop" class="lang-btn" onclick="switchLanguage('ko')">KR</button>
+            <div class="nav-right">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html#home">HOME</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="projects.html">PROJECTS</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="gallery.html" class="active">GALLERY</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="index.html#about">ABOUT</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="index.html#services">SERVICES</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="index.html#contact">CONTACT</a></li>
+                    <!-- Mobile Language Switcher -->
+                    <li class="mobile-lang-switcher">
+                        <button id="langKO" class="lang-btn active" onclick="switchLanguage('ko')">KR</button>
+                        <button id="langEN" class="lang-btn" onclick="switchLanguage('en')">EN</button>
+                    </li>
+                </ul>
+                
+                <div class="language-switcher-nav">
+                    <button id="langKO-desktop" class="lang-btn active" onclick="switchLanguage('ko')">KR</button>
+                    <button id="langEN-desktop" class="lang-btn" onclick="switchLanguage('en')">EN</button>
+                </div>
             </div>
         </nav>
     </header>
 <main class="page-content">
+    <!-- Top Spacer -->
+    <div class="page-top-spacer"></div>
+    
     <!-- Filter Section -->
     <section class="filter-section">
         <div class="container">
@@ -84,131 +94,123 @@
             <div class="gallery-grid">
                 <!-- gallery Item 1 -->
                 <div class="gallery-item" data-category="illustration" onclick="openLightbox(1)">
-                    <div class="gallery-image" style="background-image: url('assets/image/gallery/01.png');">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <h3>Fantasy Illustration</h3>
-                                <p>Digital Painting</p>
-                            </div>
+                    <div class="gallery-image" style="background-image: url('assets/image/gallery/01.png');"></div>
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>Fantasy Illustration</h3>
+                            <p>Digital Painting</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- gallery Item 2 -->
                 <div class="gallery-item" data-category="concept" onclick="openLightbox(2)">
-                    <div class="gallery-image" style="background-image: url('assets/image/gallery/02.png');">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <h3>Sci-Fi Environment</h3>
-                                <p>Concept Art</p>
-                            </div>
+                    <div class="gallery-image" style="background-image: url('assets/image/gallery/02.png');"></div>
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>Sci-Fi Environment</h3>
+                            <p>Concept Art</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- gallery Item 3 -->
                 <div class="gallery-item" data-category="character" onclick="openLightbox(3)">
-                    <div class="gallery-image" style="background-image: url('assets/image/gallery/03.png');">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <h3>Character Design</h3>
-                                <p>Character Concept</p>
-                            </div>
+                    <div class="gallery-image" style="background-image: url('assets/image/gallery/03.png');"></div>
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>Character Design</h3>
+                            <p>Character Concept</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- gallery Item 4 -->
                 <div class="gallery-item" data-category="environment" onclick="openLightbox(4)">
-                    <div class="gallery-image" style="background-image: url('assets/image/gallery/04.png');">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <h3>Fantasy Landscape</h3>
-                                <p>Environment Art</p>
-                            </div>
+                    <div class="gallery-image" style="background-image: url('assets/image/gallery/04.png');"></div>
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>Fantasy Landscape</h3>
+                            <p>Environment Art</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- gallery Item 5 -->
                 <div class="gallery-item" data-category="keyart" onclick="openLightbox(5)">
-                    <div class="gallery-image" style="background-image: url('assets/image/gallery/05.png');">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <h3>Game Key Art</h3>
-                                <p>Promotional Art</p>
-                            </div>
+                    <div class="gallery-image" style="background-image: url('assets/image/gallery/05.png');"></div>
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>Game Key Art</h3>
+                            <p>Promotional Art</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- gallery Item 6 -->
                 <div class="gallery-item" data-category="concept" onclick="openLightbox(6)">
-                    <div class="gallery-image" style="background-image: url('assets/image/gallery/06.png');">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <h3>Creature Design</h3>
-                                <p>Concept Development</p>
-                            </div>
+                    <div class="gallery-image" style="background-image: url('assets/image/gallery/06.png');"></div>
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>Creature Design</h3>
+                            <p>Concept Development</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- gallery Item 7 -->
                 <div class="gallery-item" data-category="illustration" onclick="openLightbox(7)">
-                    <div class="gallery-image" style="background-image: url('assets/image/gallery/07.png');">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <h3>Book Illustration</h3>
-                                <p>Digital Art</p>
-                            </div>
+                    <div class="gallery-image" style="background-image: url('assets/image/gallery/07.png');"></div>
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>Book Illustration</h3>
+                            <p>Digital Art</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- gallery Item 8 -->
-                <div class="gallery-item gallery-item-tall" data-category="character" onclick="openLightbox(8)">
-                    <div class="gallery-image" style="background-image: url('assets/image/gallery/08.png');">
-                        <div class="gallery-overlay">
-                            <div class="overlay-content">
-                                <h3>Hero Character</h3>
-                                <p>Character Art</p>
-                            </div>
+                <div class="gallery-item" data-category="character" onclick="openLightbox(8)">
+                    <div class="gallery-image" style="background-image: url('assets/image/gallery/08.png');"></div>
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>Hero Character</h3>
+                            <p>Character Art</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- gallery Item 9 -->
                 <div class="gallery-item gallery-video" data-category="concept" onclick="openLightbox(9)">
-                <div class="gallery-image">
-                <video class="gallery-preview-video" muted loop playsinline>
-                <source src="assets/videos/gallery_01.mp4" type="video/mp4">
-                </video>
-                <div class="video-indicator">▶ Video</div>
-                <div class="gallery-overlay">
-                <div class="overlay-content">
-                <h3>Motion Concept</h3>
-                <p>Animation Reel</p>
-            </div>
-        </div>
-    </div>
-</div>
+                    <div class="video-indicator">Video</div>
+                    <div class="gallery-image">
+                        <video class="gallery-preview-video" muted loop playsinline>
+                            <source src="assets/videos/gallery_01.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>Motion Concept</h3>
+                            <p>Animation Reel</p>
+                        </div>
+                    </div>
+                </div>
 
-<!-- gallery Item 10 -->
-<div class="gallery-item gallery-video" data-category="character" onclick="openLightbox(10)">
-    <div class="gallery-image">
-        <video class="gallery-preview-video" muted loop playsinline>
-            <source src="assets/videos/gallery_02.mp4" type="video/mp4">
-        </video>
-        <div class="video-indicator">▶ Video</div>
-        <div class="gallery-overlay">
-            <div class="overlay-content">
-                <h3>Character Animation</h3>
-                <p>Character Motion Study</p>
-            </div>
-        </div>
-    </div>
-</div>
+                <!-- gallery Item 10 -->
+                <div class="gallery-item gallery-video" data-category="character" onclick="openLightbox(10)">
+                    <div class="video-indicator">Video</div>
+                    <div class="gallery-image">
+                        <video class="gallery-preview-video" muted loop playsinline>
+                            <source src="assets/videos/gallery_02.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h3>Character Animation</h3>
+                            <p>Character Motion Study</p>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- 더 많은 아이템 추가 가능 -->
             </div>
@@ -237,10 +239,14 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <h3>MAJORS STUDIO</h3>
-                <p>© 2025 MAJORS STUDIO. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="index.html"><img src="assets/image/logo.png" alt="MAJORS STUDIO" onmouseover="this.src='assets/image/logo_up.png'" onmouseout="this.src='assets/image/logo.png'"></a>
+            </div>
+            <div class="footer-info">
+                <span>© MAJORS STUDIO 2026</span>
+                <span class="footer-divider">/</span>
+                <a href="#">PRIVACY</a>
             </div>
         </div>
     </footer>

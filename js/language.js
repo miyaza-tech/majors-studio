@@ -67,17 +67,17 @@ function updateLanguageButtons() {
     const enBtnDesktop = document.getElementById('langEN-desktop');
     const koBtnDesktop = document.getElementById('langKO-desktop');
     
-    if (currentLang === 'en') {
-        if (enBtn) enBtn.classList.add('active');
-        if (koBtn) koBtn.classList.remove('active');
-        if (enBtnDesktop) enBtnDesktop.classList.add('active');
-        if (koBtnDesktop) koBtnDesktop.classList.remove('active');
-    } else {
-        if (enBtn) enBtn.classList.remove('active');
-        if (koBtn) koBtn.classList.add('active');
-        if (enBtnDesktop) enBtnDesktop.classList.remove('active');
-        if (koBtnDesktop) koBtnDesktop.classList.add('active');
-    }
+    // 모든 lang-btn 요소들
+    const allLangBtns = document.querySelectorAll('.lang-btn');
+    
+    allLangBtns.forEach(btn => {
+        const btnId = btn.id.toLowerCase();
+        if (btnId.includes('en')) {
+            btn.classList.toggle('active', currentLang === 'en');
+        } else if (btnId.includes('ko')) {
+            btn.classList.toggle('active', currentLang === 'ko');
+        }
+    });
 }
 
 // 페이지 콘텐츠 업데이트

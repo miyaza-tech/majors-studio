@@ -23,7 +23,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
@@ -33,7 +33,7 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <a href="index.html" class="logo">MAJORS STUDIO</a>
+            <a href="index.html#home" class="logo"><img src="assets/image/logo.png" alt="MAJORS STUDIO" onmouseover="this.src='assets/image/logo_up.png'" onmouseout="this.src='assets/image/logo.png'"></a>
             
             <!-- Mobile Menu Button -->
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -42,29 +42,39 @@
                 <span class="hamburger-line"></span>
             </button>
             
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li class="language-switcher">
-                    <button id="langEN" class="lang-btn active" onclick="switchLanguage('en')">EN</button>
-                    <span class="lang-divider">|</span>
-                    <button id="langKO" class="lang-btn" onclick="switchLanguage('ko')">KR</button>
-                </li>
-            </ul>
-            
-            <div class="language-switcher">
-                <button id="langEN-desktop" class="lang-btn active" onclick="switchLanguage('en')">EN</button>
-                <span class="lang-divider">|</span>
-                <button id="langKO-desktop" class="lang-btn" onclick="switchLanguage('ko')">KR</button>
+            <div class="nav-right">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html#home">HOME</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="projects.html" class="active">PROJECTS</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="index.html#about">ABOUT</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="index.html#services">SERVICES</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="index.html#contact">CONTACT</a></li>
+                    <!-- Mobile Language Switcher -->
+                    <li class="mobile-lang-switcher">
+                        <button id="langKO" class="lang-btn active" onclick="switchLanguage('ko')">KR</button>
+                        <button id="langEN" class="lang-btn" onclick="switchLanguage('en')">EN</button>
+                    </li>
+                </ul>
+                
+                <div class="language-switcher-nav">
+                    <button id="langKO-desktop" class="lang-btn active" onclick="switchLanguage('ko')">KR</button>
+                    <button id="langEN-desktop" class="lang-btn" onclick="switchLanguage('en')">EN</button>
+                </div>
             </div>
         </nav>
     </header>
 <main class="page-content">
+    <!-- Top Spacer -->
+    <div class="page-top-spacer"></div>
+    
     <!-- Filter Section -->
     <section class="filter-section">
         <div class="container">
@@ -86,7 +96,8 @@
 
                 <!-- Project 1 - Epic Fantasy Adventure -->
                 <div class="project-card" id="project1" data-category="games concept" onclick="openModal('project1')">
-                    <div class="project-image project1-bg" style="background-image: url('assets/image/project01/01.png');">
+                    <div class="project-image">
+                        <div class="project-image-inner" style="background-image: url('assets/image/project01/01.png');"></div>
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Epic Fantasy Adventure</h3>
@@ -102,7 +113,8 @@
 
                 <!-- Project 2 - Character Design Showcase -->
                 <div class="project-card" id="project2" data-category="games character" onclick="openModal('project2')">
-                    <div class="project-image project2-bg" style="background-image: url('assets/image/project02/01.png');">
+                    <div class="project-image">
+                        <div class="project-image-inner" style="background-image: url('assets/image/project02/01.png');"></div>
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Character Design Showcase</h3>
@@ -118,7 +130,8 @@
 
                 <!-- Project 3 - Environmental Concept Art -->
                 <div class="project-card" id="project3" data-category="games concept" onclick="openModal('project3')">
-                    <div class="project-image project3-bg" style="background-image: url('assets/image/project03/01.png');">
+                    <div class="project-image">
+                        <div class="project-image-inner" style="background-image: url('assets/image/project03/01.png');"></div>
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Environmental Concept Art</h3>
@@ -134,11 +147,11 @@
 
                  <!-- Project 4 - Video -->
                  <div class="project-card" id="project4" data-category="games promotional" onclick="openModal('project4')">
+                      <div class="video-indicator">▶ Video</div>
                       <div class="project-image project4-bg">
                       <video class="project-video" muted loop playsinline>
                       <source src="assets/image/project04/project04.mp4" type="video/mp4">
                       </video>
-                      <div class="video-indicator">▶ Video</div>
                  </div>
                  <div class="project-info">
                  <h3 class="project-title">Mobile Game Trailer</h3>
@@ -164,10 +177,14 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <h3>MAJORS STUDIO</h3>
-                <p>© 2025 MAJORS STUDIO. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="index.html"><img src="assets/image/logo.png" alt="MAJORS STUDIO" onmouseover="this.src='assets/image/logo_up.png'" onmouseout="this.src='assets/image/logo.png'"></a>
+            </div>
+            <div class="footer-info">
+                <span>© MAJORS STUDIO 2026</span>
+                <span class="footer-divider">/</span>
+                <a href="#">PRIVACY</a>
             </div>
         </div>
     </footer>
@@ -175,12 +192,9 @@
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
 
-    <!-- JavaScript 순서 중요! -->
-<script src="js/main.js"></script>
     <!-- JavaScript -->
     <script src="js/language.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/projects.js"></script>
-</body>
-</html>
 </body>
 </html>

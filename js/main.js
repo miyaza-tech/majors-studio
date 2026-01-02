@@ -341,13 +341,48 @@ function initializeSmoothScrolling() {
     });
 }
 
+// ===== HEADER SCROLL EFFECT =====
+function initializeHeaderScroll() {
+    const header = safeQuery('header');
+    const heroSection = safeQuery('.hero');
+    
+    if (!header) return;
+    
+    function updateHeaderBackground() {
+        // 히어로 섹션이 없는 서브페이지는 항상 배경 표시
+        if (!heroSection) {
+            header.classList.add('scrolled');
+            return;
+        }
+        
+        // 히어로 섹션이 있으면 히어로 높이 기준
+        const threshold = heroSection.offsetHeight - 100;
+        
+        if (window.scrollY > threshold) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }
+    
+    window.addEventListener('scroll', updateHeaderBackground);
+    
+    // 초기 상태 설정
+    updateHeaderBackground();
+}
+
 // ===== BACK TO TOP BUTTON =====
 function initializeBackToTop() {
     const backToTop = safeQuery('#backToTop');
     if (!backToTop) return;
     
     function toggleVisibility() {
-        if (window.scrollY > 300) {
+        // 스크롤이 100px 이상이거나, 페이지가 viewport보다 크면 표시
+        const pageHeight = document.documentElement.scrollHeight;
+        const viewportHeight = window.innerHeight;
+        const hasScroll = pageHeight > viewportHeight + 100;
+        
+        if (window.scrollY > 100 || hasScroll) {
             backToTop.classList.add('show', 'visible');
         } else {
             backToTop.classList.remove('show', 'visible');
@@ -360,39 +395,83 @@ function initializeBackToTop() {
     
     backToTop.addEventListener('click', window.scrollToTop);
     window.addEventListener('scroll', toggleVisibility);
+    window.addEventListener('resize', toggleVisibility);
     
-    // 초기 상태 설정
+    // 초기 상태 설정 - 약간의 딜레이 후 체크
+    setTimeout(toggleVisibility, 100);
     toggleVisibility();
 }
 
 // ===== ACTIVE NAVIGATION =====
 function initializeActiveNavigation() {
+    // 서브페이지(projects, gallery, blog)에서는 스크롤 기반 활성화 비활성화
+    const currentPage = window.location.pathname.split('/').pop();
+    const subPages = ['projects.html', 'gallery.html', 'blog.html', 'blog_post.html'];
+    
+    if (subPages.includes(currentPage)) {
+        // 서브페이지에서는 HTML에 설정된 active 클래스 유지
+        return;
+    }
+    
     function updateActiveNav() {
         const sections = safeQueryAll('section[id]');
         const navLinks = safeQueryAll('.nav-links a');
         
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (window.scrollY >= sectionTop - 100) {
-                current = section.getAttribute('id');
-            }
-        });
+        let current = 'home'; // 기본값을 home으로 설정
+        
+        // 페이지 맨 아래에 도달했으면 contact 활성화
+        const scrollBottom = window.scrollY + window.innerHeight;
+        const pageHeight = document.documentElement.scrollHeight;
+        
+        if (scrollBottom >= pageHeight - 50) {
+            current = 'contact';
+        } else if (window.scrollY < 100) {
+            // 페이지 맨 위에 있으면 home 활성화
+            current = 'home';
+        } else {
+            // 각 섹션을 순회하며 현재 보이는 섹션 찾기
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                
+                // 스크롤 위치가 섹션 시작점 - 200px 이상이면 해당 섹션으로 설정
+                if (window.scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+        }
         
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
+            const href = link.getAttribute('href');
+            
+            // #섹션 링크 또는 index.html#섹션 링크 매칭
+            if (href === `#${current}` || href === `index.html#${current}`) {
+                link.classList.add('active');
+            }
+            
+            // projects, gallery, blog 섹션일 때 해당 외부 페이지 링크도 활성화
+            if (current === 'projects' && href === 'projects.html') {
+                link.classList.add('active');
+            }
+            if (current === 'gallery' && href === 'gallery.html') {
+                link.classList.add('active');
+            }
+            if (current === 'blog' && href === 'blog.html') {
                 link.classList.add('active');
             }
         });
     }
     
     window.addEventListener('scroll', updateActiveNav);
+    // 초기 상태 설정
+    updateActiveNav();
 }
 
 // ===== SCROLL ANIMATIONS =====
 function initializeScrollAnimations() {
-    const observer = new IntersectionObserver((entries) => {
+    // 기본 fade-up 애니메이션 옵저버
+    const fadeUpObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate-in');
@@ -400,11 +479,100 @@ function initializeScrollAnimations() {
         });
     }, {
         threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
+        rootMargin: '0px 0px -50px 0px'
     });
     
-    safeQueryAll('.service-item, .project-item, .testimonial-item').forEach(el => {
-        observer.observe(el);
+    // 순차적 애니메이션 옵저버 (stagger effect)
+    const staggerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const children = entry.target.querySelectorAll('.stagger-item');
+                children.forEach((child, index) => {
+                    setTimeout(() => {
+                        child.classList.add('animate-in');
+                    }, index * 100);
+                });
+                staggerObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+    
+    // 섹션 타이틀 애니메이션
+    safeQueryAll('section h2').forEach(el => {
+        el.classList.add('scroll-animate', 'fade-up');
+        fadeUpObserver.observe(el);
+    });
+    
+    // 서비스 아이템 - stagger 효과
+    const servicesGrid = safeQuery('.services-grid');
+    if (servicesGrid) {
+        servicesGrid.querySelectorAll('.service-item').forEach(item => {
+            item.classList.add('stagger-item', 'scroll-animate', 'fade-up');
+        });
+        staggerObserver.observe(servicesGrid);
+    }
+    
+    // 프로젝트 아이템 - stagger 효과
+    const projectsGrid = safeQuery('.latest-projects-grid');
+    if (projectsGrid) {
+        projectsGrid.querySelectorAll('.latest-project-item').forEach(item => {
+            item.classList.add('stagger-item', 'scroll-animate', 'fade-up');
+        });
+        staggerObserver.observe(projectsGrid);
+    }
+    
+    // 갤러리 아이템 - stagger 효과
+    const galleryGrid = safeQuery('.gallery-grid');
+    if (galleryGrid) {
+        galleryGrid.querySelectorAll('.gallery-item').forEach(item => {
+            item.classList.add('stagger-item', 'scroll-animate', 'scale-in');
+        });
+        staggerObserver.observe(galleryGrid);
+    }
+    
+    // 후기 아이템 - stagger 효과
+    const testimonialsGrid = safeQuery('.testimonials-grid');
+    if (testimonialsGrid) {
+        testimonialsGrid.querySelectorAll('.testimonial-item').forEach(item => {
+            item.classList.add('stagger-item', 'scroll-animate', 'fade-up');
+        });
+        staggerObserver.observe(testimonialsGrid);
+    }
+    
+    // About 섹션
+    safeQueryAll('.about p').forEach(el => {
+        el.classList.add('scroll-animate', 'fade-up');
+        fadeUpObserver.observe(el);
+    });
+    
+    // Blog Featured 섹션
+    const blogFeatured = safeQuery('.featured-blog-content');
+    if (blogFeatured) {
+        blogFeatured.classList.add('scroll-animate', 'fade-up');
+        fadeUpObserver.observe(blogFeatured);
+    }
+    
+    // Contact 섹션
+    const contactWrapper = safeQuery('.contact-wrapper');
+    if (contactWrapper) {
+        const contactLeft = contactWrapper.querySelector('.contact-left');
+        const contactRight = contactWrapper.querySelector('.contact-right');
+        if (contactLeft) {
+            contactLeft.classList.add('scroll-animate', 'fade-right');
+            fadeUpObserver.observe(contactLeft);
+        }
+        if (contactRight) {
+            contactRight.classList.add('scroll-animate', 'fade-left');
+            fadeUpObserver.observe(contactRight);
+        }
+    }
+    
+    // CTA 버튼들
+    safeQueryAll('.cta-button, .latest-projects-cta, .gallery-cta').forEach(el => {
+        el.classList.add('scroll-animate', 'fade-up');
+        fadeUpObserver.observe(el);
     });
 }
 
@@ -546,6 +714,7 @@ document.addEventListener('DOMContentLoaded', function() {
         initializeMobileMenu();
         initializeSmoothScrolling();
         initializeBackToTop();
+        initializeHeaderScroll();
         initializeActiveNavigation();
         initializeScrollAnimations();
         initializeProjectNavigation();
@@ -554,6 +723,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // EmailJS 초기화 및 Contact Form
         if (initializeEmailJS()) {
             initializeContactForm();
+        }
+        
+        // Hero 비디오 자동 재생 (단일 영상)
+        const heroVideo = document.querySelector('.hero-video');
+        if (heroVideo) {
+            heroVideo.play().catch(function(error) {
+                console.log('Video autoplay failed:', error);
+            });
         }
         
         // Hero 슬라이더 (존재하는 경우에만)

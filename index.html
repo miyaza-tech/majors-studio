@@ -29,7 +29,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
@@ -39,7 +39,7 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <a href="#" class="logo">MAJORS STUDIO</a>
+            <a href="#home" class="logo"><img src="assets/image/logo.png" alt="MAJORS STUDIO" onmouseover="this.src='assets/image/logo_up.png'" onmouseout="this.src='assets/image/logo.png'"></a>
             
             <!-- Mobile Menu Button -->
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -48,117 +48,153 @@
                 <span class="hamburger-line"></span>
             </button>
             
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="language-switcher">
-                    <button id="langEN" class="lang-btn active" onclick="switchLanguage('en')">EN</button>
-                    <span class="lang-divider">|</span>
-                    <button id="langKO" class="lang-btn" onclick="switchLanguage('ko')">KR</button>
-                </li>
-            </ul>
-            
-            <div class="language-switcher">
-                <button id="langEN-desktop" class="lang-btn active" onclick="switchLanguage('en')">EN</button>
-                <span class="lang-divider">|</span>
-                <button id="langKO-desktop" class="lang-btn" onclick="switchLanguage('ko')">KR</button>
+            <div class="nav-right">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">HOME</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="projects.html">PROJECTS</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="#services">SERVICES</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="#contact">CONTACT</a></li>
+                    <!-- Mobile Language Switcher -->
+                    <li class="mobile-lang-switcher">
+                        <button id="langKO" class="lang-btn active" onclick="switchLanguage('ko')">KR</button>
+                        <button id="langEN" class="lang-btn" onclick="switchLanguage('en')">EN</button>
+                    </li>
+                </ul>
+                
+                <div class="language-switcher-nav">
+                    <button id="langKO-desktop" class="lang-btn active" onclick="switchLanguage('ko')">KR</button>
+                    <button id="langEN-desktop" class="lang-btn" onclick="switchLanguage('en')">EN</button>
+                </div>
             </div>
         </nav>
     </header>
 <main class="page-content">
-   <!-- Hero Section -->
-<section class="hero" id="home">
-    <!-- Background Slider -->
-    <div class="hero-slider">
-        <!-- 🔴 첫 번째 슬라이드: preload="auto" 유지 -->
-        <div class="hero-slide active">
+    <!-- 1. Hero Section (영상) -->
+    <section class="hero" id="home">
+        <!-- Single Video Background -->
+        <div class="hero-video-container">
             <video class="hero-video" 
                    muted 
                    loop 
                    playsinline 
-                   preload="auto">  <!-- ✅ 첫 번째만 auto -->
+                   autoplay
+                   preload="auto">
                 <source src="assets/videos/main_01.mp4" type="video/mp4">
             </video>
-            <div class="video-fallback" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                <!-- 텍스트 대신 이미지 폴백 -->
-                <img src="assets/image/hero_fallback_01.jpg" alt="Hero Background" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
         </div>
-        
-        <!-- 🔴 두 번째 슬라이드: preload="none"으로 변경 -->
-        <div class="hero-slide">
-            <video class="hero-video" 
-                   muted 
-                   loop 
-                   playsinline 
-                   preload="none">  <!-- ✅ none으로 변경 -->
-                <source src="assets/videos/main_02.mp4" type="video/mp4">
-            </video>
-            <div class="video-fallback" style="background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);">
-                <img src="assets/image/hero_fallback_02.jpg" alt="Character Design" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-        </div>
-
-        <!-- 🔴 세 번째 슬라이드: preload="none"으로 변경 -->
-        <div class="hero-slide">
-            <video class="hero-video" 
-                   muted 
-                   loop 
-                   playsinline 
-                   preload="none">  <!-- ✅ none으로 변경 -->
-                <source src="assets/videos/main_03.mp4" type="video/mp4">
-            </video>
-            <div class="video-fallback" style="background: linear-gradient(135deg, #00d4aa 0%, #00a8cc 100%);">
-                <img src="assets/image/hero_fallback_03.jpg" alt="Game Art" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-        </div>
-
-        <!-- 🔴 네 번째 슬라이드: preload="none"으로 변경 -->
-        <div class="hero-slide">
-            <video class="hero-video" 
-                   muted 
-                   loop 
-                   playsinline 
-                   preload="none">  <!-- ✅ none으로 변경 -->
-                <source src="assets/videos/main_04.mp4" type="video/mp4">
-            </video>
-            <div class="video-fallback" style="background: linear-gradient(135deg, #a8e6cf 0%, #88d8c0 100%);">
-                <img src="assets/image/hero_fallback_04.jpg" alt="Promotional" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-        </div>
-    </div>
-    
         
         <!-- Hero Overlay -->
         <div class="hero-overlay"></div>
-        
-        <!-- Hero Navigation Dots -->
-        <div class="hero-dots">
-            <span class="hero-dot active" data-slide="0"></span>
-            <span class="hero-dot" data-slide="1"></span>
-            <span class="hero-dot" data-slide="2"></span>
-            <span class="hero-dot" data-slide="3"></span>
-        </div>
-        
-        <!-- Hero Navigation Arrows -->
-        <button class="hero-arrow hero-arrow-left" onclick="prevHeroSlide()">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </button>
-        <button class="hero-arrow hero-arrow-right" onclick="nextHeroSlideManual()">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </button>
     </section>
 
-    <!-- About Section -->
+    <!-- 2. Latest Projects Section -->
+    <section class="latest-projects" id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <p class="section-subtitle"></p>
+                   
+            <!-- Projects Grid -->
+            <div class="latest-projects-grid">
+                <div class="latest-project-item" data-project="project1" style="cursor: pointer;">
+                    <img src="assets/image/project01/01.png" alt="Game Concept Art">
+                    <div class="latest-project-overlay">
+                        <h4>Game Concept Art</h4>
+                        <p>Concept Art</p>
+                    </div>
+                </div>
+                <div class="latest-project-item" data-project="project2" style="cursor: pointer;">
+                    <img src="assets/image/project02/01.png" alt="Character Illustration">
+                    <div class="latest-project-overlay">
+                        <h4>Character Illustration</h4>
+                        <p>Character Design</p>
+                    </div>
+                </div>
+                <div class="latest-project-item" data-project="project3" style="cursor: pointer;">
+                    <img src="assets/image/project03/01.png" alt="Environment & Promotional Animation">
+                    <div class="latest-project-overlay">
+                        <h4>Environment & Promotional Animation</h4>
+                        <p>Environment & Animation</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- View All Projects Button -->
+            <div class="latest-projects-cta">
+                <a href="projects.html" class="cta-button">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2>Gallery</h2>
+            <p class="section-subtitle"></p>
+                   
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="illustration" onclick="window.location.href='gallery.html'" style="cursor: pointer;">
+                    <img src="assets/image/gallery/01.png" alt="gallery 1">
+                    <div class="gallery-overlay">
+                        <h4>Artwork Title 1</h4>
+                        <p>Illustration</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="concept" onclick="window.location.href='gallery.html'" style="cursor: pointer;">
+                    <img src="assets/image/gallery/02.png" alt="gallery 2">
+                    <div class="gallery-overlay">
+                        <h4>Artwork Title 2</h4>
+                        <p>Concept Art</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="character" onclick="window.location.href='gallery.html'" style="cursor: pointer;">
+                    <img src="assets/image/gallery/03.png" alt="gallery 3">
+                    <div class="gallery-overlay">
+                        <h4>Artwork Title 3</h4>
+                        <p>Character Design</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="gallery-cta">
+                <a href="gallery.html" class="cta-button">View Full Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Blog Featured Section -->
+    <section class="blog-featured" id="blog">
+        <div class="container">
+            <h2>Blog</h2>
+            <div class="featured-blog-content">
+                <div class="featured-blog-image" style="background-image: url('assets/image/blog/featured.jpg');">
+                    <span class="featured-badge">Featured</span>
+                </div>
+                <div class="featured-blog-text">
+                    <span class="post-category">Industry</span>
+                    <h3>The Future of AI in Game Art Production</h3>
+                    <p>Discover how we're combining 20 years of traditional art expertise with cutting-edge AI technology to revolutionize game art production.</p>
+                    <div class="post-meta">
+                        <span class="post-date">December 15, 2024</span>
+                        <span class="post-author">By MAJORS Team</span>
+                    </div>
+                    <a href="blog.html" class="cta-button">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. About Section -->
     <section class="about" id="about">
         <div class="container">
             <h2>About Us</h2>
@@ -168,84 +204,7 @@
         </div>
     </section>
 
-<!-- Latest Projects Section -->
-<section class="latest-projects" id="projects">
-    <div class="container">
-        <h2>Latest Projects</h2>
-        <p class="section-subtitle"></p>
-               
-        <!-- Projects Grid -->
-        <div class="latest-projects-grid">
-            <div class="latest-project-item" data-project="project1" style="cursor: pointer;">
-                <img src="assets/image/project01/01.png" alt="Game Concept Art">
-                <div class="latest-project-overlay">
-                    <h4>Game Concept Art</h4>
-                    <p>Concept Art</p>
-                </div>
-            </div>
-            <div class="latest-project-item" data-project="project2" style="cursor: pointer;">
-                <img src="assets/image/project02/01.png" alt="Character Illustration">
-                <div class="latest-project-overlay">
-                    <h4>Character Illustration</h4>
-                    <p>Character Design</p>
-                </div>
-            </div>
-            <div class="latest-project-item" data-project="project3" style="cursor: pointer;">
-                <img src="assets/image/project03/01.png" alt="Environment & Promotional Animation">
-                <div class="latest-project-overlay">
-                    <h4>Environment & Promotional Animation</h4>
-                    <p>Environment & Animation</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- View All Projects Button -->
-        <div class="latest-projects-cta">
-            <a href="projects.html" class="cta-button">View All Projects</a>
-        </div>
-    </div>
-</section>
-
-<!-- gallery Section -->
-<section class="gallery" id="gallery">
-    <div class="container">
-        <h2>Gallery</h2>
-        <p class="section-subtitle"></p>
-               
-        <!-- gallery Grid -->
-        <div class="gallery-grid">
-            <div class="gallery-item" data-category="illustration" onclick="window.location.href='gallery.html'" style="cursor: pointer;">
-                <img src="assets/image/gallery/01.png" alt="gallery 1">
-                <div class="gallery-overlay">
-                    <h4>Artwork Title 1</h4>
-                    <p>Illustration</p>
-                </div>
-            </div>
-            <div class="gallery-item" data-category="concept" onclick="window.location.href='gallery.html'" style="cursor: pointer;">
-                <img src="assets/image/gallery/02.png" alt="gallery 2">
-                <div class="gallery-overlay">
-                    <h4>Artwork Title 2</h4>
-                    <p>Concept Art</p>
-                </div>
-            </div>
-            <div class="gallery-item" data-category="character" onclick="window.location.href='gallery.html'" style="cursor: pointer;">
-                <img src="assets/image/gallery/03.png" alt="gallery 3">
-                <div class="gallery-overlay">
-                    <h4>Artwork Title 3</h4>
-                    <p>Character Design</p>
-                </div>
-            </div>
-            <!-- 더 많은 포트폴리오 아이템 추가 가능 -->
-        </div>
-        
-        <!-- Load More Button -->
-        <div class="gallery-cta">
-            <a href="gallery.html" class="cta-button">View Full gallery</a>  <!-- 링크 추가 -->
-        </div>
-    </div>
-</section>
-
-    <!-- Services Section -->
+    <!-- 6. Services Section -->
     <section class="services" id="services">
         <div class="container">
             <h2>Our Services</h2>
@@ -278,121 +237,147 @@
         </div>
     </section>
 
-    <!-- Clients Section -->
-  <section class="clients">
-  <div class="container">
-    <h2>Our Clients</h2>
-    <div class="clients-grid">
-  <div class="client-logo"><img src="assets/image/client/1.png"  alt="Client 1"></div>
-  <div class="client-logo"><img src="assets/image/client/2.png"  alt="Client 2"></div>
-  <div class="client-logo"><img src="assets/image/client/3.png"  alt="Client 3"></div>
-  <div class="client-logo"><img src="assets/image/client/4.png"  alt="Client 4"></div>
-  <div class="client-logo"><img src="assets/image/client/5.png"  alt="Client 5"></div>
-  <div class="client-logo"><img src="assets/image/client/6.png"  alt="Client 6"></div>
-  <div class="client-logo"><img src="assets/image/client/7.png"  alt="Client 7"></div>
-  <div class="client-logo"><img src="assets/image/client/8.png"  alt="Client 8"></div>
-  <div class="client-logo"><img src="assets/image/client/9.png"  alt="Client 9"></div>
-  <div class="client-logo"><img src="assets/image/client/10.png" alt="Client 10"></div>
-  <div class="client-logo"><img src="assets/image/client/11.png" alt="Client 11"></div>
-  <div class="client-logo"><img src="assets/image/client/12.png" alt="Client 12"></div>
-</div>
-</div>
-</section>
-
-    <!-- Testimonials -->
-<section class="testimonials">
-    <div class="container">
-        <h2>Client Feedback</h2>
-        <div class="testimonials-grid">
-            <div class="testimonial-item">
-                <p>"MAJORS STUDIO's concept art has perfectly realized our game's vision. Their attention to detail and creative process exceeded our expectations with fervent enthusiasm."</p>
-                <div class="testimonial-author">- Major Game Developer</div>
-            </div>
-            <div class="testimonial-item">
-                <p>"Professional and reliable, always delivering high-quality results. MAJORS STUDIO has become an invaluable partner for our multiple projects. Fast, efficient and immensely talented."</p>
-                <div class="testimonial-author">- Mobile Game Publisher</div>
-            </div>
-            <div class="testimonial-item">
-                <p>"Their AI-powered workflow combined with 20 years of experience delivers exceptional results in record time. The perfect blend of traditional expertise and modern innovation."</p>
-                <div class="testimonial-author">- Design Studio</div>
+    <!-- 7. Clients Section -->
+    <section class="clients">
+        <div class="container">
+            <h2>Worked with</h2>
+        </div>
+        <div class="clients-marquee">
+            <div class="clients-track">
+                <div class="client-logo"><img src="assets/image/client/1.png" alt="Client 1"></div>
+                <div class="client-logo"><img src="assets/image/client/2.png" alt="Client 2"></div>
+                <div class="client-logo"><img src="assets/image/client/3.png" alt="Client 3"></div>
+                <div class="client-logo"><img src="assets/image/client/4.png" alt="Client 4"></div>
+                <div class="client-logo"><img src="assets/image/client/5.png" alt="Client 5"></div>
+                <div class="client-logo"><img src="assets/image/client/6.png" alt="Client 6"></div>
+                <div class="client-logo"><img src="assets/image/client/7.png" alt="Client 7"></div>
+                <div class="client-logo"><img src="assets/image/client/8.png" alt="Client 8"></div>
+                <div class="client-logo"><img src="assets/image/client/9.png" alt="Client 9"></div>
+                <div class="client-logo"><img src="assets/image/client/10.png" alt="Client 10"></div>
+                <div class="client-logo"><img src="assets/image/client/11.png" alt="Client 11"></div>
+                <div class="client-logo"><img src="assets/image/client/12.png" alt="Client 12"></div>
+                <div class="client-logo"><img src="assets/image/client/13.png" alt="Client 13"></div>
+                <div class="client-logo"><img src="assets/image/client/14.png" alt="Client 14"></div>
+                <div class="client-logo"><img src="assets/image/client/15.png" alt="Client 15"></div>
+                <div class="client-logo"><img src="assets/image/client/16.png" alt="Client 16"></div>
+                <!-- 루프를 위한 복제 -->
+                <div class="client-logo"><img src="assets/image/client/1.png" alt="Client 1"></div>
+                <div class="client-logo"><img src="assets/image/client/2.png" alt="Client 2"></div>
+                <div class="client-logo"><img src="assets/image/client/3.png" alt="Client 3"></div>
+                <div class="client-logo"><img src="assets/image/client/4.png" alt="Client 4"></div>
+                <div class="client-logo"><img src="assets/image/client/5.png" alt="Client 5"></div>
+                <div class="client-logo"><img src="assets/image/client/6.png" alt="Client 6"></div>
+                <div class="client-logo"><img src="assets/image/client/7.png" alt="Client 7"></div>
+                <div class="client-logo"><img src="assets/image/client/8.png" alt="Client 8"></div>
+                <div class="client-logo"><img src="assets/image/client/9.png" alt="Client 9"></div>
+                <div class="client-logo"><img src="assets/image/client/10.png" alt="Client 10"></div>
+                <div class="client-logo"><img src="assets/image/client/11.png" alt="Client 11"></div>
+                <div class="client-logo"><img src="assets/image/client/12.png" alt="Client 12"></div>
+                <div class="client-logo"><img src="assets/image/client/13.png" alt="Client 13"></div>
+                <div class="client-logo"><img src="assets/image/client/14.png" alt="Client 14"></div>
+                <div class="client-logo"><img src="assets/image/client/15.png" alt="Client 15"></div>
+                <div class="client-logo"><img src="assets/image/client/16.png" alt="Client 16"></div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- Contact Section -->
-<section class="contact-section" id="contact">
-    <div class="container">
-        <div class="contact-wrapper">
-            <!-- 왼쪽: Contact Information -->
-            <div class="contact-left">
-                <h2>Contact information</h2>
-                <p class="contact-intro">Please use contact information below. If you want to send us a message, please use our contact form to the right and we will respond promptly.</p>
-                
-                <div class="contact-item">
-                    <h4>HQ Location:</h4>
-                    <p>Seongnam-si, Gyeonggi-do, Korea</p>
+    <!-- 8. Testimonials (Client Feedback) Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-item">
+                    <p>"MAJORS STUDIO's concept art has perfectly realized our game's vision. Their attention to detail and creative process exceeded our expectations with fervent enthusiasm."</p>
+                    <div class="testimonial-author">- Major Game Developer</div>
                 </div>
-                
-                <div class="contact-item">
-                    <h4>Email:</h4>
-                    <p><a href="mailto:hello@majors-studio.com">hello@majors-studio.com</a></p>
+                <div class="testimonial-item">
+                    <p>"Professional and reliable, always delivering high-quality results. MAJORS STUDIO has become an invaluable partner for our multiple projects. Fast, efficient and immensely talented."</p>
+                    <div class="testimonial-author">- Mobile Game Publisher</div>
                 </div>
-                
-                <div class="contact-item">
-                    <h4>Social links:</h4>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook">f</a>
-                        <a href="#" aria-label="Twitter">𝕏</a>
-                                        <a href="#" aria-label="LinkedIn">in</a>
+                <div class="testimonial-item">
+                    <p>"Their AI-powered workflow combined with 20 years of experience delivers exceptional results in record time. The perfect blend of traditional expertise and modern innovation."</p>
+                    <div class="testimonial-author">- Design Studio</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <!-- 왼쪽: Contact Information -->
+                <div class="contact-left">
+                    <h2>Contact information</h2>
+                    <p class="contact-intro">Please use contact information below. If you want to send us a message, please use our contact form to the right and we will respond promptly.</p>
+                    
+                    <div class="contact-item">
+                        <h4>HQ Location:</h4>
+                        <p>Seongnam-si, Gyeonggi-do, Korea</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h4>Email:</h4>
+                        <p><a href="mailto:hello@majors-studio.com">hello@majors-studio.com</a></p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h4>Social links:</h4>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook">f</a>
+                            <a href="#" aria-label="Twitter">𝕏</a>
+                            <a href="#" aria-label="LinkedIn">in</a>
+                        </div>
                     </div>
                 </div>
+
+                <!-- 오른쪽: Contact Form -->
+                <div class="contact-right">
+                    <h2>Send us a message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Name *" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="E-mail *" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select id="projectType" name="projectType" required>
+                                <option value="">Project Type *</option>
+                                <option value="concept-art">Concept Art</option>
+                                <option value="character-design">Character Design</option>
+                                <option value="environment-design">Environment Design</option>
+                                <option value="illustration">Illustration</option>
+                                <option value="art-direction">Art Direction</option>
+                                <option value="multiple">Multiple Services</option>
+                                <option value="consultation">Consultation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Message *" rows="6" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">SEND MESSAGE</button>
+                    </form>
+                </div>
             </div>
-
-            <!-- 오른쪽: Contact Form -->
-<div class="contact-right">
-    <h2>Send us a message</h2>
-    <form id="contactForm">
-        <div class="form-group">
-            <input type="text" id="name" name="name" placeholder="Name *" required>
         </div>
-        
-        <div class="form-group">
-            <input type="email" id="email" name="email" placeholder="E-mail *" required>
-        </div>
-        
-                    <div class="form-group">
-                        <select id="projectType" name="projectType" required>
-                            <option value="">Project Type *</option>
-                            <option value="concept-art">Concept Art</option>
-                            <option value="character-design">Character Design</option>
-                            <option value="environment-design">Environment Design</option>
-                            <option value="illustration">Illustration</option>
-                            <option value="art-direction">Art Direction</option>
-                            <option value="multiple">Multiple Services</option>
-                            <option value="consultation">Consultation</option>
-                        </select>
-                    </div>
-        
-        <div class="form-group">
-            <textarea id="message" name="message" placeholder="Message *" rows="6" required></textarea>
-        </div>
-        
-        <button type="submit" class="submit-btn">SEND MESSAGE</button>
-    </form>
-</div>
-
-        </div>
-    </div>
-</section>
+    </section>
 </main>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <h3>MAJORS STUDIO</h3>
-                <p>© 2025 MAJORS STUDIO. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="index.html"><img src="assets/image/logo.png" alt="MAJORS STUDIO" onmouseover="this.src='assets/image/logo_up.png'" onmouseout="this.src='assets/image/logo.png'"></a>
+            </div>
+            <div class="footer-info">
+                <span>© MAJORS STUDIO 2026</span>
+                <span class="footer-divider">/</span>
+                <a href="#">PRIVACY</a>
             </div>
         </div>
     </footer>

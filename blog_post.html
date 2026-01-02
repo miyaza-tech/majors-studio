@@ -33,7 +33,7 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <a href="index.html" class="logo">MAJORS STUDIO</a>
+            <a href="index.html#home" class="logo"><img src="assets/image/logo.png" alt="MAJORS STUDIO" onmouseover="this.src='assets/image/logo_up.png'" onmouseout="this.src='assets/image/logo.png'"></a>
             
             <!-- Mobile Menu Button -->
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -42,37 +42,40 @@
                 <span class="hamburger-line"></span>
             </button>
             
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="blog.html" class="active">Blog</a></li>
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li class="language-switcher">
-                    <button id="langEN" class="lang-btn active" onclick="switchLanguage('en')">EN</button>
-                    <span class="lang-divider">|</span>
-                    <button id="langKO" class="lang-btn" onclick="switchLanguage('ko')">KR</button>
-                </li>
-            </ul>
-            
-            <div class="language-switcher">
-                <button id="langEN-desktop" class="lang-btn active" onclick="switchLanguage('en')">EN</button>
-                <span class="lang-divider">|</span>
-                <button id="langKO-desktop" class="lang-btn" onclick="switchLanguage('ko')">KR</button>
+            <div class="nav-right">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html#home">HOME</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="projects.html">PROJECTS</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="blog.html" class="active">BLOG</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="index.html#about">ABOUT</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="index.html#services">SERVICES</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="index.html#contact">CONTACT</a></li>
+                    <!-- Mobile Language Switcher -->
+                    <li class="mobile-lang-switcher">
+                        <button id="langKO" class="lang-btn active" onclick="switchLanguage('ko')">KR</button>
+                        <button id="langEN" class="lang-btn" onclick="switchLanguage('en')">EN</button>
+                    </li>
+                </ul>
+                
+                <div class="language-switcher-nav">
+                    <button id="langKO-desktop" class="lang-btn active" onclick="switchLanguage('ko')">KR</button>
+                    <button id="langEN-desktop" class="lang-btn" onclick="switchLanguage('en')">EN</button>
+                </div>
             </div>
         </nav>
     </header>
 
-    <!-- Breadcrumb -->
-    <section class="breadcrumb">
-        <div class="container">
-            <a href="index.html">Home</a> / 
-            <a href="blog.html">Blog</a> / 
-            <span>The Future of AI in Game Art Production</span>
-        </div>
-    </section>
+    <main class="page-content">
+
+    <!-- Top Spacer -->
+    <div class="page-top-spacer"></div>
 
     <!-- Article Header -->
     <article class="article-header">
@@ -90,7 +93,7 @@
                     <span class="read-time">&#9201; 5 min read</span>
                 </div>
                 <div class="share-buttons">
-                    <button class="share-btn" aria-label="Share on Twitter">🐦</button>
+                    <button class="share-btn" aria-label="Share on Twitter">𝕏</button>
                     <button class="share-btn" aria-label="Share on Facebook">f</button>
                     <button class="share-btn" aria-label="Share on LinkedIn">in</button>
                     <button class="share-btn" aria-label="Copy link">🔗</button>
@@ -201,80 +204,21 @@
                         <p>The future of game art is not about choosing between traditional skills and AI—it's about mastering both. And that's exactly what we're doing.</p>
                     </section>
 
-                    <!-- Author Bio -->
-                    <div class="author-bio">
-                        <img src="assets/image/team.jpg" alt="MAJORS Team" class="bio-image">
-                        <div class="bio-content">
-                            <h3>About MAJORS STUDIO</h3>
-                            <p>With 20 years of experience in game graphics, MAJORS STUDIO combines traditional artistic expertise with cutting-edge AI technology to deliver fast, high-quality 2D graphic solutions. From concept art to polished illustrations, we maintain consistent quality across all visual elements of your project.</p>
-                            <a href="index.html#contact" class="contact-link">Work with us →</a>
-                        </div>
-                    </div>
-
-                    <!-- Tags -->
-                    <div class="article-tags">
-                        <span class="tag">AI Art</span>
-                        <span class="tag">Game Production</span>
-                        <span class="tag">Workflow</span>
-                        <span class="tag">Industry Insights</span>
-                        <span class="tag">Concept Art</span>
-                    </div>
                 </div>
             </div>
         </div>
     </article>
 
-    <!-- Related Posts -->
-    <section class="related-posts">
-        <div class="container">
-            <h2>Related Articles</h2>
-            <div class="related-grid">
-                <article class="related-card">
-                    <div class="related-content">
-                        <h3>Creating Compelling Character Silhouettes</h3>
-                        <span class="related-meta">Tutorials • ⏱ 8 min read</span>
-                    </div>
-                </article>
-                <article class="related-card">
-                    <div class="related-content">
-                        <h3>Behind the Scenes: Fantasy World Building</h3>
-                        <span class="related-meta">Process • 6 min read</span>
-                    </div>
-                </article>
-                <article class="related-card">
-                    <div class="related-content">
-                        <h3>2024 Game Art Trends Analysis</h3>
-                        <span class="related-meta">Industry • 7 min read</span>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Comments Section -->
-    <section class="comments-section">
-        <div class="container">
-            <h2>Comments</h2>
-            <div class="comment-form">
-                <h3>Leave a Comment</h3>
-                <form>
-                    <div class="form-row">
-                        <input type="text" placeholder="Name *" required>
-                        <input type="email" placeholder="Email *" required>
-                    </div>
-                    <textarea placeholder="Your comment *" rows="5" required></textarea>
-                    <button type="submit" class="submit-comment">Post Comment</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <h3>MAJORS STUDIO</h3>
-                <p>© 2025 MAJORS STUDIO. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="index.html"><img src="assets/image/logo.png" alt="MAJORS STUDIO" onmouseover="this.src='assets/image/logo_up.png'" onmouseout="this.src='assets/image/logo.png'"></a>
+            </div>
+            <div class="footer-info">
+                <span>© MAJORS STUDIO 2026</span>
+                <span class="footer-divider">/</span>
+                <a href="#">PRIVACY</a>
             </div>
         </div>
     </footer>

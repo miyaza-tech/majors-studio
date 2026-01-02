@@ -41,8 +41,8 @@
   },
   "latestProjects": {
     "title": {
-      "en": "Latest Projects",
-      "ko": "Latest Projects"
+      "en": "Projects",
+      "ko": "Projects"
     },
     "viewAll": {
       "en": "View All Projects",
@@ -193,14 +193,14 @@
   },
   "clients": {
     "title": {
-      "en": "Our Clients",
-      "ko": "Our Clients"
+      "en": "Worked with",
+      "ko": "Worked with"
     }
   },
   "testimonials": {
     "title": {
-      "en": "Client Feedback",
-      "ko": "Client Feedback"
+      "en": "Testimonials",
+      "ko": "Testimonials"
     },
     "items": [
       {

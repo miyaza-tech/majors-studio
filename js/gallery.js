@@ -37,23 +37,31 @@ function initializeFilters() {
             
             const filter = tab.getAttribute('data-filter');
             
-            galleryItems.forEach((item, index) => {
-                const category = item.getAttribute('data-category');
-                
-                if (filter === 'all' || category === filter) {
-                    item.style.display = 'block';
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
-                    }, index * 50);
-                } else {
-                    item.style.opacity = '0';
-                    item.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        item.style.display = 'none';
-                    }, 300);
-                }
+            // 먼저 모든 아이템을 fade out
+            galleryItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
             });
+            
+            // 잠시 후 필터링 및 fade in
+            setTimeout(() => {
+                let visibleIndex = 0;
+                galleryItems.forEach((item) => {
+                    const category = item.getAttribute('data-category');
+                    const shouldShow = filter === 'all' || category === filter;
+                    
+                    if (shouldShow) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, visibleIndex * 80);
+                        visibleIndex++;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }, 300);
             
             // Update filtered data for lightbox
             if (filter === 'all') {
@@ -79,7 +87,7 @@ function openLightbox(index) {
             currentImageIndex = 0;
         }
         updateLightboxContent(item);
-        lightbox.style.display = 'block';
+        lightbox.style.display = 'flex';
         document.body.style.overflow = 'hidden';
     } else {
         console.error('Item not found for index:', index);
@@ -200,7 +208,7 @@ function createGalleryItem(id) {
 // ===== KEYBOARD NAVIGATION =====
 document.addEventListener('keydown', (e) => {
     const lightbox = document.getElementById('lightbox');
-    if (lightbox && lightbox.style.display === 'block') {
+    if (lightbox && lightbox.style.display === 'flex') {
         switch(e.key) {
             case 'Escape':
                 closeLightbox();

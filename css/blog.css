@@ -1,16 +1,17 @@
 /* ===== BLOG PAGE STYLES ===== */
 
+/* Top Spacer */
+.page-top-spacer {
+    height: 160px !important;
+    background: #ffffff !important;
+}
+
 /* Blog Hero */
 .blog-hero {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     padding: 120px 0 80px;
-  .post-content p {
-   color: #666;
-   line-height: 1.6;
-   margin-bottom: 15px;
-   font-size: 14px;
-}-align: center;
+    text-align: center;
 }
 
 .blog-hero h1 {
@@ -63,6 +64,8 @@
 .featured-post {
     background: #ffffff;
     padding: 60px 0;
+    position: relative;
+    z-index: 1;
 }
 
 .featured-content {
@@ -198,27 +201,12 @@
 
 /* Post Category Badge */
 .post-category {
-   position: absolute;
-   top: 15px;
-   left: 15px;
-   background: rgba(0,0,0,0.7);
-   color: white;
-   padding: 5px 12px;
-   border-radius: 15px;
-   font-size: 0.85em;
-   text-transform: uppercase;
-   letter-spacing: 0.5px;
+   display: none; /* 카테고리 뱃지 숨김 */
 }
 
-/* 🔴 수정된 이모지 - UTF-8 인코딩 */
 /* Post Meta */
 .post-meta {
-   display: flex;
-   gap: 15px;
-   font-size: 0.9em;
-   color: #999;
-   align-items: center;
-   flex-wrap: wrap;
+   display: none; /* 날짜, 시간 숨김 */
 }
 
 .post-meta span {
@@ -310,9 +298,7 @@
 .load-more-container {
    text-align: center;
    margin-top: 50px;
-}
-
-.load-more-btn {
+    display: none; /* 추가 항목이 있을 때만 표시 */
    padding: 15px 40px;
    background: white;
    border: 2px solid #e0e0e0;

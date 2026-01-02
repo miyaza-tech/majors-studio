@@ -1,10 +1,15 @@
 /* ===== BLOG POST STYLES ===== */
 
+/* Top Spacer */
+.page-top-spacer {
+    height: 160px !important;
+    background: #ffffff !important;
+}
+
 /* Breadcrumb */
 .breadcrumb {
     background: #f8f8f8;
     padding: 15px 0;
-    margin-top: 70px;
     font-size: 0.9em;
 }
 
@@ -24,7 +29,7 @@
 
 /* Article Header */
 .article-header {
-    padding: 60px 0 40px;
+    padding: 40px 0 40px;
     background: white;
 }
 
@@ -36,18 +41,11 @@
 }
 
 .article-category {
-    background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 0.9em;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    display: none; /* 카테고리 배지 숨김 */
 }
 
 .article-date {
-    color: #999;
-    font-size: 0.95em;
+    display: none; /* 날짜 숨김 */
 }
 
 .article-header h1 {
@@ -92,8 +90,7 @@
 }
 
 .read-time {
-    color: #999;
-    font-size: 0.9em;
+    display: none; /* 읽기 시간 숨김 */
 }
 
 .share-buttons {
@@ -119,23 +116,6 @@
     background: #667eea;
     color: white;
     border-color: #667eea;
-}
-
-/* 🔴 수정된 share button aria-label */
-.share-btn[aria-label="Share on Twitter"]::before {
-    content: "𝕏";
-}
-
-.share-btn[aria-label="Share on Facebook"]::before {
-    content: "f";
-}
-
-.share-btn[aria-label="Share on LinkedIn"]::before {
-    content: "in";
-}
-
-.share-btn[aria-label="Copy link"]::before {
-    content: "🔗";
 }
 
 /* Featured Image */

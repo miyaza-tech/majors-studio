@@ -22,7 +22,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
@@ -32,7 +32,7 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <a href="index.html" class="logo">MAJORS STUDIO</a>
+            <a href="index.html#home" class="logo"><img src="assets/image/logo.png" alt="MAJORS STUDIO" onmouseover="this.src='assets/image/logo_up.png'" onmouseout="this.src='assets/image/logo.png'"></a>
             
             <!-- Mobile Menu Button -->
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -41,43 +41,40 @@
                 <span class="hamburger-line"></span>
             </button>
             
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="blog.html" class="active">Blog</a></li>
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li class="language-switcher">
-                    <button id="langEN" class="lang-btn active" onclick="switchLanguage('en')">EN</button>
-                    <span class="lang-divider">|</span>
-                    <button id="langKO" class="lang-btn" onclick="switchLanguage('ko')">KR</button>
-                </li>
-            </ul>
-            
-            <div class="language-switcher">
-                <button id="langEN-desktop" class="lang-btn active" onclick="switchLanguage('en')">EN</button>
-                <span class="lang-divider">|</span>
-                <button id="langKO-desktop" class="lang-btn" onclick="switchLanguage('ko')">KR</button>
+            <div class="nav-right">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html#home">HOME</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="projects.html">PROJECTS</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="blog.html" class="active">BLOG</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="index.html#about">ABOUT</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="index.html#services">SERVICES</a></li>
+                    <li class="nav-divider">/</li>
+                    <li><a href="index.html#contact">CONTACT</a></li>
+                    <!-- Mobile Language Switcher -->
+                    <li class="mobile-lang-switcher">
+                        <button id="langKO" class="lang-btn active" onclick="switchLanguage('ko')">KR</button>
+                        <button id="langEN" class="lang-btn" onclick="switchLanguage('en')">EN</button>
+                    </li>
+                </ul>
+                
+                <div class="language-switcher-nav">
+                    <button id="langKO-desktop" class="lang-btn active" onclick="switchLanguage('ko')">KR</button>
+                    <button id="langEN-desktop" class="lang-btn" onclick="switchLanguage('en')">EN</button>
+                </div>
             </div>
         </nav>
     </header>
 
     <main class="page-content">
 
-    <!-- Blog Categories -->
-    <section class="blog-categories">
-        <div class="container">
-            <div class="category-tabs">
-                <button class="category-tab active" data-category="all">All Posts</button>
-                <button class="category-tab" data-category="tutorials">Tutorials</button>
-                <button class="category-tab" data-category="process">Process</button>
-                <button class="category-tab" data-category="industry">Industry</button>
-                <button class="category-tab" data-category="showcase">Showcase</button>
-            </div>
-        </div>
-    </section>
+    <!-- Top Spacer -->
+    <div class="page-top-spacer"></div>
 
     <!-- Featured Post -->
     <section class="featured-post">
@@ -202,28 +199,18 @@
             </div>
         </div>
     </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <div class="container">
-            <div class="newsletter-content">
-                <h2>Stay Updated</h2>
-                <p>Subscribe to our newsletter for the latest insights and tutorials</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
-    </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <h3>MAJORS STUDIO</h3>
-                <p>© 2025 MAJORS STUDIO. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="index.html"><img src="assets/image/logo.png" alt="MAJORS STUDIO" onmouseover="this.src='assets/image/logo_up.png'" onmouseout="this.src='assets/image/logo.png'"></a>
+            </div>
+            <div class="footer-info">
+                <span>© MAJORS STUDIO 2026</span>
+                <span class="footer-divider">/</span>
+                <a href="#">PRIVACY</a>
             </div>
         </div>
     </footer>

@@ -251,31 +251,31 @@ function initCommentForm() {
     }
 }
 
-// Progress Bar
-function initProgressBar() {
-    const progressBar = document.createElement('div');
-    progressBar.className = 'reading-progress';
-    progressBar.style.cssText = `
-        position: fixed;
-        top: 70px;
-        left: 0;
-        width: 0%;
-        height: 3px;
-        background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-        z-index: 1000;
-        transition: width 0.2s ease;
-    `;
-    document.body.appendChild(progressBar);
-    
-    window.addEventListener('scroll', () => {
-        const windowHeight = window.innerHeight;
-        const documentHeight = document.documentElement.scrollHeight - windowHeight;
-        const scrolled = window.scrollY;
-        const progress = (scrolled / documentHeight) * 100;
-        
-        progressBar.style.width = `${progress}%`;
-    });
-}
+// Progress Bar - 비활성화
+// function initProgressBar() {
+//     const progressBar = document.createElement('div');
+//     progressBar.className = 'reading-progress';
+//     progressBar.style.cssText = `
+//         position: fixed;
+//         top: 70px;
+//         left: 0;
+//         width: 0%;
+//         height: 3px;
+//         background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+//         z-index: 1000;
+//         transition: width 0.2s ease;
+//     `;
+//     document.body.appendChild(progressBar);
+//     
+//     window.addEventListener('scroll', () => {
+//         const windowHeight = window.innerHeight;
+//         const documentHeight = document.documentElement.scrollHeight - windowHeight;
+//         const scrolled = window.scrollY;
+//         const progress = (scrolled / documentHeight) * 100;
+//         
+//         progressBar.style.width = `${progress}%`;
+//     });
+// }
 
 // Back to Top
 function scrollToTop() {
@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     initShareButtons();
     initRelatedPosts();
     initCommentForm();
-    initProgressBar();
+    // initProgressBar(); // 프로그레스 바 비활성화
     
     // Back to top button visibility
     const backToTop = document.getElementById('backToTop');

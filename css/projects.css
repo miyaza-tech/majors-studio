@@ -1,5 +1,11 @@
 /* ===== PROJECTS PAGE SPECIFIC STYLES ===== */
 
+/* Top Spacer */
+.page-top-spacer {
+    height: 80px;
+    background: #ffffff;
+}
+
 .projects-hero h1 {
     font-size: 3em;
     margin-bottom: 20px;
@@ -17,7 +23,6 @@
 .filter-section {
     background: #fff;
     padding: 40px 0;
-    margin-top: 15px;
 }
 
 .filter-tabs {
@@ -49,6 +54,8 @@
 .projects-section {
     background: #fff;
     padding: 60px 0;
+    min-height: calc(100vh - 200px);
+    flex: 1;
 }
 
 .projects-section .container {
@@ -63,12 +70,15 @@
 
 /* Project Cards */
 .project-card {
+    position: relative;
     background: white;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: all 0.3s;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .project-card:hover {
@@ -99,14 +109,29 @@
     height: 280px;
     position: relative;
     overflow: hidden;
+}
+
+/* 내부 이미지 - transform scale 적용 */
+.project-image-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+/* 호버 시 이미지 확대 */
+.project-card:hover .project-image-inner {
+    transform: scale(1.1) !important;
 }
 
 /* 🔴 수정된 주석 - 한글 인코딩 수정 */
-/* 기본 상태 - 어둡게 */
+/* 기본 상태 - 투명 */
 .project-image::before {
     content: '';
     position: absolute;
@@ -114,19 +139,15 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0);
     transition: all 0.3s;
     z-index: 1;
 }
 
 /* 🔴 수정된 주석 - 한글 인코딩 수정 */
-/* 호버 시 원본 이미지 그대로 + 확대 */
+/* 호버 시 원본 이미지 그대로 */
 .project-card:hover .project-image::before {
     background: rgba(0, 0, 0, 0);
-}
-
-.project-card:hover .project-image {
-    transform: scale(1.05);
 }
 
 .project-placeholder {
@@ -159,20 +180,33 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease;
 }
 
-/* 🔴 수정된 주석 - 한글 인코딩 수정 */
-/* 비디오 인디케이터 */
-.video-indicator {
+/* 비디오 호버 시 확대 */
+.project-card:hover .project-video {
+    transform: scale(1.05);
+}
+
+/* 비디오 인디케이터 - project-card 기준으로 고정 */
+.project-card .video-indicator {
     position: absolute;
     top: 10px;
     right: 10px;
     background: rgba(0, 0, 0, 0.7);
     color: white;
-    padding: 5px 10px;
+    padding: 5px 12px;
     border-radius: 20px;
-    font-size: 0.9em;
-    z-index: 2;
+    font-size: 0.85em;
+    z-index: 20;
+}
+
+/* 프로젝트는 화살표 추가 */
+.project-card .video-indicator::before {
+    content: "▶ ";
 }
 
 /* 🔴 수정된 주석 - 한글 인코딩 수정 */
@@ -238,6 +272,7 @@
 /* Project Info */
 .project-info {
     padding: 30px;
+    background: white;
 }
 
 .project-title {
@@ -279,14 +314,20 @@
     background: rgba(0,0,0,0.9) !important;
     z-index: 9999 !important;
     overflow-y: auto !important;
+    /* 중앙 정렬 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-content {
     max-width: 1000px;
-    margin: 50px auto;
+    max-height: 90vh;
+    margin: auto;
     background: white;
     border-radius: 12px;
     overflow: hidden;
+    overflow-y: auto;
     position: relative;
 }
 
