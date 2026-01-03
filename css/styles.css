@@ -2089,14 +2089,14 @@ header, nav, .hero, .hero-slider, .hero-slide {
     /* 5. About 섹션 - 이름 겹침 방지 */
     .about p {
         padding: 25px 20px;
-        padding-bottom: 60px;
+        padding-bottom: 200px;
         font-size: 14px;
         line-height: 1.8;
     }
     
     .about-author {
         margin-top: -40px;
-        padding-bottom: 500px;
+        padding-bottom: 60px;
         font-size: 13px;
     }
     
