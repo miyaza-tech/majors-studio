@@ -353,6 +353,39 @@
 @media (max-width: 480px) {
     .gallery-grid {
         grid-template-columns: 1fr;
-        grid-auto-rows: 250px;
+        grid-auto-rows: auto;
+        gap: 20px;
+        padding: 0;
+    }
+    
+    .gallery-item {
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .gallery-image {
+        height: 250px;
+    }
+    
+    .container-fluid {
+        padding: 0 15px;
+    }
+    
+    .filter-section {
+        padding: 25px 0;
+    }
+    
+    .filter-tabs {
+        gap: 8px;
+        padding: 0 10px;
+    }
+    
+    .filter-tab {
+        padding: 8px 14px;
+        font-size: 0.85em;
+    }
+    
+    .gallery-section {
+        padding: 40px 0;
     }
 }

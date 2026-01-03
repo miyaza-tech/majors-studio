@@ -561,7 +561,7 @@
 
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 25px;
     }
     
     .project-card {
@@ -575,6 +575,52 @@
     .filter-tab {
         padding: 10px 16px;
         font-size: 0.9em;
+    }
+}
+
+/* ===== MOBILE OPTIMIZATION (iPhone 13 Mini) ===== */
+@media (max-width: 480px) {
+    .projects-section .container {
+        padding: 0 15px;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .project-image {
+        height: 220px;
+    }
+    
+    .project-info {
+        padding: 20px 15px;
+    }
+    
+    .project-title {
+        font-size: 1.1em;
+    }
+    
+    .project-description {
+        font-size: 0.9em;
+    }
+    
+    .filter-section {
+        padding: 25px 0;
+    }
+    
+    .filter-tabs {
+        gap: 8px;
+        padding: 0 10px;
+    }
+    
+    .filter-tab {
+        padding: 8px 14px;
+        font-size: 0.85em;
+    }
+    
+    .projects-section {
+        padding: 40px 0;
     }
 
     .modal-content {
