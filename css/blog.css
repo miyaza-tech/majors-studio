@@ -233,14 +233,18 @@
 .read-more-btn {
    display: inline-block;
    margin-top: 20px;
-   color: #667eea;
+   background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+   color: white;
+   padding: 12px 30px;
+   border-radius: 50px;
    text-decoration: none;
    font-weight: 600;
    transition: all 0.3s;
 }
 
 .read-more-btn:hover {
-   transform: translateX(5px);
+   transform: translateY(-2px);
+   box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
 /* Newsletter Section */
