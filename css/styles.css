@@ -2086,17 +2086,17 @@ header, nav, .hero, .hero-slider, .hero-slide {
         height: 250px;
     }
     
-    /* 5. About 섹션 - 이름 겹침 방지 */
+    /* 5. About 섹션 - Testimonials와 레이아웃 맞춤 */
     .about p {
         padding: 25px 20px;
-        padding-bottom: 100px;
+        padding-bottom: 70px;
         font-size: 14px;
         line-height: 1.7;
     }
     
     .about-author {
-        margin-top: -80px;
-        padding-bottom: 60px;
+        margin-top: -50px;
+        padding-bottom: 20px;
         font-size: 13px;
     }
     
@@ -2112,7 +2112,7 @@ header, nav, .hero, .hero-slider, .hero-slide {
         margin-bottom: 30px;
     }
     
-    /* Testimonials 그리드 */
+    /* Testimonials 그리드 - About과 레이아웃 맞춤 */
     .testimonials-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -2120,12 +2120,18 @@ header, nav, .hero, .hero-slider, .hero-slide {
     
     .testimonial-item {
         padding: 25px 20px;
+        padding-bottom: 20px;
         min-height: auto;
     }
     
     .testimonial-item p {
         font-size: 14px;
         line-height: 1.7;
+        margin-bottom: 15px;
+    }
+    
+    .testimonial-author {
+        font-size: 13px;
     }
     
     /* Contact 섹션 */
