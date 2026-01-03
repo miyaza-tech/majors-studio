@@ -788,31 +788,25 @@ nav.container {
     }
 }
 
-/* 모바일 스크롤 애니메이션 최적화 */
+/* 모바일 스크롤 애니메이션 제거 */
 @media (max-width: 768px) {
-    .scroll-animate {
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .scroll-animate.fade-up {
-        transform: translateY(30px);
-    }
-    
+    .scroll-animate,
+    .scroll-animate.fade-up,
+    .scroll-animate.fade-down,
     .scroll-animate.fade-left,
-    .scroll-animate.fade-right {
-        transform: translateY(25px);
-    }
-    
-    .scroll-animate.scale-in {
-        transform: scale(0.95);
-    }
-    
-    .stagger-item {
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
+    .scroll-animate.fade-right,
+    .scroll-animate.scale-in,
+    .stagger-item,
     .stagger-item.fade-up {
-        transform: translateY(25px);
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    
+    .scroll-animate.animate-in,
+    .stagger-item.animate-in {
+        opacity: 1 !important;
+        transform: none !important;
     }
 }
 
@@ -2102,7 +2096,7 @@ header, nav, .hero, .hero-slider, .hero-slide {
     
     .about-author {
         margin-top: -40px;
-        padding-bottom: 40px;
+        padding-bottom: 60px;
         font-size: 13px;
     }
     
