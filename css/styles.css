@@ -1429,8 +1429,46 @@ nav.container {
         min-height: auto;
     }
 
+    /* About 섹션 - 768px 이하 모든 모바일 적용 */
     .about p {
-        padding: 30px 25px;
+        padding: 25px 20px;
+        padding-bottom: 70px;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+    
+    .about-author {
+        margin-top: -50px;
+        padding-bottom: 20px;
+        font-size: 13px;
+    }
+    
+    /* 서비스 그리드 - 중앙정렬 */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .service-item {
+        padding: 25px 20px;
+    }
+    
+    .service-item h3 {
+        font-size: 1.2em;
+        white-space: normal;
+        word-break: keep-all;
+    }
+    
+    /* 갤러리 그리드 */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Projects 그리드 */
+    .latest-projects-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
     }
 }
 
