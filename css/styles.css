@@ -1470,6 +1470,10 @@ nav.container {
         grid-template-columns: 1fr;
         gap: 25px;
     }
+    
+    .latest-project-item img {
+        height: 250px;
+    }
 }
 
 /* ===== CONTACT SECTION ===== */
