@@ -2041,7 +2041,7 @@ header, nav, .hero, .hero-slider, .hero-slide {
     
     /* 2. Hero 텍스트 위치 조정 - 잘리지 않게 */
     .hero-text {
-        bottom: 80px;
+        bottom: 150px;
         right: 15px;
         left: 15px;
         text-align: center;
@@ -2102,7 +2102,7 @@ header, nav, .hero, .hero-slider, .hero-slide {
     
     .about-author {
         margin-top: -40px;
-        padding-bottom: 20px;
+        padding-bottom: 40px;
         font-size: 13px;
     }
     
