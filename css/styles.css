@@ -2089,9 +2089,9 @@ header, nav, .hero, .hero-slider, .hero-slide {
     /* 5. About 섹션 - 이름 겹침 방지 */
     .about p {
         padding: 25px 20px;
-        padding-bottom: 200px;
+        padding-bottom: 60px;
         font-size: 14px;
-        line-height: 1.8;
+        line-height: 1.7;
     }
     
     .about-author {
