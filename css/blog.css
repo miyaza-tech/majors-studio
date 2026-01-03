@@ -354,3 +354,8 @@
        width: 100%;
    }
 }
+@media (max-width: 480px) {
+    .page-top-spacer {
+        height: 80px !important;
+    }
+}
