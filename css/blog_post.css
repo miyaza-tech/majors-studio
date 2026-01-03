@@ -500,3 +500,8 @@ blockquote cite {
         grid-template-columns: 1fr;
     }
 }
+@media (max-width: 480px) {
+    .page-top-spacer {
+        height: 80px !important;
+    }
+}
